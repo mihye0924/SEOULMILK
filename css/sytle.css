@@ -36,17 +36,21 @@ header .gnbBtn .closeBtn .bottom { position: absolute; top: 8px; width: 25px; he
 
 /* main */
 main #main { position: absolute; width: 100%; height: 100%; }
-main #main h1.title01 { position: absolute; right: 0; margin-top: 90px; font-family: 'Archivo', sans-serif; font-size: 210px; letter-spacing: -3px; color: #fff; -webkit-text-stroke: 1px var(--color); }
-main #main h1.title01 span { font-family: 'Archivo', sans-serif; font-size: 210px; margin-left: 50px; }
+main #main h1.title01  { position: absolute; overflow: hidden; height: 230px; right: 0; margin-top: 90px; display: flex; }
+main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 210px; letter-spacing: -3px; color: #fff; -webkit-text-stroke: 1px var(--color); }
+main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 210px; margin-left: 50px; }
+/* main #main h1.title01.animate span:first-of-type{ animation: mainText 0.5s ease-in-out; position: relative; } */
 /* main #main h1.title02 { margin-top: 30px; font-family: 'Archivo', sans-serif; font-size: 120px; letter-spacing: -3px; } */
 /* main #main h1.title02 span { font-family: 'Archivo', sans-serif; font-size: 120px; margin-left: 50px; color: #fff; -webkit-text-stroke: 1px var(--color); } */
-main #main .slide_container { position: fixed; bottom: 0; width:1030px; height: 680px; /* overflow: hidden; */ }
+main #main .slide_container { position: fixed; bottom: 0; width:1030px; height: 680px; overflow: hidden; }
 main #main .slide_wrap { display: flex; width: 3090px !important; height: 680px; }
 main #main .slide_wrap .slide_content { position: relative; width: 1030px; height: 680px; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
 main #main .slide_wrap .slide_content .textBox { position: absolute; left: 50px; bottom: 120px;  }
-main #main .slide_wrap .slide_content .textBox span:first-of-type { font-size: 70px; font-weight: 900; color: #fff; }
-main #main .slide_wrap .slide_content .textBox span:last-of-type { display: block; margin-top: 20px; font-size: 50px; font-weight: 900; color: #fff; }
+main #main .slide_wrap .slide_content .textBox .title_inner { bottom: 100px; position: absolute; overflow: hidden; width: 920px; height: 105px; }
+main #main .slide_wrap .slide_content .textBox span.title { position: absolute; bottom: -125px;  font-size: 70px; font-weight: 900; color: #fff; }
+main #main .slide_wrap .slide_content .textBox .subTitle_inner { overflow: hidden; position: absolute; bottom: 0; width: 700px; height: 80px; }
+main #main .slide_wrap .slide_content .textBox span.subTitle { position: absolute; bottom: -80px; font-size: 50px; font-weight: 900; color: #fff; }
 main #main .slide_bar { position: absolute; bottom: 60px; left: 50px; }
 main #main .slide_bar span { color: #fff; }
 main #main .slide_bar .slide_prograss {  position: relative; top: 0; display: inline-block; margin: 0 10px; width: 280px; height: 8px; background-color: var(--color); border-radius: 25px; overflow: hidden;  }
@@ -56,8 +60,8 @@ main #main .slide_bar .slide_prograss .slide_prograss_inner.pause { animation-pl
 main #main .slide_more { cursor: pointer; position: absolute; width: 80px; height: 80px; top: 40%; left: 70px; border-radius: 50%; border:1px solid #fff; }
 main #main .slide_more .slide_line { position: absolute; width: 80px; height: 1px; background-color: #fff; top: 60%; left: 20%; }
 main #main .slide_more span { color: #fff; position: absolute; top: 40%; left: 50%; transform: translate(-50%,-50%); font-size: 12px; }
-main #main .slide_wrap .slide_content { background-color: #000;}
- 
+
+/* @keyframes mainText { 0%{ top: -210px; } 100%{ top: 0px; } } */
 @keyframes timer { 0% { width: 0;} 100% { width: 100%; } }
 
 #story_wrap { height: 15000px;}
