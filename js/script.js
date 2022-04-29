@@ -2,7 +2,13 @@ var pause = false;
 var sec = 0
 var click = false 
 
+
 $(function(){        
+
+    $('.motion').scrolla({
+        mobile: true,        // 모바일 적용 여부
+        once: true,         // 스크롤 애니메이션 한 번만 적용 여부
+    })
 
     var content = $('.slide_content')
     var slide_wrap = $('.slide_wrap')
@@ -99,16 +105,31 @@ $(function(){
         // fresh text - 애니메이션 구현
         var scrollD  = $(this).scrollTop()    
         var mainHeight = $('main #main').height() 
-        var windowScreen = $(window).height()  
+        var windowHeight = $(window).height()   
 
-        if( scrollD >= mainHeight-windowScreen) {
+        if( scrollD >= mainHeight-windowHeight) {
             $('.slide_container').addClass('nofixed')  
             $('main #main h1.title01').addClass('animated_opacity') 
+
         }else{
             $('.slide_container').removeClass('nofixed') 
             $('main #main h1.title01 ').removeClass('animated_opacity') 
         }
-        
+     
+        // 2번째 섹션으로 넘어가기
+        var section01Height = $('#whiteBg_wrap').height()
+        var gap = scrollD - (section01Height - windowHeight)
+        if( gap < 0 ) {
+            gap = 0
+        }  
+        if( scrollD > section01Height - windowHeight ) { 
+            $('#whiteBg_wrap').css({'opacity' : gap / 100 * 0.2, 'zIndex' : 3 }) 
+            $('#story_wrap').css({'opacity' : gap / 100 * 0.2}) 
+        } else {
+            $('#whiteBg_wrap').css({'opacity' : 0 , 'zIndex' : 0 })
+            $('#story_wrap').css({'opacity' : 0})
+        } 
+         
     })
       
     // 맨위로 올리기

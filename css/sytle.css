@@ -1,5 +1,6 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid red */; }
+*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid red; */ }
  
+ul, li { list-style: none; }
 a,p,span,h1,h2,h3,h4,h5,h6 { font-size: 15px; color: #E00909; }
 @font-face {
     font-family: 'Outer Sans Outline Black PERSONAL USE';
@@ -9,6 +10,13 @@ a,p,span,h1,h2,h3,h4,h5,h6 { font-size: 15px; color: #E00909; }
     font-family: 'Outer Sans Black PERSONAL USE';
     src: url(../font/MADE\ Outer\ Sans\ Black\ PERSONAL\ USE.otf);
 }
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 :root { --color: #E00909; --font:'NotoSansKR', sans-serif; }
 
@@ -39,23 +47,21 @@ header .gnbBtn .closeBtn .top { position: absolute; top: 8px; width: 25px; heigh
 header .gnbBtn .closeBtn .center { display: none; }
 header .gnbBtn .closeBtn .bottom { position: absolute; top: 8px; width: 25px; height: 3px; border-radius: 25px; background-color: var(--color); transform: rotate(45deg); }
 
-
-#whiteBg_wrap { opacity: 0; width: 100%; height: 3875px; position: absolute; background-color: #fff; z-index: 3; }
-/* main */ 
-main #main { display: grid; position: relative; width: 100%; justify-content: end; border: 1px solid blue; }
+/* section01 - main */ 
+#whiteBg_wrap { opacity: 0; width: 100%; height: 3875px; position: absolute; background-color: #fff; }
+main #main { display: grid; position: relative; width: 100%; justify-content: end; }
 main #main h1.title01  { position: fixed; overflow: hidden; height: 230px; right: 0; margin-top: 50px; display: flex; }
 main #main h1.title01.animated_opacity { animation: opacity 1s linear; opacity: 0; animation-fill-mode: backwards; } 
 @keyframes opacity { 0%{ opacity: 1; } 100%{ opacity: 0; } } 
-
-main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 210px; letter-spacing: -3px; color: #fff; -webkit-text-stroke: 1px var(--color); }
-main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 210px; margin-left: 50px; } 
+main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 210px;  letter-spacing: -10px; color: #fff; -webkit-text-stroke: 1px var(--color); }
+main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 210px; letter-spacing: -10px; margin-left: 50px; } 
 main #main .slide_container { z-index: 2; position: fixed; bottom: 0; width:1030px; height: 720px; overflow: hidden; }
 main #main .slide_wrap { display: flex; width: 3090px !important; height: 720px; }
 main #main .slide_wrap .slide_content { position: relative; width: 1030px; height: 720px; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
 main #main .slide_wrap .slide_content .textBox { position: absolute; left: 50px; bottom: 120px;  }
 main #main .slide_wrap .slide_content .textBox .title_inner { bottom: 100px; position: absolute; overflow: hidden; width: 920px; height: 105px; }
-main #main .slide_wrap .slide_content .textBox span.title { position: absolute; bottom: -125px;  font-size: 70px; font-weight: 900; color: #fff; }
+main #main .slide_wrap .slide_content .textBox span.title { position: absolute; bottom: -125px;  font-size: 70px; font-weight: 900; letter-spacing: -3px; color: #fff; }
 main #main .slide_wrap .slide_content .textBox .subTitle_inner { overflow: hidden; position: absolute; bottom: 0; width: 700px; height: 80px; }
 main #main .slide_wrap .slide_content .textBox span.subTitle { position: absolute; bottom: -80px; font-size: 50px; font-weight: 900; color: #fff; }
 main #main .slide_bar { position: absolute; bottom: 60px; left: 50px; }
@@ -70,7 +76,6 @@ main #main .slide_more:hover { animation: sizeUp 0.3s ease-in; animation-fill-mo
 main #main .slide_more .slide_line { position: absolute; width: 80px; height: 1px; background-color: #fff; top: 60%; left: 20%; }
 main #main .slide_more span { color: #fff; position: absolute; top: 40%; left: 50%; transform: translate(-50%,-50%); font-size: 12px; }
 @keyframes timer { 0% { width: 0;} 100% { width: 100%; } } 
-
 main #main .scroll_wrap { position: relative; right: 0; margin: 310px 0; width: 810px; }
 main #main .scroll_wrap .imgBox { position: relative; float: right; width: 570px; height: 850px; }
 main #main .scroll_wrap .imgBox img { z-index: 2; position: absolute; right: 0; width: 510px; height: 740px; }  
@@ -81,7 +86,6 @@ main #main .scroll_wrap .imgBox.img01 img:last-of-type,
 main #main .scroll_wrap .imgBox.img02 img:last-of-type,
 main #main .scroll_wrap .imgBox.img03 img:last-of-type { z-index: 1; }
 @keyframes  imgAnimate { 100%{ opacity: 1;} }
-
 main #main .scroll_wrap .imgBox.img01 span:first-of-type { display: block; position: absolute; transform: rotate(-90deg); top: 165px; left: -160px; font-size: 28px; font-weight: 600; letter-spacing: -1px; }
 main #main .scroll_wrap .imgBox.img01 span:last-of-type { display: block; position: absolute; width: 280px; bottom: 0; right: 10px; font-size: 32px; text-align: right; font-weight: 600; letter-spacing: -5px; }
 main #main .scroll_wrap .imgBox.img02 { position: relative; float: left; margin-top: 350px; } 
@@ -91,9 +95,37 @@ main #main .scroll_wrap .imgBox.img02 span:last-of-type { color: #006546; displa
 main #main .scroll_wrap .imgBox.img03 { margin-top: 350px; }
 main #main .scroll_wrap .imgBox.img03 span:first-of-type { color: #264e6e; display: block; position: absolute; transform: rotate(-90deg); top: 160px; left: -160px; font-size: 28px; font-weight: 600; letter-spacing: -1px; }
 main #main .scroll_wrap .imgBox.img03 span:last-of-type { color: #264e6e; display: block; position: absolute; width: 380px; bottom: 0; right: 10px; font-size: 32px; text-align: right; font-weight: 600; letter-spacing: -5px; }
-
-
 main #main .slide_container.nofixed { position: absolute; bottom: 0; }
 
+/* section02 */
+#story_wrap { margin-top: 4px; opacity: 0; position: relative; width: 100%; background-color: #fff; }
+#story_wrap .content { width: 1250px; margin: 0 auto; padding: 250px 0; }
+#story_wrap .textBox { text-align: center; overflow: hidden; }
+#story_wrap .textBox .topTextBox { width: 100%; height: 35px; overflow: hidden; }
+#story_wrap .textBox .topTitle { position: relative; text-align: center; bottom: -40px; font-size: 24px; font-weight: 600; display: block; letter-spacing: -3px; }
+#story_wrap .textBox .mainTextBox { margin: 30px 0; width: 100%; height: 165px; overflow: hidden; }
+#story_wrap .textBox .mainTitle { position: relative; text-align: center; bottom: -120px; font-size: 60px; line-height: 1.1; font-weight: 900; letter-spacing: -3px; display: block; }
+#story_wrap .textBox .bottomTextBox { width: 100%; height: 70px; overflow: hidden; }
+#story_wrap .textBox .bottomTitle { position: relative; text-align: center; bottom: -120px; font-size: 18px; font-weight: 600; letter-spacing: -3px; display: block; line-height: 1.8; }
+#story_wrap .textBox button { position: relative; bottom: -40px; margin-top: 110px; width: 180px; height: 40px; background-color:var(--color); border: 0; border-radius: 25px; }
+#story_wrap .textBox button span { position: relative; color: #fff; letter-spacing: 0; display: block; width: 100px; margin-left: 30px; }
+#story_wrap .textBox button span::after { font-family: 'FontAwesome'; position: absolute; top: -1px; right: -22px; display: block; content: '\f061'; color: var(--color); font-size: 15px; line-height: 20px; background-color: #fff; border-radius: 25px; width: 20px; height: 20px; }
+#story_wrap .inner {  margin-top: 120px; width: 100%; height: 610px; overflow: hidden; }
+#story_wrap .imgBox { position: relative; bottom: -610px;  width: 100%; display: flex; justify-content: space-between; }
+#story_wrap .imgBox .img { margin: 0 auto; width: 350px; height: 300px; }
+#story_wrap .imgBox .text  { text-align: center; margin: 0 auto; width: 350px; }
+#story_wrap .imgBox .text span:first-of-type { margin: 30px 0; display: block; font-size: 24px; font-weight: 900; letter-spacing: -2px; }
+#story_wrap .imgBox .text span:last-of-type { display: block; color: #343434; font-weight: 600; line-height: 2;  letter-spacing: -1px; }
 
-#story_wrap { position: relative; width: 100%; height: 800px; background-color: #fff; }
+/* 텍스트 애니메이션 적용 */
+@keyframes section02Text { 0% {bottom:-40px; } 100% { bottom: 0; } }
+.topTitle.motion.animate__animated { animation-name: section02Text; }
+.motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
+   
+@keyframes section02Text { 0% {bottom:-165px; } 100% { bottom: 0; } }
+.motion.animate__animated { animation-name: section02Text; }
+.motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
+
+@keyframes section02Content { 0% {bottom:-610px; } 100% { bottom: 0; } }
+.imgBox.motion.animate__animated { animation-name: section02Content; }
+.motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
