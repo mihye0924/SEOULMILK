@@ -29,97 +29,131 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
     <!-- css -->
     <link rel="stylesheet" href="./css/sytle.css">
     <!-- js -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     <script src="./js/script.js"></script>
 
 </head>
 <body>
-    <header> 
-        <div id="header_wrap">
-            <h1><a href="#"><img src="./img/logo.png" alt="로고"></a></h1>
-            <div class="inner">
-                <input type="image" id="search" src="./img/search.png">
-                <div class="gnbBtn">
-                    <div class="openBtn">
-                        <span class="top"></span>
-                        <span class="center"></span>
-                        <span class="bottom"></span>
-                    </div>
-                    
-                    <div class="closeBtn">
-                        <span class="top"></span>
-                        <span class="center"></span>
-                        <span class="bottom"></span>
+    <div id="scrollbar">
+        <div class="scrollbar_right">
+            <div class="scrollbar_inner"></div> 
+        </div>
+        <div class="scroll_text">
+            <span>SCROLL</span>
+        </div> 
+    </div> 
+ 
+    <div id="bg"></div>
+        <header> 
+            <div id="header_wrap">
+                <h1><a href="#"><img src="./img/logo.png" alt="로고"></a></h1>
+                <div class="inner">
+                    <input type="image" id="search" src="./img/search.png">
+                    <div class="gnbBtn">
+                        <div class="openBtn">
+                            <span class="top"></span>
+                            <span class="center"></span>
+                            <span class="bottom"></span>
+                        </div>
+                        
+                        <div class="closeBtn">
+                            <span class="top"></span>
+                            <span class="center"></span>
+                            <span class="bottom"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div> 
-    </header>
-    <main>
-        <div id="main">
-            <h1 class="title01">
-                <span>FRESH</span>
-                <span>MILK</span>
-            </h1>
-            <!-- <h1 class="title02">LIGHT<span>UP</span></h1> -->
-            <div class="slide_container"> 
-                <div class="slide_wrap"> 
-                    <div class="slide_content">
-                        <a href="#"><img src="./img/slideImg01.jpg" alt=""></a>
-                        <div class="textBox">
-                            <div class="title_inner">
-                                <span class="title">GREENER PASTURES</span>
-                            </div>
-                            <div class="subTitle_inner">
-                                <span class="subTitle">푸른목장</span>
+            </div> 
+        </header>
+        <main>
+            <div id="main">
+                <h1 class="title01">
+                    <span>FRESH</span>
+                    <span>MILK</span>
+                </h1>
+                  <div class="slide_container"> 
+                    <div class="slide_wrap"> 
+                        <div class="slide_content">
+                            <a href="#"><img src="./img/slideImg01.jpg" alt=""></a>
+                            <div class="textBox">
+                                <div class="title_inner">
+                                    <span class="title">GREENER PASTURES</span>
+                                </div>
+                                <div class="subTitle_inner">
+                                    <span class="subTitle">푸른목장</span>
+                                </div>
                             </div>
                         </div>
+                        <div class="slide_content">
+                            <a href="#"><img src="./img/slideImg02.jpg" alt=""></a>
+                            <div class="textBox">
+                                <div class="title_inner">
+                                    <span class="title">CLEAN WATER</span>
+                                </div>
+                                <div class="subTitle_inner">
+                                    <span class="subTitle">깨끗한 물</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide_content">
+                            <a href="#"><img src="./img/slideImg03.jpg" alt=""></a>
+                            <div class="textBox">
+                                <div class="title_inner">
+                                    <span class="title">GOOD ENVIRONMENT</span>
+                                </div>
+                                <div class="subTitle_inner">
+                                    <span class="subTitle">좋은 환경</span>
+                                </div>
+                            </div>
+                        </div> 
                     </div>
-                    <div class="slide_content">
-                        <a href="#"><img src="./img/slideImg02.jpg" alt=""></a>
-                        <div class="textBox">
-                            <div class="title_inner">
-                                <span class="title">CLEAN WATER</span>
-                            </div>
-                            <div class="subTitle_inner">
-                                <span class="subTitle">깨끗한 물</span>
-                            </div>
-                        </div>
+                    <div class="slide_more">
+                        <span class="slide_line"></span>
+                        <span>MORE</span>
                     </div>
-                    <div class="slide_content">
-                        <a href="#"><img src="./img/slideImg03.jpg" alt=""></a>
-                        <div class="textBox">
-                            <div class="title_inner">
-                                <span class="title">GOOD ENVIRONMENT</span>
-                            </div>
-                            <div class="subTitle_inner">
-                                <span class="subTitle">좋은 환경</span>
-                            </div>
-                        </div>
+                    <div class="slide_bar">
+                        <span class="prev_count">01</span>
+                        <span class="slide_prograss">
+                            <span class="slide_prograss_inner"></span>
+                        </span>
+                        <span class="next_count">03</span>
                     </div> 
                 </div>
-                <div class="slide_more">
-                    <span class="slide_line"></span>
-                    <span>MORE</span>
+                <div class="scroll_wrap">
+                    <div class="imgBox img01">
+                        <a href="#">
+                            <img src="./img/scrollImg01.jpg" alt="">
+                            <img src="./img/scrollImg01_h.jpg" alt=""> 
+                            <span>LIGHT & COMFORTABLEDAY</span>
+                            <span>간단한 식사로 하루를 보내세요</span> 
+                        </a> 
+                    </div>
+                    <div class="imgBox img02">
+                        <a href="#"> 
+                            <img src="./img/scrollImg02.png" alt=""> 
+                            <img src="./img/scrollImg02_h.png" alt=""> 
+                            <span>CLASS 1A SEOUL MILK</span>
+                            <span>깨끗한 목장, 건강한 젖소에서 
+                                착유한 진심이 담긴 우유</span> 
+                        </a>
+                    </div>
+                    <div class="imgBox img03">
+                        <a href="#"> 
+                            <img src="./img/scrollImg03.jpg" alt=""> 
+                            <img src="./img/scrollImg03_h.jpg" alt=""> 
+                            <span>COFFEE WITH GANGNEUNG</span>
+                            <span>깊은 핸드드립과 같은<br> 
+                                강릉 바다 앞에서 커피를 더하다</span> 
+                        </a>
+                    </div>
                 </div>
-                <div class="slide_bar">
-                    <span class="prev_count">01</span>
-                    <span class="slide_prograss">
-                        <span class="slide_prograss_inner"></span>
-                    </span>
-                    <span class="next_count">03</span>
-                </div> 
             </div>
-
-            <div class="scroll_wrap">
-
-            </div>
-        </div>
-    </main>
-    <section id="story_wrap"></section>
+        </main>
+        <section id="story_wrap">
+    
+        </section> 
 </body>
 </html>

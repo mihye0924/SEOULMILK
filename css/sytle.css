@@ -1,4 +1,4 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid red;  */}
+*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid red */; }
  
 a,p,span,h1,h2,h3,h4,h5,h6 { font-size: 15px; color: #E00909; }
 @font-face {
@@ -12,11 +12,16 @@ a,p,span,h1,h2,h3,h4,h5,h6 { font-size: 15px; color: #E00909; }
 
 :root { --color: #E00909; --font:'NotoSansKR', sans-serif; }
 
+#scrollbar { z-index: 2; position: fixed; bottom: 30px; right: 30px; width:30px; height: 360px;  }
+#scrollbar .scrollbar_right { margin: 0 auto; overflow: hidden; z-index: 2; width: 5px; height: 280px; background-color: rgba(233, 233, 233, 0.567); border-radius: 25px; }
+#scrollbar .scroll_text { display: block; position:absolute; width: 55px; transform: rotate(90deg); bottom: 30px; left: -13px; font-size: 15px; font-weight: 900; }
+#scrollbar .scrollbar_inner { z-index: 3; top: 0; right: 0;  width: 5px; height: 0; background-color: rgb(255, 0, 0);  border-radius: 25px; }
+
 /* header */
-body { background: url(../img/bg.jpg) no-repeat; background-size: cover; }
-header { position: fixed; width: 100%; height: 80px; /* background-color: #fff; */ }
+#bg { width: 100vw; height: 100vh; position: fixed; background: url(../img/bg.jpg) no-repeat; background-size: cover; }
+header { z-index: 2; position: fixed; width: 100%; height: 80px; /* background-color: #fff; */ }
 header #header_wrap { display: flex; justify-content: space-between; align-items: center; width: 90%; height: 80px; margin: 0 auto; }
-header h1 { display: flex;  width: 130px; height: 70px; }
+header h1 { display: flex;  width: 180px; height: 80px; }
 header h1 a { display: block; }
 header h1 img { width: 100%; height: 100%; }
 header input#search { width: 30px; height: 30px; }
@@ -35,16 +40,13 @@ header .gnbBtn .closeBtn .bottom { position: absolute; top: 8px; width: 25px; he
 
 
 /* main */
-main #main { position: absolute; width: 100%; height: 100%; }
-main #main h1.title01  { position: absolute; overflow: hidden; height: 230px; right: 0; margin-top: 90px; display: flex; }
+main #main { width: 100%; height: 100%; }
+main #main h1.title01  {  position: fixed; overflow: hidden; height: 230px; right: 0; margin-top: 50px; display: flex; }
 main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 210px; letter-spacing: -3px; color: #fff; -webkit-text-stroke: 1px var(--color); }
-main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 210px; margin-left: 50px; }
-/* main #main h1.title01.animate span:first-of-type{ animation: mainText 0.5s ease-in-out; position: relative; } */
-/* main #main h1.title02 { margin-top: 30px; font-family: 'Archivo', sans-serif; font-size: 120px; letter-spacing: -3px; } */
-/* main #main h1.title02 span { font-family: 'Archivo', sans-serif; font-size: 120px; margin-left: 50px; color: #fff; -webkit-text-stroke: 1px var(--color); } */
-main #main .slide_container { position: fixed; bottom: 0; width:1030px; height: 680px; overflow: hidden; }
-main #main .slide_wrap { display: flex; width: 3090px !important; height: 680px; }
-main #main .slide_wrap .slide_content { position: relative; width: 1030px; height: 680px; }
+main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 210px; margin-left: 50px; } 
+main #main .slide_container { z-index: 2; position: fixed; bottom: 0; width:1030px; height: 720px; overflow: hidden; }
+main #main .slide_wrap { display: flex; width: 3090px !important; height: 720px; }
+main #main .slide_wrap .slide_content { position: relative; width: 1030px; height: 720px; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
 main #main .slide_wrap .slide_content .textBox { position: absolute; left: 50px; bottom: 120px;  }
 main #main .slide_wrap .slide_content .textBox .title_inner { bottom: 100px; position: absolute; overflow: hidden; width: 920px; height: 105px; }
@@ -58,10 +60,36 @@ main #main .slide_bar .slide_prograss .slide_prograss_inner { position: absolute
 main #main .slide_bar .slide_prograss .slide_prograss_inner.animate { animation: timer 3s linear; animation-iteration-count: infinite; } 
 main #main .slide_bar .slide_prograss .slide_prograss_inner.pause { animation-play-state: paused; } 
 main #main .slide_more { cursor: pointer; position: absolute; width: 80px; height: 80px; top: 40%; left: 70px; border-radius: 50%; border:1px solid #fff; }
+main #main .slide_more:hover { animation: sizeUp 0.3s ease-in; animation-fill-mode: forwards; }
+@keyframes sizeUp { 0%{ transform: scale(1); } 100%{ transform:scale(1.2);} }
 main #main .slide_more .slide_line { position: absolute; width: 80px; height: 1px; background-color: #fff; top: 60%; left: 20%; }
 main #main .slide_more span { color: #fff; position: absolute; top: 40%; left: 50%; transform: translate(-50%,-50%); font-size: 12px; }
+@keyframes timer { 0% { width: 0;} 100% { width: 100%; } } 
 
-/* @keyframes mainText { 0%{ top: -210px; } 100%{ top: 0px; } } */
-@keyframes timer { 0% { width: 0;} 100% { width: 100%; } }
+main #main .scroll_wrap { position: absolute; right: 0; top: 310px; width: 825px; }
+main #main .scroll_wrap .imgBox { position: relative; float: right; width: 570px; height: 850px; }
+main #main .scroll_wrap .imgBox img { z-index: 2; position: absolute; right: 0; width: 510px; height: 740px; }  
+main #main .scroll_wrap .imgBox.img01:hover img:last-of-type,
+main #main .scroll_wrap .imgBox.img02:hover img:last-of-type,
+main #main .scroll_wrap .imgBox.img03:hover img:last-of-type { z-index: 3; display: block; animation: imgAnimate 2s ease-in-out; animation-fill-mode: forwards; opacity: 0;  }
+main #main .scroll_wrap .imgBox.img01 img:last-of-type,
+main #main .scroll_wrap .imgBox.img02 img:last-of-type,
+main #main .scroll_wrap .imgBox.img03 img:last-of-type { z-index: 1; }
+@keyframes  imgAnimate { 100%{ opacity: 1;} }
+
+
+main #main .scroll_wrap .imgBox.img01 span:first-of-type { display: block; position: absolute; transform: rotate(-90deg); top: 165px; left: -160px; font-size: 28px; font-weight: 600; letter-spacing: -1px; }
+main #main .scroll_wrap .imgBox.img01 span:last-of-type { display: block; position: absolute; width: 280px; bottom: 0; right: 10px; font-size: 32px; text-align: right; font-weight: 600; letter-spacing: -5px; }
+
+main #main .scroll_wrap .imgBox.img02 { position: relative; float: left; margin-top: 350px; } 
+main #main .scroll_wrap .imgBox.img02 img { left: 0; } 
+main #main .scroll_wrap .imgBox.img02 span:first-of-type { color: #006546; display: block; position: absolute; transform: rotate(90deg); top: 125px; right: -125px;  font-size: 28px; font-weight: 600; letter-spacing: -1px; }
+main #main .scroll_wrap .imgBox.img02 span:last-of-type { color: #006546; display: block; position: absolute; width: 350px; bottom: 0; left: 10px; font-size: 32px; text-align: left; font-weight: 600; letter-spacing: -5px; }
+
+main #main .scroll_wrap .imgBox.img03 { margin-top: 350px; }
+main #main .scroll_wrap .imgBox.img03 span:first-of-type { color: #264e6e; display: block; position: absolute; transform: rotate(-90deg); top: 160px; left: -160px; font-size: 28px; font-weight: 600; letter-spacing: -1px; }
+main #main .scroll_wrap .imgBox.img03 span:last-of-type { color: #264e6e; display: block; position: absolute; width: 380px; bottom: 0; right: 10px; font-size: 32px; text-align: right; font-weight: 600; letter-spacing: -5px; }
+
+
 
 #story_wrap { height: 15000px;}

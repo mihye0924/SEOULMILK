@@ -66,23 +66,38 @@ $(function(){
 
 
     //fresh milk 텍스트 애니메이션
-    var fresh = document.querySelector('.title01 span:first-of-type').innerHTML
-    console.log(fresh)
-
     var timer = 0;
     setInterval(() => { 
         timer+=1;
 
         if(timer % 2 == 0){
-            $('h1.title01 span:first-of-type').css({top:'-210px'}).animate({top:'0'},500)
+            $('h1.title01 span:first-of-type').css({top:'-190px'}).animate({top:'0'},200)
             document.querySelector('.title01 span:first-of-type').textContent = 'FRESH'
         }else{
-            $('h1.title01 span:first-of-type').css({top:'-210px'}).animate({top:'0'},500)
-            document.querySelector('.title01 span:first-of-type').textContent = 'SPECIAL'
-        }
-        console.log(timer)
-      
+            $('h1.title01 span:first-of-type').css({top:'-190px'}).animate({top:'0'},200)
+            document.querySelector('.title01 span:first-of-type').textContent = 'SEOUL'
+        } 
     }, 4000);
  
+
+    // 전체 스크롤바 - 오른쪽
+    
+    $(window).on('scroll',function(){ 
+        var scroll  = $(window).scrollTop()  
+        currentHeight = scroll / 50
+        $('#scrollbar .scrollbar_inner').css({ height : currentHeight })
+
+        if( scroll >= 400 ){
+            document.querySelector('#scrollbar span').textContent='TOP'  
+        }else{
+            document.querySelector('#scrollbar span').textContent='SCROLL'
+        }
+    })
+      
+
+    $('.scroll_text').on('click',function(){ 
+        $('html, body').animate({scrollTop: 0}, 500);
+    })
+  
 }) 
  
