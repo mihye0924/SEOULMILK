@@ -1,8 +1,9 @@
 var pause = false;
 var sec = 0
-var click = false
+var click = false 
 
-$(function(){       
+$(function(){        
+
     var content = $('.slide_content')
     var slide_wrap = $('.slide_wrap')
     var slideCount = content.length
@@ -83,21 +84,38 @@ $(function(){
     // 전체 스크롤바 - 오른쪽
     
     $(window).on('scroll',function(){ 
-        var scroll  = $(window).scrollTop()  
-        currentHeight = scroll / 50
+        var scroll  = $(this).scrollTop()  
+     
+        currentHeight = scroll / 21
+        
         $('#scrollbar .scrollbar_inner').css({ height : currentHeight })
 
-        if( scroll >= 400 ){
+        if( scroll >= 100 ){
             document.querySelector('#scrollbar span').textContent='TOP'  
         }else{
             document.querySelector('#scrollbar span').textContent='SCROLL'
+        } 
+
+        // fresh text - 애니메이션 구현
+        var scrollD  = $(this).scrollTop()    
+        var mainHeight = $('main #main').height() 
+        var windowScreen = $(window).height()  
+
+        if( scrollD >= mainHeight-windowScreen) {
+            $('.slide_container').addClass('nofixed')  
+            $('main #main h1.title01').addClass('animated_opacity') 
+        }else{
+            $('.slide_container').removeClass('nofixed') 
+            $('main #main h1.title01 ').removeClass('animated_opacity') 
         }
+        
     })
       
-
+    // 맨위로 올리기
     $('.scroll_text').on('click',function(){ 
         $('html, body').animate({scrollTop: 0}, 500);
     })
+ 
   
 }) 
  
