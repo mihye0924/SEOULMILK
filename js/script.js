@@ -132,6 +132,16 @@ $(function(){
          
     })
       
+    $('.autoText.marquee').marquee({ 
+        duration: '6000',
+        direction : 'left',
+        loop : '-1',
+        scrollamount: '0',
+        duplicated : 'true', 
+    })
+  
+
+
     // 맨위로 올리기
     $('.scroll_text').on('click',function(){ 
         $('html, body').animate({scrollTop: 0}, 500);
