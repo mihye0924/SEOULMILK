@@ -5,11 +5,6 @@ var click = false
 
 $(function(){        
 
-    $('.motion').scrolla({
-        mobile: true,        // 모바일 적용 여부
-        once: true,         // 스크롤 애니메이션 한 번만 적용 여부
-    })
-
     var content = $('.slide_content')
     var slide_wrap = $('.slide_wrap')
     var slideCount = content.length
@@ -17,6 +12,16 @@ $(function(){
     var currentPosition = 0;   
     var totalSlideWidth = slideWidth*slideCount
 
+    // 스크롤시 텍스트 애니메이션
+    $('.motion').scrolla({
+        mobile: true,        // 모바일 적용 여부
+        once: true,         // 스크롤 애니메이션 한 번만 적용 여부
+    })
+  
+    // 맨위로 올리기
+    $('.scroll_text').on('click',function(){ 
+        $('html, body').animate({scrollTop: 0}, 500);
+    })
 
     // 슬라이드 네비게이션바 타이머
     setInterval(() => {   
@@ -87,8 +92,7 @@ $(function(){
     }, 4000);
  
 
-    // 전체 스크롤바 - 오른쪽
-    
+    // 전체 스크롤바 - 오른쪽 
     $(window).on('scroll',function(){ 
         var scroll  = $(this).scrollTop()  
      
@@ -117,21 +121,21 @@ $(function(){
         }
      
         // 2번째 섹션으로 넘어가기
-        var section01Height = $('#whiteBg_wrap').height()
-        var gap = scrollD - (section01Height - windowHeight)
+        var gap = scrollD - (mainHeight - windowHeight)
         if( gap < 0 ) {
             gap = 0
         }  
-        if( scrollD > section01Height - windowHeight ) { 
-            $('#whiteBg_wrap').css({'opacity' : gap / 100 * 0.2, 'zIndex' : 3 }) 
-            $('#story_wrap').css({'opacity' : gap / 100 * 0.2}) 
+        if( scrollD > mainHeight - windowHeight ) { 
+            $('#redBg_wrap').css({'opacity' : gap / 100 * 0.2, 'zIndex' : 3 }) 
+            $('#product').css({'opacity' : gap / 100 * 0.2}) 
         } else {
-            $('#whiteBg_wrap').css({'opacity' : 0 , 'zIndex' : 0 })
-            $('#story_wrap').css({'opacity' : 0})
+            $('#redBg_wrap').css({'opacity' : 0 , 'zIndex' : 0 })
+            $('#product').css({'opacity' : 0})
         } 
          
     })
       
+    // 자동 글자 애니메이션
     $('.autoText.marquee').marquee({ 
         duration: '6000',
         direction : 'left',
@@ -139,14 +143,32 @@ $(function(){
         scrollamount: '0',
         duplicated : 'true', 
     })
-  
-
-
-    // 맨위로 올리기
-    $('.scroll_text').on('click',function(){ 
-        $('html, body').animate({scrollTop: 0}, 500);
-    })
  
-  
+    var log_wrap = $('.logSlide_wrap')
+    var log_list = document.querySelector('.logSlide_wrap .slide_list').offsetWidth
+    console.log(log_wrap)
+    console.log(log_list)
+
+    // currentPosition-=log_list
+    setInterval(() => {
+        if( pause == false ){
+            stopBtn.click()
+        }else{
+            stopBtn.preventDefault
+        }
+    }, 2000);
+
+    var stopBtn = $('.stop').on('click',function(){
+        $('.logSlide_wrap .slide_list').css({ left: currentPosition })
+        $('.logSlide_wrap .slide_list:first-child').appendTo(log_wrap)
+    })
+    
+    $('.logSlide_wrap').on('mouseover', function(){ 
+        pause = true 
+    })
+    $('.logSlide_wrap').on('mouseout', function(){ 
+        pause = false
+    })
+
 }) 
  
