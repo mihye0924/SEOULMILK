@@ -143,17 +143,17 @@ main #main .slide_container.nofixed { position: absolute; bottom: 0; }
 #product .content .subTitle { margin-top: 50px; text-align: center; overflow: hidden; }
 #product .content .subTitle span { position: relative; display: block; font-size: 24px; font-weight: 600; letter-spacing: -1px;} 
 #product .content .productBox { margin: 250px 0 500px 0; width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; }
-#product .content .productBox li { position: relative; width: calc(98%/2); height:500px; background-color: #fff; margin-bottom: 25px; }
+#product .content .productBox li { position: relative; width: calc(98%/2); height:625px; background-color: #fff; margin-bottom: 25px; }
 #product .content .productBox li:nth-of-type(2) { margin-top: 100px; }
 #product .content .productBox li:nth-of-type(3) { margin-top: -100px; }
-#product .content .productBox img { position: absolute; right: 0; margin: 50px 15px; width: 280px; height: 400px; }
-#product .content .productBox .productTitle { font-size: 36px; font-weight: 900; letter-spacing:-2px;  display: block; margin: 50px 0 20px 30px; float: left; }
-#product .content .productBox .productCategory { font-size: 18px; font-weight: 900; letter-spacing:-2px;  display: block; float: left; margin:65px 0 0 20px; }
-#product .content .productBox .productSubTitle { width: 270px; color: #343434; font-weight: 600; letter-spacing: -2px; display: block; margin-left:30px; clear: left; }
-#product .content .productBox .moreBox { position: relative; width: 150px; height: 50px; margin: 220px 0 0 30px;}
-#product .content .productBox .moreBox a.img { float: left; position: relative; display: block; width: 50px; height: 50px; border-radius: 25px; border: 1px solid #343434; }
-#product .content .productBox .moreBox::after { position: absolute; display:block; content:''; width: 24px; height: 24px; margin: 12px; background: url(../img/arrow-right.png) no-repeat center; background-size: cover;  }
-#product .content .productBox .moreBox .more { display: block; float: left; margin: 12px; color: #343434; font-weight: 600; letter-spacing: -1px;  }
+#product .content .productBox img { position: absolute; right: 0; margin: 50px; width: 280px; height: 400px; }
+#product .content .productBox .productTitle { font-size: 48px; font-weight: 900; letter-spacing:-2px;  display: block; margin: 70px 0 20px 50px; float: left; }
+#product .content .productBox .productCategory { font-size: 18px; font-weight: 900; letter-spacing:-2px;  display: block; float: left; margin:100px 0 0 20px; }
+#product .content .productBox .productSubTitle { width: 305px; color: #343434; font-weight: 600; font-size: 16px; letter-spacing: -2px; display: block; margin-left:50px; clear: left; }
+#product .content .productBox .moreBox { position: absolute; width: 150px; height: 50px; bottom: 80px; left: 50px;  }
+#product .content .productBox .moreBox a.img { float: left; position: relative; display: block; width: 60px; height: 60px; border-radius: 30px; border: 1px solid #343434; }
+#product .content .productBox .moreBox::after { position: absolute; display:block; content:''; width: 24px; height: 24px; margin: 17px; background: url(../img/arrow-right.png) no-repeat center; background-size: cover;  }
+#product .content .productBox .moreBox .more { display: block; float: left; margin: 20px; color: #343434; font-weight: 600; letter-spacing: -1px;  }
 .milk { color: #006546; }
 .yogrt { color: #E4B48A; }
 .beverage { color: #F5C141; }
