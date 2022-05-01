@@ -59,8 +59,8 @@
   };
   jQuery.fn.scrolla = function(options) {
     options = $.extend({
-      mobile: false,
-      once: false,
+      mobile: true,
+      once: true,
       animateCssVersion: 4
     }, options);
     if (options.mobile === false) {
