@@ -49,8 +49,7 @@ $(function(){
     var gnbImg = document.querySelector('#gnbMenu img') 
     $('#gnbMenu .gnb li').on('mouseover',function(){
         $(this).addClass('hover')   
-        var text = document.querySelector('.gnb li.hover a').innerHTML 
-
+        var text= document.querySelector('.gnb li.hover a').innerHTML  
         if( text == '스토리'){ 
             gnbImg.src ='./img/gnb01.jpg' 
         }else if( text == '제품' ){ 
@@ -65,15 +64,7 @@ $(function(){
 
 
     }).on('mouseout',function(){
-       $(this).removeClass('hover') 
-
-       if( text == '스토리'){  
-        $('#gnbMenu .gnb li.story.hover a').animate({ top : '0' }) 
-        }else if( text == '제품' ){  
-        }else if( text == '서울로그'){ 
-        }else if( text == '홍보&amp;이벤트'){ 
-        }
-
+       $(this).removeClass('hover')   
     })
 
 
@@ -146,19 +137,36 @@ $(function(){
         } 
     }, 4000);
  
- 
+
     // 전체 스크롤바 - 오른쪽 
+    $(window).on('load',function(){ 
+        var scrollTop  = $(this).scrollTop()    
+        var mainHeight = $('main #main').height() 
+        var windowHeight = $(window).height()   
+
+        if( scrollTop < mainHeight-windowHeight) {
+            $('.slide_container').addClass('fixed') 
+            $('main #main h1.title01').addClass('fixed') 
+        } 
+       
+
+    })
+ 
+    
+
+   
+
+    // 스크롤 시 빨간 부분 표시
     $(window).on('scroll',function(){ 
         var scroll  = $(this).scrollTop()   
-        currentHeight = scroll / 40
-        
+        currentHeight = scroll / 40 
         $('#scrollbar .scrollbar_inner').css({ height : currentHeight })
 
         if( scroll >= 100 ){
-            document.querySelector('#scrollbar span:nth-of-type(2)').textContent='BOTTOM'  
+            document.querySelector('#scrollbar span:nth-of-type(2)').textContent='BOTTOM'    
             $('#scrollbar span:first-of-type').css({ opacity:0, display: 'block' }).animate({opacity:1},1000)
         }else{
-            document.querySelector('#scrollbar span:nth-of-type(2)').textContent='SCROLL'
+            document.querySelector('#scrollbar span:nth-of-type(2)').textContent='SCROLL' 
             $('#scrollbar span:first-of-type').css({ opacity:0, display: 'none' }).animate({opacity:1},1000)
         } 
 
@@ -168,12 +176,12 @@ $(function(){
         var windowHeight = $(window).height()   
 
         if( scrollD >= mainHeight-windowHeight) {
-            $('.slide_container').addClass('nofixed')  
-            $('main #main h1.title01').addClass('animated_opacity') 
+              $('.slide_container').removeClass('fixed') 
+            $('main #main h1.title01').addClass('animated_opacity').removeClass('fixed') 
 
         }else{
-            $('.slide_container').removeClass('nofixed') 
-            $('main #main h1.title01 ').removeClass('animated_opacity') 
+            $('.slide_container').addClass('fixed') 
+            $('main #main h1.title01 ').removeClass('animated_opacity').addClass('fixed')
         }
      
         // 2번째 섹션으로 넘어가기
@@ -189,21 +197,25 @@ $(function(){
             $('#product').css({'opacity' : 0}) 
         } 
 
-        var milkImg = $('#product .content img').height()
-        var section2Height = $('#product').height() 
-        if( scrollD > (mainHeight + section2Height ) - windowHeight ) {   
-
-            if(scrollD > (mainHeight + section2Height + milkImg ) - windowHeight ){ 
-            }
-        } 
     })
-      
 
-    // 맨위로 올리기
+    // 맨아래로 
+    $(window).on('scroll', function(){ 
+        var sck = document.querySelector('#scrollbar span:nth-of-type(2)').textContent 
+    
+        if(sck =='SCROLL'){ 
+            $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'none' })
+        }else{
+            $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'unset' })
+        }
+    
+    })
+    // 맨위로
     var bottom = $(document).height() 
     $('#scrollbar span:nth-of-type(2)').on('click',function(){ 
         $('html, body').animate({scrollTop:bottom}, 500);
     })
+   
     $('#scrollbar span:first-of-type').on('click',function(){ 
         $('html, body').animate({scrollTop:0}, 500);
     })
@@ -217,33 +229,134 @@ $(function(){
         duplicated : 'true', 
     })
  
- 
-    var owl = $('.owl-carousel');
+    // 서울로그 슬라이드
+    var owl = $('.owl-carousel'); 
         owl.owlCarousel({ 
-            loop:true,
-            autoplay:true,
-            margin:25,
+            // loop:true,
+            // autoplay:true,
+            autoWidth:true,
+            margin:50,
             autoplayTimeout:1000,
-            autoplayHoverPause:true
-        })
+            autoplayHoverPause:true,
+            // items:1 
+        }) 
 
+        
         owl.on('mousewheel', '.owl-stage', function (e) {
-            if (e.deltaY>0) {
-                owl.trigger('next.owl');
-            } else {
+            if (e.deltaY>0) { 
                 owl.trigger('prev.owl');
+            } else {
+                owl.trigger('next.owl');
             }
             e.preventDefault();
         });
+
+
+        var chk = false
+        $('.slide_list.yogurt').on('click',function(){
+            if(chk != false){ 
+                $('.owl-item').removeClass('yogurt')
+                $('.owl-item.iframe1').remove()
+                chk = false
+            }else{
+                $('.owl-item.iframe2, .owl-item.iframe3,.owl-item.iframe4').remove()
+                var item = $('.slide_list.yogurt').parent('.owl-item')
+                console.log('동작')
+                item.addClass('yogurt')
+
+                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.yogurt')  
+                var iframe = '' 
+                iframe +='<div class="owl-item iframe1" style="width: auto; margin-right: 25px;">'
+                iframe +='<li class="slide_video">'
+                iframe +='<iframe width="1260" height="721" src="https://www.youtube.com/embed/5rotXHuReww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'
+                iframe +='</iframe>'
+                iframe +='</li>'
+                iframe +='</div>'  
+                $(iframe).insertAfter(seoulLog_wrap)  
+                chk = true
+
+
+            }
+        })
+ 
+        $('.slide_list.gCoffee').on('click',function(){
+            if(chk != false){ 
+                $('.owl-item').removeClass('gCoffee')
+                $('.owl-item.iframe2').remove()
+                chk = false
+            }else{
+                $('.owl-item.iframe1, .owl-item.iframe3,.owl-item.iframe4').remove()
+                var item = $('.slide_list.gCoffee').parent('.owl-item')
+                item.addClass('gCoffee')
+                
+                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.gCoffee')  
+                var iframe = '' 
+                iframe +='<div class="owl-item iframe2" style="width: auto; margin-right: 25px;">'
+                iframe +='<li class="slide_video">'
+                iframe +='<iframe width="1280" height="720" src="https://www.youtube.com/embed/wIVANe3FMJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                iframe +='</iframe>'
+                iframe +='</li>'
+                iframe +='</div>'  
+                $(iframe).insertAfter(seoulLog_wrap)  
+                chk = true
+
+            }
+        })
+
+        $('.slide_list.freshMilk').on('click',function(){
+            if(chk != false){ 
+                $('.owl-item').removeClass('freshMilk')
+                $('.owl-item.iframe3').remove()
+                chk = false
+            }else{
+                $('.owl-item.iframe1, .owl-item.iframe2,.owl-item.iframe4').remove()
+                var item = $('.slide_list.freshMilk').parent('.owl-item')
+                item.addClass('freshMilk')
+
+                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.freshMilk')  
+                var iframe = '' 
+                iframe +='<div class="owl-item iframe3" style="width: auto; margin-right: 25px;">'
+                iframe +='<li class="slide_video">'
+                iframe +='<iframe width="1280" height="720" src="https://www.youtube.com/embed/likK4NPvUTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                iframe +='</iframe>'
+                iframe +='</li>'
+                iframe +='</div>'  
+                $(iframe).insertAfter(seoulLog_wrap)  
+                chk = true
+
+            }
+        })
+
+        $('.slide_list.yangpangCheese').on('click',function(){
+            if(chk != false){ 
+                $('.owl-item').removeClass('yangpangCheese')
+                $('.owl-item.iframe4').remove()
+                chk = false
+            }else{
+                $('.owl-item.iframe1, .owl-item.iframe2,.owl-item.iframe3').remove()
+                var item = $('.slide_list.yangpangCheese').parent('.owl-item')
+                item.addClass('yangpangCheese')
+
+                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.yangpangCheese')  
+                var iframe = '' 
+                iframe +='<div class="owl-item iframe4" style="width: auto; margin-right: 25px;">'
+                iframe +='<li class="slide_video">'
+                iframe +='<iframe width="1280" height="720" src="https://www.youtube.com/embed/4VBQ3ySuBjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                iframe +='</iframe>'
+                iframe +='</li>'
+                iframe +='</div>'  
+                $(iframe).insertAfter(seoulLog_wrap)  
+                chk = true
+
+            }
+        })
  
 
-
+    // 푸터 familysite
     $('footer .familysite li.mainTitle .footer_plus').on('click', function(){
         $('footer .familysite li:not(.mainTitle)').slideToggle()
     })
-
-
-
+ 
 
     // 사랑받는 이유 원 움직임
     var circle01 = document.documentElement.style;
@@ -263,4 +376,7 @@ $(function(){
     });
 
 
+
 })  
+
+   
