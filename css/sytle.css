@@ -1,7 +1,7 @@
 *{ margin: 0; padding: 0; box-sizing: border-box;/*  border: 1px solid #000 */; }
  
 ul, li { list-style: none; }
-a,p,span,h1,h2,h3,h4,h5,h6 { text-decoration: none; font-size: 15px; color: #E00909; }
+a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 15px; color: var(--color); }
 @font-face {
     font-family: 'SEOULMILK 1000mL';
     src: url(../font/SEOULMILK\ 1000mL\ TTF.ttf);
@@ -172,15 +172,15 @@ main #main .slide_container.fixed { position: fixed; }
 #product .content .productBox img { position: absolute; right: 0; margin: 50px; width: 295px; height: 400px; object-fit: contain; }
 #product .content .productBox .productTitle { font-size: 48px; font-weight: 900; letter-spacing:-2px;  display: block; margin: 70px 0 20px 50px; float: left; }
 #product .content .productBox .productCategory { font-size: 18px; font-weight: 900; letter-spacing:-2px;  display: block; float: left; margin:100px 0 0 20px; }
-#product .content .productBox .productSubTitle { width: 305px; color: #343434; font-weight: 600; font-size: 16px; letter-spacing: -2px; display: block; margin-left:50px; clear: left; }
+#product .content .productBox .productSubTitle { width: 305px; color: #767676; font-weight: 600; font-size: 16px; letter-spacing: -2px; display: block; margin-left:50px; clear: left; }
 #product .content .productBox .moreBox { position: absolute; width: 150px; height: 50px; bottom: 80px; left: 50px;  }
 #product .content .productBox .moreBox:hover { animation: more 0.8s ease-out forwards; }
 #product .content .productBox .moreBox:hover::after { animation: rotateArrow 0.8s linear; }
 @keyframes rotateArrow { 0%{ transform: rotate(0);} 100%{transform: rotate(360deg);} }
 @keyframes more { 100%{ transform: scale(1.2);} }
-#product .content .productBox .moreBox a.img { float: left; position: relative; display: block; width: 60px; height: 60px; border-radius: 30px; border: 1px solid #343434; }
+#product .content .productBox .moreBox a.img { float: left; position: relative; display: block; width: 60px; height: 60px; border-radius: 30px; border: 1px solid #767676; }
 #product .content .productBox .moreBox::after { position: absolute; display:block; content:''; width: 24px; height: 24px; margin: 17px; background: url(../img/arrow-right.png) no-repeat center; background-size: cover;  }
-#product .content .productBox .moreBox .more { display: block; float: left; margin: 20px; color: #343434; font-weight: 600; letter-spacing: -1px;  }
+#product .content .productBox .moreBox .more { display: block; float: left; margin: 20px; color: #767676; font-weight: 600; letter-spacing: -1px;  }
 .milk { color: #006546; }
 .yogrt { color: #E4B48A; }
 .beverage { color: #F5C141; }
@@ -209,7 +209,7 @@ main #main .slide_container.fixed { position: fixed; }
 #story_wrap .imgBox .img { margin: 0 auto; width: 350px; height: 300px; }
 #story_wrap .imgBox .text  { text-align: center; margin: 0 auto; width: 350px; }
 #story_wrap .imgBox .text span:first-of-type { margin: 30px 0; display: block; font-size: 24px; font-weight: 900; letter-spacing: -2px; }
-#story_wrap .imgBox .text span:last-of-type { display: block; color: #343434; font-weight: 600; line-height: 2;  letter-spacing: -1px; }
+#story_wrap .imgBox .text span:last-of-type { display: block; color: #767676; font-weight: 600; line-height: 2;  letter-spacing: -1px; }
 
 /* 텍스트 애니메이션 적용 */
 .motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
@@ -289,8 +289,16 @@ footer .content { width: 1250px; margin: 0 auto; padding: 90px 0; }
 footer span,
 footer a { color: #fff; } 
 footer .menu { width: 845px; float: left; }
-footer .menu>li {  margin: 30px 0 }
+footer .menu>li { position: relative;  margin: 30px 0 }
 footer .menu>li a { font-size: 24px; font-weight: 600; letter-spacing: -2px; } 
+footer .menu>li:hover:first-of-type a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line70 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:hover:nth-of-type(2) a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line45 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:hover:nth-of-type(3) a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line90 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:hover:nth-of-type(4) a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line130 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+@keyframes line70 { 100%{ width: 70px;} }
+@keyframes line45 { 100%{ width: 45px;} }
+@keyframes line90 { 100%{ width: 90px;} }
+@keyframes line130 { 100%{ width: 130px;} }
 footer .rightBox { position: relative; width: 400px; height:325px; float: left; } 
 footer .familysite li.mainTitle { position: relative; border-bottom: 2px solid #fff; }
 footer .familysite li.mainTitle .footer_plus { position: absolute; top: 35px; right: 0; content: ''; width: 30px; height: 30px; display: block; background: url(../img/footer_plus.png);  background-size: cover; }

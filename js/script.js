@@ -232,8 +232,8 @@ $(function(){
     // 서울로그 슬라이드
     var owl = $('.owl-carousel'); 
         owl.owlCarousel({ 
-            // loop:true,
-            // autoplay:true,
+            loop:true,
+            autoplay:true,
             autoWidth:true,
             margin:50,
             autoplayTimeout:1000,
@@ -251,7 +251,7 @@ $(function(){
             e.preventDefault();
         });
 
-
+        // 서울로그 클릭시 영상 자동재생
         var chk = false
         $('.slide_list.yogurt').on('click',function(){
             if(chk != false){ 
