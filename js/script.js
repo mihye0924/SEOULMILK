@@ -21,6 +21,63 @@ $(function(){
 
     })
 
+    // gnb버튼 클릭 이벤트
+    $('.openBtn').on('click',function(e){
+        var chk = $('input#gnb_bg').is(":checked") 
+        if( chk != false ){ 
+            $('input#gnb_bg').removeAttr('checked')
+            chk = false
+        }else{
+            $('input#gnb_bg').attr('checked','checked')
+            chk = true
+        }
+        $('header').toggleClass('active')
+        $('#scrollbar').toggleClass('active')
+ 
+        e.preventDefault();
+        if($(this).hasClass('active')){
+            $('.openBtn').removeClass('active')
+            $('.openBtn').addClass('close')
+        }else{
+            $('.openBtn').addClass('active')
+            $('.openBtn').removeClass('close')
+        }
+        $('#gnbMenu .gnb li a').addClass('motion')
+    }) 
+
+    // gnb 버튼 클릭 후 텍스트 호버시 이미지 변경  
+    var gnbImg = document.querySelector('#gnbMenu img') 
+    $('#gnbMenu .gnb li').on('mouseover',function(){
+        $(this).addClass('hover')   
+        var text = document.querySelector('.gnb li.hover a').innerHTML 
+
+        if( text == '스토리'){ 
+            gnbImg.src ='./img/gnb01.jpg' 
+        }else if( text == '제품' ){ 
+            gnbImg.src ='./img/gnb02.jpg'
+        }else if( text == '서울로그'){
+            gnbImg.src = './img/gnb03.jpg'
+        }else if( text == '홍보&amp;이벤트'){
+            gnbImg.src = './img/gnb04.jpg'
+        }
+        
+
+
+
+    }).on('mouseout',function(){
+       $(this).removeClass('hover') 
+
+       if( text == '스토리'){  
+        $('#gnbMenu .gnb li.story.hover a').animate({ top : '0' }) 
+        }else if( text == '제품' ){  
+        }else if( text == '서울로그'){ 
+        }else if( text == '홍보&amp;이벤트'){ 
+        }
+
+    })
+
+
+
     // 슬라이드 네비게이션바 타이머
     setInterval(() => {   
         
@@ -38,11 +95,11 @@ $(function(){
     }, 10);
  
     // 마우스 올렸을때
-    $('.slide_content, .slide_more').on('mouseover', function(){  
+    $('.slide_content, .slide_more, .slide_bar').on('mouseover', function(){  
         $('.slide_prograss_inner').addClass('pause')
         pause = true 
     }) 
-    $('.slide_content, .slide_more').on('mouseout', function(){ 
+    $('.slide_content, .slide_more, .slide_bar').on('mouseout', function(){ 
         $('.slide_prograss_inner').removeClass('pause')
         pause = false
     }) 
@@ -92,9 +149,8 @@ $(function(){
  
     // 전체 스크롤바 - 오른쪽 
     $(window).on('scroll',function(){ 
-        var scroll  = $(this).scrollTop()  
-        console.log(scroll)
-        currentHeight = scroll / 50
+        var scroll  = $(this).scrollTop()   
+        currentHeight = scroll / 40
         
         $('#scrollbar .scrollbar_inner').css({ height : currentHeight })
 
@@ -125,7 +181,6 @@ $(function(){
         if( gap < 0 ) {
             gap = 0
         }  
-        // console.log(mainHeight - windowHeight,'2번째 높이')
         if( scrollD > mainHeight - windowHeight ) { 
             $('#redBg_wrap').css({'opacity' : gap / 100 * 0.2, 'zIndex' : 3 }) 
             $('#product').css({'opacity' : gap / 100 * 0.2})   
@@ -135,9 +190,7 @@ $(function(){
         } 
 
         var milkImg = $('#product .content img').height()
-        var section2Height = $('#product').height()
-        console.log((mainHeight + section2Height),'2번째 높이')
-        console.log(milkImg)
+        var section2Height = $('#product').height() 
         if( scrollD > (mainHeight + section2Height ) - windowHeight ) {   
 
             if(scrollD > (mainHeight + section2Height + milkImg ) - windowHeight ){ 
@@ -164,35 +217,50 @@ $(function(){
         duplicated : 'true', 
     })
  
-    var log_wrap = $('.logSlide_wrap')
-    var log_list = document.querySelector('.logSlide_wrap .slide_list').offsetWidth
-    var j = jQuery; 
+ 
+    var owl = $('.owl-carousel');
+        owl.owlCarousel({ 
+            loop:true,
+            autoplay:true,
+            margin:25,
+            autoplayTimeout:1000,
+            autoplayHoverPause:true
+        })
 
-    // currentPosition-=log_list
-    setInterval(() => {
-        if( pause == false ){
-            stopBtn.click()
-        }else{
-            stopBtn.preventDefault
-        }
-    }, 2000);
+        owl.on('mousewheel', '.owl-stage', function (e) {
+            if (e.deltaY>0) {
+                owl.trigger('next.owl');
+            } else {
+                owl.trigger('prev.owl');
+            }
+            e.preventDefault();
+        });
+ 
 
-    var stopBtn = $('.stop').on('click',function(){
-        j('.logSlide_wrap .slide_list:first-child').appendTo(log_wrap)
-        // currentPosition=-log_list
-        j('.logSlide_wrap .slide_list').css( { left: currentPosition } ).animate({ left: -log_list-25},1000)  
-    })
-
-    
-    $('.logSlide_wrap').on('mouseover', function(e){   
-        pause = true 
-    })
-    $('.logSlide_wrap').on('mouseout', function(){ 
-        pause = false
-    })
 
     $('footer .familysite li.mainTitle .footer_plus').on('click', function(){
         $('footer .familysite li:not(.mainTitle)').slideToggle()
     })
+
+
+
+
+    // 사랑받는 이유 원 움직임
+    var circle01 = document.documentElement.style;
+    var circle02 = document.documentElement.style;
+    var circle03 = document.documentElement.style;
+    var circle04 = document.documentElement.style;
+ 
+    document.addEventListener('mousemove', function(e) {
+    circle01.setProperty('--mouse-x', e.clientX);
+    circle01.setProperty('--mouse-y', e.clientY);
+    circle02.setProperty('--mouse-x', e.clientX);
+    circle02.setProperty('--mouse-y', e.clientY);
+    circle03.setProperty('--mouse-x', e.clientX);
+    circle03.setProperty('--mouse-y', e.clientY);
+    circle04.setProperty('--mouse-x', e.clientX);
+    circle04.setProperty('--mouse-y', e.clientY);
+    });
+
 
 })  
