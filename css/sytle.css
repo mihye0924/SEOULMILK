@@ -101,8 +101,7 @@ header .openBtn.close .bottom { animation: gnbBottom-02 0.8s linear forwards; }
 @keyframes gnbCetner-02 { 0%{ width: 0; } 100%{ width: 25px; } }
 @keyframes gnbBottom-02 { 0%{ bottom:8px; transform: rotate(45deg); } 100%{ bottom: 0; transform: rotate(0deg);} }
 #scrollbar.active { display: none; }
-
-
+ 
 /* main */ 
 #redBg_wrap { opacity: 0; width: 100%; height: 3785px; position: absolute; background-color: var(--color); }
 main #main { display: grid; position: relative; width: 100%; justify-content: end; }
@@ -117,17 +116,17 @@ main #main .slide_wrap { display: flex; width: 3090px !important; height: 720px;
 main #main .slide_wrap .slide_content { position: relative; width: 1030px; height: 720px; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
 main #main .slide_wrap .slide_content .textBox { position: absolute; left: 50px; bottom: 120px;  }
-main #main .slide_wrap .slide_content .textBox .title_inner { bottom: 100px; position: absolute; overflow: hidden; width: 920px; height: 105px; }
-main #main .slide_wrap .slide_content .textBox span.title { position: absolute; bottom: -125px;  font-size: 70px; font-weight: 900; letter-spacing: -3px; color: #fff; }
-main #main .slide_wrap .slide_content .textBox .subTitle_inner { overflow: hidden; position: absolute; bottom: 0; width: 700px; height: 80px; }
-main #main .slide_wrap .slide_content .textBox span.subTitle { position: absolute; bottom: -80px; font-size: 50px; font-weight: 900; color: #fff; }
+main #main .slide_wrap .slide_content .textBox .title_inner { bottom: 60px; position: absolute; overflow: hidden; width: 920px; height: 60px; }
+main #main .slide_wrap .slide_content .textBox span.title { position: absolute; bottom: -125px;  font-size: 55px; font-weight: 900; letter-spacing: -6px; color: #fff; }
+main #main .slide_wrap .slide_content .textBox .subTitle_inner { overflow: hidden; position: absolute; bottom: 0; width: 800px; height: 45px; }
+main #main .slide_wrap .slide_content .textBox span.subTitle { position: absolute; bottom: -80px; font-size: 36px; letter-spacing: -4px; font-weight: 900; color: #fff; }
 main #main .slide_bar { position: absolute; bottom: 60px; left: 50px; }
 main #main .slide_bar span { color: #fff; }
 main #main .slide_bar .slide_prograss {  position: relative; top: 0; display: inline-block; margin: 0 10px; width: 280px; height: 8px; background-color: var(--color); border-radius: 25px; overflow: hidden;  }
 main #main .slide_bar .slide_prograss .slide_prograss_inner { position: absolute; top: -5px;  width: 0px; height: 18px; background-color: #fff; }
 main #main .slide_bar .slide_prograss .slide_prograss_inner.animate { animation: timer 3s linear; animation-iteration-count: infinite; } 
 main #main .slide_bar .slide_prograss .slide_prograss_inner.pause { animation-play-state: paused; } 
-main #main .slide_more { cursor: pointer; position: absolute; width: 80px; height: 80px; top: 40%; left: 70px; border-radius: 50%; border:1px solid #fff; }
+main #main .slide_more { cursor: pointer; position: absolute; width: 80px; height: 80px; top: 50%; left: 70px; border-radius: 50%; border:1px solid #fff; }
 main #main .slide_more:hover { animation: sizeUp 0.3s ease-in; animation-fill-mode: forwards; }
 @keyframes sizeUp { 0%{ transform: scale(1); } 100%{ transform:scale(1.2);} }
 main #main .slide_more .slide_line { position: absolute; right: 0; width: 0; height: 1px; background-color: #fff; top: 60%; left: 20%; }
