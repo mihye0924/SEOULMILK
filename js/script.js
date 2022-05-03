@@ -138,7 +138,7 @@ $(function(){
     }, 4000);
  
 
-    // 전체 스크롤바 - 오른쪽 
+    // 새로고침시 고정 여부 - 오른쪽 
     $(window).on('load',function(){ 
         var scrollTop  = $(this).scrollTop()    
         var mainHeight = $('main #main').height() 
@@ -148,7 +148,11 @@ $(function(){
             $('.slide_container').addClass('fixed') 
             $('main #main h1.title01').addClass('fixed') 
         } 
-       
+        var sck = document.querySelector('#scrollbar span:nth-of-type(2)').textContent 
+    
+        if(sck =='SCROLL'){ 
+            $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'none' })
+        }
 
     })
  

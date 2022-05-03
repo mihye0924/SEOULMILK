@@ -1,7 +1,10 @@
-*{ margin: 0; padding: 0; box-sizing: border-box;/*  border: 1px solid #000 */; }
+*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid #000; */ }
  
-ul, li { list-style: none; }
+li { list-style: none; }
 a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 15px; color: var(--color); }
+a img {border: none;} 
+address, em, i {font-style: normal;}
+
 @font-face {
     font-family: 'SEOULMILK 1000mL';
     src: url(../font/SEOULMILK\ 1000mL\ TTF.ttf);
@@ -12,7 +15,10 @@ a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; fo
     src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
-  } 
+} 
+/* 텍스트 애니메이션 적용 */
+.motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
+
 :root { --color: #E00909; --font:'NotoSansKR', sans-serif; }
 body, textarea:focus, input:focus, a:focus { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 #scrollbar { mix-blend-mode: difference; z-index: 4; position: fixed; bottom: 30px; right: 30px; width:30px; height: 410px;  }
@@ -57,6 +63,7 @@ header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180
 #gnbMenu .gnb li.promotionEvent.hover a { animation: outline 0.2s linear forwards;  }
 @keyframes outline { 0%{ top: 0; } 100%{ top: -55px;} }
 
+/* 텍스트 애니메이션 적용 */ 
 .story .motion { animation-name:text70; animation-delay: 200ms; }
 .product .motion { animation-name:text70; animation-delay: 400ms; }
 .seoulLog .motion { animation-name:text70; animation-delay: 600ms; }
@@ -151,6 +158,8 @@ main #main .scroll_wrap .imgBox.img03 { height: 740px; margin-top: 350px; }main 
 main #main .scroll_wrap .imgBox.img03 .bottomText { width: 445px; overflow: hidden; height: 90px; position: absolute; bottom: 0; left: 55px; }
 main #main .scroll_wrap .imgBox.img03 .bottomText p { color: #264e6e; position: relative; bottom: -40px; font-size: 32px; font-weight: 600; letter-spacing: -5px; }
 main #main .slide_container.fixed { position: fixed; }
+
+/* 텍스트 애니메이션 적용 */ 
 .bottomText .motion.animate__animated { animation-name:text40;}
 .bottomText.img02 .motion.animate__animated { animation-name:text80;}
 
@@ -205,15 +214,25 @@ main #main .slide_container.fixed { position: fixed; }
 #story_wrap .textBox button span { position: relative; color: #fff; letter-spacing: 0; display: block; width: 100px; margin-left: 30px; }
 #story_wrap .textBox button span::after { font-family: 'FontAwesome'; content: '\f061'; position: absolute; top: -1px; right: -22px; display: block; color: var(--color); font-size: 15px; line-height: 20px; background-color: #fff; border-radius: 25px; width: 20px; height: 20px; }
 #story_wrap .inner {  margin-top: 120px; width: 100%; height: 610px; overflow: hidden; }
-#story_wrap .imgBox { position: relative; bottom: -610px;  width: 100%; display: flex; justify-content: space-between; }
-#story_wrap .imgBox .img { margin: 0 auto; width: 350px; height: 300px; }
-#story_wrap .imgBox .text  { text-align: center; margin: 0 auto; width: 350px; }
+#story_wrap .imgBox { width: 100%; display: flex; justify-content: space-between; }
+#story_wrap .imgBox .img { position: relative; width: 350px; height: 355px; }
+#story_wrap .imgBox .text  { position: relative; bottom: -280px; text-align: center; margin: 0 auto; width: 350px; }
 #story_wrap .imgBox .text span:first-of-type { margin: 30px 0; display: block; font-size: 24px; font-weight: 900; letter-spacing: -2px; }
 #story_wrap .imgBox .text span:last-of-type { display: block; color: #767676; font-weight: 600; line-height: 2;  letter-spacing: -1px; }
 
-/* 텍스트 애니메이션 적용 */
-.motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
 
+/* svg이미지 애니메이션 적용 */ 
+@keyframes storymilk { 0% { background-position: 0px 0px; } 100% { background-position: -12000px 0px; } }
+.storymilk { animation-timing-function: steps(60); width: 200px; height: 250px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background-repeat: no-repeat; }
+.storymilk.motion.animate__animated { animation-name: storymilk; }
+@keyframes storyyogurt { 0% { background-position: 0px 0px; } 100% { background-position: -15000px 0px; } }
+.storyyogurt { animation-timing-function: steps(60); width: 250px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background-repeat: no-repeat; }
+.storyyogurt.motion.animate__animated { animation-name: storyyogurt; }
+@keyframes storycoffee { 0% { background-position: 0px 0px; } 100% { background-position: -15000px 0px; }}
+.storycoffee { animation-timing-function: steps(60); width: 250px; height: 250px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background-position: 100% 200px; background-repeat: no-repeat; }
+.storycoffee.motion.animate__animated { animation-name: storycoffee; }
+
+/* 텍스트 애니메이션 적용 */ 
 @keyframes text40 { 0% {bottom:-40px; } 100% { bottom: 0; } }
 .topTitle.motion.animate__animated { animation-name: text40; } 
 @keyframes text70 { 0% {bottom:-70px; } 100% { bottom: 0; } }
@@ -221,6 +240,8 @@ main #main .slide_container.fixed { position: fixed; }
 @keyframes text80 { 0% {bottom:-80px; } 100% { bottom: 0; } }
 @keyframes text180 { 0% {bottom:-180px; } 100% { bottom: 0; } }
 .mainTitle.motion.animate__animated { animation-name: text180; animation-delay: 500ms; } 
+@keyframes text280 { 0% {bottom:-280px; } 100% { bottom: 0; } }
+.text.motion.animate__animated { animation-name: text610; }
 @keyframes text610 { 0% {bottom:-610px; } 100% { bottom: 0; } }
 .imgBox.motion.animate__animated { animation-name: text610; }
  
@@ -247,10 +268,14 @@ main #main .slide_container.fixed { position: fixed; }
 #seoulLove .textInner .text03 span { position: relative; bottom:-40px; font-size: 18px; font-weight: 600; letter-spacing: -2px; }
 #seoulLove .textInner .text02,
 #seoulLove .textInner .text03 { overflow: hidden; width: 100%; margin-top: 20px; text-align: center; }
+
+/* 텍스트 애니메이션 적용 */ 
 .text01 .motion.animate__animated { animation-name: text40; animation-delay: 500ms; } 
 .text02 .motion.animate__animated { animation-name: text40; animation-delay: 1000ms; } 
 .text03 .motion.animate__animated { animation-name: text40; animation-delay: 1500ms; } 
 .seoulMilkReason .motion.animate__animated { animation-name: text180; } 
+
+/* 마우스커서 움직임따라 애니메이션 적용 */ 
 .circle01 { transform: translateX(calc(var(--mouse-x) * 0.05px)) translateY(calc(var(--mouse-y) * 0.05px)); }
 .circle02 { transform: translateX(calc(var(--mouse-x) * -0.05px)) translateY(calc(var(--mouse-y) * -0.05px)); }
 .circle03 { transform: translateX(calc(var(--mouse-x) * 0.05px)) translateY(calc(var(--mouse-y) * 0.05px)); }
@@ -291,12 +316,12 @@ footer a { color: #fff; }
 footer .menu { width: 845px; float: left; }
 footer .menu>li { position: relative;  margin: 30px 0 }
 footer .menu>li a { font-size: 24px; font-weight: 600; letter-spacing: -2px; } 
-footer .menu>li:hover:first-of-type a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line70 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
-footer .menu>li:hover:nth-of-type(2) a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line45 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
-footer .menu>li:hover:nth-of-type(3) a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line90 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
-footer .menu>li:hover:nth-of-type(4) a::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line130 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
-@keyframes line70 { 100%{ width: 70px;} }
+footer .menu>li:first-of-type a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line70 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:nth-of-type(2) a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line45 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:nth-of-type(3) a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line90 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:nth-of-type(4) a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line130 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
 @keyframes line45 { 100%{ width: 45px;} }
+@keyframes line70 { 100%{ width: 70px;} }
 @keyframes line90 { 100%{ width: 90px;} }
 @keyframes line130 { 100%{ width: 130px;} }
 footer .rightBox { position: relative; width: 400px; height:325px; float: left; } 
