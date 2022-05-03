@@ -236,11 +236,11 @@ $(function(){
     // 서울로그 슬라이드
     var owl = $('.owl-carousel'); 
         owl.owlCarousel({ 
-            loop:true,
-            autoplay:true,
+            // loop:true,
+            // autoplay:true,
             autoWidth:true,
             margin:50,
-            autoplayTimeout:1000,
+            autoplayTimeout:2000,
             autoplayHoverPause:true,
             // items:1 
         }) 
@@ -254,108 +254,7 @@ $(function(){
             }
             e.preventDefault();
         });
-
-        // 서울로그 클릭시 영상 자동재생
-        var chk = false
-        $('.slide_list.yogurt').on('click',function(){
-            if(chk != false){ 
-                $('.owl-item').removeClass('yogurt')
-                $('.owl-item.iframe1').remove()
-                chk = false
-            }else{
-                $('.owl-item.iframe2, .owl-item.iframe3,.owl-item.iframe4').remove()
-                var item = $('.slide_list.yogurt').parent('.owl-item')
-                console.log('동작')
-                item.addClass('yogurt')
-
-                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.yogurt')  
-                var iframe = '' 
-                iframe +='<div class="owl-item iframe1" style="width: auto; margin-right: 25px;">'
-                iframe +='<li class="slide_video">'
-                iframe +='<iframe width="1260" height="721" src="https://www.youtube.com/embed/5rotXHuReww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'
-                iframe +='</iframe>'
-                iframe +='</li>'
-                iframe +='</div>'  
-                $(iframe).insertAfter(seoulLog_wrap)  
-                chk = true
-
-
-            }
-        })
  
-        $('.slide_list.gCoffee').on('click',function(){
-            if(chk != false){ 
-                $('.owl-item').removeClass('gCoffee')
-                $('.owl-item.iframe2').remove()
-                chk = false
-            }else{
-                $('.owl-item.iframe1, .owl-item.iframe3,.owl-item.iframe4').remove()
-                var item = $('.slide_list.gCoffee').parent('.owl-item')
-                item.addClass('gCoffee')
-                
-                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.gCoffee')  
-                var iframe = '' 
-                iframe +='<div class="owl-item iframe2" style="width: auto; margin-right: 25px;">'
-                iframe +='<li class="slide_video">'
-                iframe +='<iframe width="1280" height="720" src="https://www.youtube.com/embed/wIVANe3FMJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-                iframe +='</iframe>'
-                iframe +='</li>'
-                iframe +='</div>'  
-                $(iframe).insertAfter(seoulLog_wrap)  
-                chk = true
-
-            }
-        })
-
-        $('.slide_list.freshMilk').on('click',function(){
-            if(chk != false){ 
-                $('.owl-item').removeClass('freshMilk')
-                $('.owl-item.iframe3').remove()
-                chk = false
-            }else{
-                $('.owl-item.iframe1, .owl-item.iframe2,.owl-item.iframe4').remove()
-                var item = $('.slide_list.freshMilk').parent('.owl-item')
-                item.addClass('freshMilk')
-
-                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.freshMilk')  
-                var iframe = '' 
-                iframe +='<div class="owl-item iframe3" style="width: auto; margin-right: 25px;">'
-                iframe +='<li class="slide_video">'
-                iframe +='<iframe width="1280" height="720" src="https://www.youtube.com/embed/likK4NPvUTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-                iframe +='</iframe>'
-                iframe +='</li>'
-                iframe +='</div>'  
-                $(iframe).insertAfter(seoulLog_wrap)  
-                chk = true
-
-            }
-        })
-
-        $('.slide_list.yangpangCheese').on('click',function(){
-            if(chk != false){ 
-                $('.owl-item').removeClass('yangpangCheese')
-                $('.owl-item.iframe4').remove()
-                chk = false
-            }else{
-                $('.owl-item.iframe1, .owl-item.iframe2,.owl-item.iframe3').remove()
-                var item = $('.slide_list.yangpangCheese').parent('.owl-item')
-                item.addClass('yangpangCheese')
-
-                var seoulLog_wrap = $('#seoulLog .logSlide_wrap .owl-item.yangpangCheese')  
-                var iframe = '' 
-                iframe +='<div class="owl-item iframe4" style="width: auto; margin-right: 25px;">'
-                iframe +='<li class="slide_video">'
-                iframe +='<iframe width="1280" height="720" src="https://www.youtube.com/embed/4VBQ3ySuBjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-                iframe +='</iframe>'
-                iframe +='</li>'
-                iframe +='</div>'  
-                $(iframe).insertAfter(seoulLog_wrap)  
-                chk = true
-
-            }
-        })
- 
-
     // 푸터 familysite
     $('footer .familysite li.mainTitle .footer_plus').on('click', function(){
         $('footer .familysite li:not(.mainTitle)').slideToggle()
@@ -379,8 +278,48 @@ $(function(){
     circle04.setProperty('--mouse-y', e.clientY);
     });
 
-
-
+   var play = false
+    $('.playIcon').on('click',function(){ 
+        $('#player').css({ zIndex : 1 })
+        
+        if( play != false){
+            console.log('ㅋㅋㅋㅋㅋㅇㅇㅇㅇㅇㅇㅋㅋㅋㅋㅋㅋㅋ')  
+            
+            stopVideo()
+            play = false
+        }else{ 
+            $('#seoulLog .logSlide_wrap .playIcon.yogurt,'+
+            '#seoulLog .logSlide_wrap li span.yogurt ').animate({ bottom: '-80px'})
+            playVideo()
+            play = true
+            console.log(play)   
+        }
+    })
 })  
+ 
+var player;
+function onYouTubeIframeAPIReady(){
+    player = new YT.Player('player',{    
+      
+      videoId:'3wHCprySi2I',
+      // origin : 가져올 서버의 주소를 입력
+      playerVars : { 
+        'rel': 0,
+        'loop':1,
+        'controls': 0,
+        'showinfo':0,
+        'autohide':0,
+        'modestbranding':1,
+        'frameborderz':0,
+        'mute':1,
+        },
+    
+    }) 
+}
 
-   
+function playVideo(){
+    player.playVideo();
+}
+function stopVideo(){
+    player.stopVideo()
+}
