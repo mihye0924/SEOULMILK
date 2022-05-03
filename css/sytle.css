@@ -104,7 +104,7 @@ header .openBtn.close .bottom { animation: gnbBottom-02 0.8s linear forwards; }
 
 
 /* main */ 
-#redBg_wrap { opacity: 0; width: 100%; height: 3745px; position: absolute; background-color: var(--color); }
+#redBg_wrap { opacity: 0; width: 100%; height: 3785px; position: absolute; background-color: var(--color); }
 main #main { display: grid; position: relative; width: 100%; justify-content: end; }
 main #main h1.title01  { position:absolute; overflow: hidden; height: 230px; right: 0; margin-top: 50px; display: flex; }
 main #main h1.title01.fixed { position: fixed; }
@@ -138,7 +138,7 @@ main #main .slide_more:hover .slide_line { animation: moreLine 0.3s linear forwa
 @keyframes moreLine { 100% { width: 80px; } }
 @keyframes timer { 0% { width: 0;} 100% { width: 100%; } } 
 main #main .scroll_wrap { position: relative; right: 0; margin: 430px 0; width: 810px; }
-main #main .scroll_wrap .imgBox { position: relative; float: left; width: 500px; height: 700px; }
+main #main .scroll_wrap .imgBox { position: relative; float: left; width: 500px; height: 740px; }
 main #main .scroll_wrap .imgBox img { z-index: 2; position: absolute; right: 0; width: 440px; height: 630px; }  
 main #main .scroll_wrap .imgBox.img01:hover img:last-of-type,
 main #main .scroll_wrap .imgBox.img02:hover img:last-of-type,
@@ -148,20 +148,22 @@ main #main .scroll_wrap .imgBox.img02 img:last-of-type,
 main #main .scroll_wrap .imgBox.img03 img:last-of-type { z-index: 1; }
 @keyframes  imgAnimate { 100%{ opacity: 1;} }
 main #main .scroll_wrap .imgBox.img01 span { display: block; position: absolute; transform: rotate(90deg); top: 105px; left: -80px; font-size: 18px; font-weight: 600; letter-spacing: -1px; }
-main #main .scroll_wrap .imgBox.img01 .bottomText { width: 445px; overflow: hidden; height: 50px; position: absolute; bottom: 0; left: 55px; }
+main #main .scroll_wrap .imgBox.img01 .bottomText { width: 445px; height: 90px; overflow: hidden; position: absolute; bottom: 0; left: 55px; }
 main #main .scroll_wrap .imgBox.img01 .bottomText p { position: relative; bottom: -40px; font-size: 32px; font-weight: 600; letter-spacing: -5px; }
 main #main .scroll_wrap .imgBox.img02 { height: 740px; position: relative; float: right; margin-top: 350px; }  
-main #main .scroll_wrap .imgBox.img02 span { color: #006546;  display: block; position: absolute; transform: rotate(90deg); top: 80px; left: -60px; font-size: 18px; font-weight: 600; letter-spacing: -1px;  }  
+main #main .scroll_wrap .imgBox.img02 span { display: block; position: absolute; transform: rotate(90deg); top: 100px; left: -80px; font-size: 18px; font-weight: 600; letter-spacing: -1px;  }  
 main #main .scroll_wrap .imgBox.img02 .bottomText { width: 445px; overflow: hidden; height: 90px; position: absolute; bottom: 0; left: 55px; }
-main #main .scroll_wrap .imgBox.img02 .bottomText p { color: #006546; position: relative; bottom: -40px; font-size: 32px; font-weight: 600; letter-spacing: -5px; }
-main #main .scroll_wrap .imgBox.img03 { height: 740px; margin-top: 350px; }main #main .scroll_wrap .imgBox.img03 span { color: #264e6e; display: block; position: absolute; transform: rotate(90deg); top: 100px; left: -80px; font-size: 18px; font-weight: 600; letter-spacing: -1px; }  
+main #main .scroll_wrap .imgBox.img02 .bottomText p { position: relative; bottom: -40px; font-size: 32px; font-weight: 600; letter-spacing: -5px; }
+main #main .scroll_wrap .imgBox.img03 { height: 740px; margin-top: 350px; }
+main #main .scroll_wrap .imgBox.img03 span { display: block; position: absolute; transform: rotate(90deg); top: 100px; left: -80px; font-size: 18px; font-weight: 600; letter-spacing: -1px; }  
 main #main .scroll_wrap .imgBox.img03 .bottomText { width: 445px; overflow: hidden; height: 90px; position: absolute; bottom: 0; left: 55px; }
-main #main .scroll_wrap .imgBox.img03 .bottomText p { color: #264e6e; position: relative; bottom: -40px; font-size: 32px; font-weight: 600; letter-spacing: -5px; }
+main #main .scroll_wrap .imgBox.img03 .bottomText p { position: relative; bottom: -40px; font-size: 32px; font-weight: 600; letter-spacing: -5px; }
 main #main .slide_container.fixed { position: fixed; }
 
 /* 텍스트 애니메이션 적용 */ 
-.bottomText .motion.animate__animated { animation-name:text40;}
-.bottomText.img02 .motion.animate__animated { animation-name:text80;}
+.bottomText.img01 .motion.animate__animated,
+.bottomText.img02 .motion.animate__animated,
+.bottomText.img03 .motion.animate__animated { animation-name:text80;}
 
 
 /* section01 - product */

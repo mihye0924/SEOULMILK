@@ -306,7 +306,7 @@ function onYouTubeIframeAPIReady(){
       playerVars : { 
         'rel': 0,
         'loop':1,
-        'controls': 0,
+        'controls': 1,
         'showinfo':0,
         'autohide':0,
         'modestbranding':1,
