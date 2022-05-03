@@ -59,15 +59,11 @@ $(function(){
         }else if( text == '홍보&amp;이벤트'){
             gnbImg.src = './img/gnb04.jpg'
         }
-        
-
-
-
+         
     }).on('mouseout',function(){
        $(this).removeClass('hover')   
     })
-
-
+ 
 
     // 슬라이드 네비게이션바 타이머
     setInterval(() => {   
@@ -75,7 +71,7 @@ $(function(){
         if( sec >= 3 ) {
             sec = 0
             if(!pause) { 
-                $('.slide_more').trigger('click')  
+                // $('.slide_more').trigger('click')  
             }
         } else {
             if(!pause) {

@@ -1,4 +1,4 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid #000; */ }
+*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid #000;  */}
  
 li { list-style: none; }
 a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 15px; color: var(--color); }
@@ -103,20 +103,23 @@ header .openBtn.close .bottom { animation: gnbBottom-02 0.8s linear forwards; }
 #scrollbar.active { display: none; }
  
 /* main */ 
-#redBg_wrap { opacity: 0; width: 100%; height: 3785px; position: absolute; background-color: var(--color); }
-main #main { display: grid; position: relative; width: 100%; justify-content: end; }
+#redBg_wrap { opacity: 0; width: 100%; height: 100%; position: absolute; background-color: var(--color); }
+
+main #main .inner { display: flex; justify-content: space-between; width: 100%;}
+main #main { position: relative; width: 100%; }
 main #main h1.title01  { position:absolute; overflow: hidden; height: 230px; right: 0; margin-top: 50px; display: flex; }
 main #main h1.title01.fixed { position: fixed; }
 main #main h1.title01.animated_opacity { animation: opacity 1s linear; opacity: 0; animation-fill-mode: backwards; } 
 @keyframes opacity { 0%{ opacity: 1; } 100%{ opacity: 0; } } 
-main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 210px;  letter-spacing: -10px; color: transparent; -webkit-text-stroke: 1px var(--color); }
-main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 210px; letter-spacing: -10px; margin-left: 50px; } 
-main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:1030px; height: 720px; overflow: hidden; }
-main #main .slide_wrap { display: flex; width: 3090px !important; height: 720px; }
-main #main .slide_wrap .slide_content { position: relative; width: 1030px; height: 720px; }
+main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; color: transparent; -webkit-text-stroke: 1px var(--color); }
+main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; margin-left: 50px; } 
+main #main .fixedBox { width: 58%; }
+main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:50%; height: 670px; overflow: hidden; }
+main #main .slide_wrap { display: flex; width: 300% !important; height: 670px; }
+main #main .slide_wrap .slide_content { position: relative; width: 100%; height: 670px; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
 main #main .slide_wrap .slide_content .textBox { position: absolute; left: 50px; bottom: 120px;  }
-main #main .slide_wrap .slide_content .textBox .title_inner { bottom: 60px; position: absolute; overflow: hidden; width: 920px; height: 60px; }
+main #main .slide_wrap .slide_content .textBox .title_inner { bottom: 60px; position: absolute; overflow: hidden; width: 800px; height: 60px; }
 main #main .slide_wrap .slide_content .textBox span.title { position: absolute; bottom: -125px;  font-size: 55px; font-weight: 900; letter-spacing: -6px; color: #fff; }
 main #main .slide_wrap .slide_content .textBox .subTitle_inner { overflow: hidden; position: absolute; bottom: 0; width: 800px; height: 45px; }
 main #main .slide_wrap .slide_content .textBox span.subTitle { position: absolute; bottom: -80px; font-size: 36px; letter-spacing: -4px; font-weight: 900; color: #fff; }
@@ -136,7 +139,7 @@ main #main .slide_more:hover .slide_line { animation: moreLine 0.3s linear forwa
 @keyframes moreText { 100% { top: 40%; } }
 @keyframes moreLine { 100% { width: 80px; } }
 @keyframes timer { 0% { width: 0;} 100% { width: 100%; } } 
-main #main .scroll_wrap { position: relative; right: 0; margin: 430px 0; width: 810px; }
+main #main .scroll_wrap { position: relative; right: 0; margin: 20vw 0 120px 0; width: 810px; }
 main #main .scroll_wrap .imgBox { position: relative; float: left; width: 500px; height: 740px; }
 main #main .scroll_wrap .imgBox img { z-index: 2; position: absolute; right: 0; width: 440px; height: 630px; }  
 main #main .scroll_wrap .imgBox.img01:hover img:last-of-type,
@@ -147,7 +150,7 @@ main #main .scroll_wrap .imgBox.img02 img:last-of-type,
 main #main .scroll_wrap .imgBox.img03 img:last-of-type { z-index: 1; }
 @keyframes  imgAnimate { 100%{ opacity: 1;} }
 main #main .scroll_wrap .imgBox.img01 span { display: block; position: absolute; transform: rotate(90deg); top: 105px; left: -80px; font-size: 18px; font-weight: 600; letter-spacing: -1px; }
-main #main .scroll_wrap .imgBox.img01 .bottomText { width: 445px; height: 90px; overflow: hidden; position: absolute; bottom: 0; left: 55px; }
+main #main .scroll_wrap .imgBox.img01 .bottomText { width: 100%; height: 90px; overflow: hidden; position: absolute; bottom: 0; margin-left: 60px; }
 main #main .scroll_wrap .imgBox.img01 .bottomText p { position: relative; bottom: -40px; font-size: 32px; font-weight: 600; letter-spacing: -5px; }
 main #main .scroll_wrap .imgBox.img02 { height: 740px; position: relative; float: right; margin-top: 350px; }  
 main #main .scroll_wrap .imgBox.img02 span { display: block; position: absolute; transform: rotate(90deg); top: 100px; left: -80px; font-size: 18px; font-weight: 600; letter-spacing: -1px;  }  
@@ -166,7 +169,7 @@ main #main .slide_container.fixed { position: fixed; }
 
 
 /* section01 - product */
-#product { margin-top: 5px; padding-top: 350px; overflow: hidden; position: relative; background-color: var(--color); width: 100%; }
+#product { padding-top: 350px; overflow: hidden; position: relative; background-color: var(--color); width: 100%; }
 #product img { position: absolute; bottom: 0; width: 100%; }
 #product .autoText { margin-top: 30px; position: absolute; display: block; font-weight: 900; font-size: 115px; color: #fff; letter-spacing: -3px; }
 #product .content .textBox { width: 100%; }
@@ -346,3 +349,12 @@ footer .info span { display: inline-block; margin: 5px 0; font-weight: 400; }
 footer .info li:nth-of-type(3)::after,
 footer .info li:nth-of-type(6)::after,
 footer .info li:nth-of-type(7)::after { display: none; }
+
+
+
+/* 반응형 */
+@media ( max-width: 1500px) {
+    main #main .scroll_wrap { width: 615px; }
+    main #main .scroll_wrap .imgBox { width: 440px; }
+    main #main .scroll_wrap .imgBox img { width: 370px; height: 510px;}
+}
