@@ -247,10 +247,11 @@ $(function(){
 
     // 자동 글자 애니메이션
     $('.marquee').marquee({ 
-        duration: '6000',
+        duration: 2000,
+        delayBeforeStart: 0,
         direction : 'left',
         loop : '-1',
-        scrollamount: '0',
+        // scrollamount: '0',
         duplicated : 'true', 
     })
  

@@ -164,7 +164,7 @@ main #main .slide_container.fixed { position: fixed; height: 100%; }
 /* section01 - product */
 #product { padding-top: 350px; overflow: hidden; position: relative; background-color: var(--color); width: 100%; }
 #product img { position: absolute; bottom: 0; width: 100%; }
-#product .autoText { margin-top: 30px; position: absolute; display: block; font-weight: 900; font-size: 5vw; color: #fff; letter-spacing: -3px; }
+#product .autoText { width: 300px; margin-top: 30px; position: absolute; display: block; font-weight: 900; font-size: 5vw; color: #fff; letter-spacing: -3px; }
 #product .content .titleBox { width: 100%; }
 #product .content .titleBox span { color: #fff; }
 #product .content .titleBox .title { text-align: center; overflow: hidden; }
@@ -488,3 +488,4 @@ footer .info li:nth-of-type(7)::after { display: none; }
 
 @media ( max-width:730px) { 
 }
+
