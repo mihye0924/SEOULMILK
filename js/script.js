@@ -158,22 +158,34 @@ $(function(){
 
         }
     }) 
-
-    $(window).resize(function(){    
-        var windowWidth = $(window).width()
-        console.log(windowWidth+ 17)  
-        var scroll  = $(this).scrollTop()   
-        var mainHeight = $('main #main').height() 
-        console.log(scroll,'스크롤')
-        console.log(mainHeight,'높이')
-        if( windowWidth + 17 <= 768 ) {
-            $('.slide_container').removeClass('fixed') 
-        }else{
-            $('.slide_container').addClass('fixed') 
-        } 
-        
-    })
      
+
+    // $(window).resize(function(){    
+    //     var windowWidth = $(window).width()
+    //     var windowHeight = $(window).height()    
+    //     var scroll  = $(this).scrollTop()   
+    //     var mainHeight = $('main #main').height() 
+    //     console.log(scroll,'스크롤')
+    //     console.log(mainHeight,'높이')
+
+    //     // 768 사이즈보다 작고, 첫번째 구간일때
+    //     if( windowWidth + 17 <= 768 ) {
+    //         $(window).on('scroll',function(){ 
+    //             if( scroll >= mainHeight-windowHeight ) {
+    //                 $('.slide_container').removeClass('fixed') 
+    //             } 
+    //         })
+    //     }else{
+    //         $(window).on('scroll',function(){ 
+    //             if( scroll >= mainHeight-windowHeight ) {
+    //                 $('.slide_container').removeClass('fixed') 
+    //             }else{
+    //                 $('.slide_container').addClass('fixed') 
+    //             }
+    //         })
+    //     } 
+    // })
+    
     // 스크롤 시 빨간 부분 표시
     $(window).on('scroll',function(){ 
         var scroll  = $(this).scrollTop()   
@@ -192,17 +204,11 @@ $(function(){
         var scroll  = $(this).scrollTop()    
         var mainHeight = $('main #main').height() 
         var windowHeight = $(window).height()    
-        var windowWidth = $(window).width()
 
-        if( scroll >= mainHeight-windowHeight) {
+        if( scroll >= mainHeight-windowHeight ) {
             $('.slide_container').removeClass('fixed') 
             $('main #main h1.title01').addClass('animated_opacity').removeClass('fixed')    
         }else{
-            if(windowWidth + 17 <= 768  ) {
-                $('.slide_container').removeClass('fixed') 
-            }else{
-                $('.slide_container').addClass('fixed') 
-            }
             $('.slide_container').addClass('fixed') 
             $('main #main h1.title01 ').removeClass('animated_opacity').addClass('fixed')  
         }
@@ -218,20 +224,17 @@ $(function(){
             $('#redBg_wrap').css({'opacity' : 0 , 'zIndex' : 0 })
             $('#product').css({'opacity' : 0}) 
         } 
-
-    })
-
-    // 맨아래로 
-    $(window).on('scroll', function(){ 
+        
+        // 맨아래로 
         var sck = document.querySelector('#scrollbar span:nth-of-type(2)').textContent 
-    
         if(sck =='SCROLL'){ 
             $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'none' })
         }else{
             $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'unset' })
         }
-    
+
     })
+ 
     // 맨위로
     var bottom = $(document).height() 
     $('#scrollbar span:nth-of-type(2)').on('click',function(){ 
@@ -329,7 +332,7 @@ function onYouTubeIframeAPIReady(){
         'autohide':0,
         'modestbranding':1,
         'frameborderz':0,
-        'mute':1,
+        // 'mute':1,
         },
     
     }) 
