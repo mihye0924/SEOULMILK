@@ -341,8 +341,7 @@ footer .info{ clear: left; padding-top: 90px; }
 footer .info li { display: inline; position: relative; margin-right: 15px; } 
 footer .info li::after { content: ''; width: 1px; height: 10px; background-color: #fff; display: inline-block; margin: 10px; position: absolute;  }
 footer .info span { display: inline-block; margin: 5px 0; font-weight: 400; }
-footer .info li:nth-of-type(3)::after,
-footer .info li:nth-of-type(6)::after,
+footer .info li:nth-of-type(4)::after, 
 footer .info li:nth-of-type(7)::after { display: none; }
 
 
