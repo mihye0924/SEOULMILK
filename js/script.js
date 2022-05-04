@@ -246,7 +246,7 @@ $(function(){
     })
 
     // 자동 글자 애니메이션
-    $('.autoText.marquee').marquee({ 
+    $('.marquee').marquee({ 
         duration: '6000',
         direction : 'left',
         loop : '-1',
