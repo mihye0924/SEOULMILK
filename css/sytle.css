@@ -36,13 +36,13 @@ header #header_wrap { display: flex; justify-content: space-between; align-items
 header .logo { width: 160px; height: 80px; }
 header .logo a {  display: flex; justify-content: space-between; align-items: center;  }
 header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180px; font-size: 20px; color: #00fff3;  }
-/* .logo.st0{fill:#000000;} */
-/* .logo.st1{fill:#00fff3;}  */
-/* .search.st0{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10;}
-.search.st1{fill:none; stroke:#00fff3; stroke-width:7; events-linecap:round; stroke-miterlimit:10;} */
+.logo.st0{fill:#000000;} 
+.logo.st1{fill:#00fff3;} 
+.search.st0{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10;}
+.search.st1{fill:none; stroke:#00fff3; stroke-width:7; events-linecap:round; stroke-miterlimit:10;}
 #gnbMenu { display: none; position: fixed; z-index: 3; width: 100%; height: 100vh; }
 #gnbMenu .innerBg { position: relative; width: 100%; height: 100%; background-color: #ff1c1c33;  }
-#gnbMenu img { position: absolute; top: 0; z-index: -1; width: 100%; height:100% } 
+#gnbMenu img { object-fit: cover; position: absolute; top: 0; z-index: -1; width: 100%; height:100% } 
 #gnbMenu .gnb { position: absolute; top: 50%; left:30%; transform: translate(-50%,-50%); }
 #gnbMenu .gnb li { margin: 15px 0; overflow: hidden; height: 53px; }
 #gnbMenu .gnb li a { position: relative; height: 53px; display: block; font-size: 42px; font-weight: 900; color: #fff; }
@@ -164,7 +164,7 @@ main #main .slide_container.fixed { position: fixed; height: 100%; }
 /* section01 - product */
 #product { padding-top: 350px; overflow: hidden; position: relative; background-color: var(--color); width: 100%; }
 #product img { position: absolute; bottom: 0; width: 100%; }
-#product .autoText { width: 300px; margin-top: 30px; position: absolute; display: block; font-weight: 900; font-size: 5vw; color: #fff; letter-spacing: -3px; }
+#product .autoText { margin-top: 30px; position: absolute; display: block; font-weight: 900; font-size: 5vw; color: #fff; letter-spacing: -3px; }
 #product .content .titleBox { width: 100%; }
 #product .content .titleBox span { color: #fff; }
 #product .content .titleBox .title { text-align: center; overflow: hidden; }
@@ -290,8 +290,8 @@ button.motion.animate__animated { animation-name: text40; animation-delay: 1500m
 #seoulLog .subTitle span { margin-left: 12px; font-size: 22px; letter-spacing: -2px; font-weight: 600; }
 #seoulLog .title { margin-top: 15px; }
 #seoulLog .title span { font-size: 80px; font-weight: 900; letter-spacing: -4px; }
-#seoulLog .logSlide_wrap { position: relative; overflow: hidden; margin-left: 345px; display: flex; }
-#seoulLog .logSlide_wrap li { position: relative; width: 730px; height: 500px; } 
+#seoulLog .logSlide_wrap { position: relative; height: 500px; overflow: hidden; margin-left: 345px; display: flex; }
+#seoulLog .logSlide_wrap li { overflow: hidden; position: relative; width: 730px; height: 500px; } 
 #seoulLog .logSlide_wrap li span:first-of-type { display: block; position: absolute; transform: rotate(90deg); top: 110px; left: -100px; font-weight: 600; letter-spacing: -1px; font-size: 15px; }
 #seoulLog .logSlide_wrap li span:last-of-type { position: absolute; font-weight: 900; color: #fff; letter-spacing: -3px; font-size: 18px; bottom: 35px; left: 170px; z-index: 3; } 
 #seoulLog .logSlide_wrap .coffeeText { top: 125px !important; left: -115px !important; }
@@ -299,7 +299,7 @@ button.motion.animate__animated { animation-name: text40; animation-delay: 1500m
 #seoulLog .logSlide_wrap .cheeseText { top: 105px !important; left: -100px !important; }
 #seoulLog .logSlide_wrap a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 200px; background:linear-gradient(transparent,rgba(0, 0, 0, 0.882));}
 #seoulLog .logSlide_wrap a { z-index: 2; position: absolute; display: block; width: 690px; height: 500px; right: 0; top: 0; }
-#seoulLog .logSlide_wrap a img { position: absolute; z-index: -1; width: 100%; height: 100% }
+#seoulLog .logSlide_wrap a img { object-fit: cover; position: absolute; z-index: -1; width: 100%; height: 100% }
 #seoulLog .logSlide_wrap .playIcon { position: absolute; box-shadow: -5px 5px 10px #85858549; z-index: 3; left: 20px; bottom: 20px; width: 80px; height: 80px; background-color: #fff; border-radius: 50%; }
 #seoulLog .logSlide_wrap .playIcon::after { position: absolute; content: ''; width: 30px; height: 30px; margin: 25px; background: url(../img/playIcon.png) no-repeat; background-size: contain; }
 /* #seoulLog .logSlide_wrap li:hover .hoverBox { animation: opacityLog 0.8s linear forwards; background-color: #000; width: 690px; height: 500px; }
@@ -337,7 +337,7 @@ footer .sns { display: flex; justify-content: space-between; margin-top: 30px; w
 footer .sns li { width: 40px; height: 40px; }
 footer .sns li a { display: block; }
 footer .sns li img { width: 100%; height: 100%; }
-footer .info{ clear: left; padding-top: 90px; }
+footer .info{ clear: left; padding-top: 90px; width: 850px; }
 footer .info li { display: inline; position: relative; margin-right: 15px; } 
 footer .info li::after { content: ''; width: 1px; height: 10px; background-color: #fff; display: inline-block; margin: 10px; position: absolute;  }
 footer .info span { display: inline-block; margin: 5px 0; font-weight: 400; }
@@ -366,7 +366,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
    
    
     .content { width: 95%; } 
-    #product .autoText  { font-size: 6vw; } 
+    #product .autoText  { font-size: 14vw; } 
     #product .content .textBox { padding: 3vw; }
     #product .content .titleBox .title span { font-size: 38px; }
     #product .content .subTitle span { font-size: 18px; }
@@ -398,17 +398,27 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLove .circle04 { bottom: 35vw; right: -8vw; }
     #seoulLove .circle01, #seoulLove .circle03 { width: 250px; height: 250px; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 155px; height: 155px; }
-
+    #seoulLog .logSlide_wrap { height: 420px; }
+    #seoulLog .logSlide_wrap li { width: 50vw; height: 420px; }
+    #seoulLog .logSlide_wrap li.yogurt img { object-position: 100%; }
+    #seoulLog .logSlide_wrap a { width: 92.5%;  height: 420px;  }
+    footer .info { width: 100%; }
+    footer .info li:nth-of-type(2)::after,
+    footer .info li:nth-of-type(6)::after { display: none; }  
 }   
 
 @media ( max-width: 1024px) {  
-    a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 12px; color: var(--color); }
+    a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 14px; color: var(--color); }
 
+    #gnbMenu .gnbFooter { width: 97%; } 
+    #gnbMenu .gnb li { height: 45px; }
+    #gnbMenu .gnb li a { font-size: 34px; height: 45px; }
 
-    main #main .scroll_wrap { margin: 30vw 0 120px 0; } 
+    main #main .scroll_wrap { margin: 30vw 0 120px 0; width: 45%; } 
     main #main .scroll_wrap .imgBox { width: 315px; height: 510px; }
     main #main .scroll_wrap .imgBox img { width: 275px; height: 430px; }
     main #main .scroll_wrap .imgBox .bottomText { padding-left: 35px; } 
+    main #main .scroll_wrap .imgBox .bottomText p { font-size: 22px; }
     main #main .slide_wrap { padding-top: 40%; }
     main #main .slide_wrap .slide_content .textBox { height: 110px; } 
     main #main .slide_wrap .slide_content .textBox span.title { font-size: 3.6vw; } 
@@ -425,7 +435,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #story_wrap .imgBox { flex-wrap: wrap; width: 90%; }
     #story_wrap .imgBox .text { width: 280px; }
     #story_wrap .imgBox .img { width: 280px; height: 280px; }
-    #story_wrap .imgBox .text span:first-of-type { margin: 0 0 30px 0; }
+    #story_wrap .imgBox .text span:first-of-type { margin: 0 0 30px 0; font-size: 24px; }
     #story_wrap .imgBox li:nth-of-type(3) { margin-top: 80px; }
 
     #seoulLove .content { padding: 60vw 0; }
@@ -435,10 +445,34 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 100px; height: 100px; }
     #seoulLove .textOuter span:first-child, #seoulLove .textOuter span:last-child { font-size: 22vw; }
 
+    #seoulLog .textBox { position: static; width: 100%; }
+    #seoulLog .content { margin: 15vw auto; }
+    #seoulLog .title { margin-bottom: 50px; margin-top: 10px; }
+    #seoulLog .logSlide_wrap { height: 500px; margin-left: 0; } 
+    #seoulLog .logSlide_wrap li { width: 78vw; height: 500px;  }
+    #seoulLog .logSlide_wrap a { width: 88%;  height: 500px; }
+    #seoulLog .title { font-size: 68px; }
+    #seoulLog .subTitle span { font-size: 18px; } 
+    #seoulLog .logSlide_wrap li.yogurt img { object-position: 100%; }
+    #seoulLog .logSlide_wrap li span:last-of-type { left: 200px; font-size: 18px; bottom: 35px; }
+
+
+    footer .info li:nth-of-type(2)::after,
+    footer .info li:nth-of-type(4)::after,
+    footer .info li:nth-of-type(6)::after { display: initial; }
+    footer .info li:nth-of-type(3)::after,  
+    footer .info li:nth-of-type(5)::after { display: none; }  
+
+ 
 } 
 
 @media ( max-width:730px) { 
-    
+    #gnbMenu .gnbFooter { width: 95%; }
+    #gnbMenu .gnb li { height: 40px; }
+    #gnbMenu .gnb li a { font-size: 28px; height: 40px; }
+
+    main #main h1.title01 span:first-of-type { letter-spacing: -5px; }
+    main #main h1.title01 span:last-of-type { margin-left: 20px; letter-spacing: -5px; }
     main #main .slide_wrap { padding: 0; }
     main #main .slide_wrap .slide_content { height: 510px; }
     main #main .slide_container { position: relative; bottom: initial; top: 200px; width: 100%; height: 510px; } 
@@ -483,9 +517,42 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLove .circle01, #seoulLove .circle03 { width: 150px; height: 150px; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 80px; height: 80px; }
     #seoulLove .textOuter span:first-child { position: absolute; top: 250px; right: -10px; }
-    #seoulLove .textOuter span:last-child { position: absolute; left: -20px; bottom: 215px;}
+    #seoulLove .textOuter span:last-child { position: absolute; left: -20px; bottom: 215px; }
+
+    footer .content { width: 80%; padding: 10vw 0; display: grid;  }
+    footer .rightBox { width: 90%; }
+    footer .sns_wrap { float: right; }
+    footer .menu { grid-row: 2/3; margin: 5vw 0; width: 150px; }
+    footer .menu>li { margin: 5vw 0; } 
+    footer .familysite li.mainTitle a { font-size: 24px; } 
+    footer .menu>li a { font-size: 18px; }
+    footer .info { margin-top: 2vw; padding: 0; width: 100%; } 
+    footer .info span { font-size: 12px; }
+    footer .menu>li:first-of-type a:hover::after { animation: line50 0.2s linear forwards; }
+    footer .menu>li:nth-of-type(2) a:hover::after { animation: line35 0.2s linear forwards; }
+    footer .menu>li:nth-of-type(3) a:hover::after { animation: line65 0.2s linear forwards; }
+    footer .menu>li:nth-of-type(4) a:hover::after { animation: line100 0.2s linear forwards; }
+    @keyframes line50 { 100%{ width: 50px;} }
+    @keyframes line35 { 100%{ width: 35px;} }
+    @keyframes line65 { 100%{ width: 65px;} }
+    @keyframes line100 { 100%{ width: 100px;} }
+ 
+    footer .info li:nth-of-type(2)::after,
+    footer .info li:nth-of-type(6)::after { display: none; }  
+    #seoulLog .logSlide_wrap li span:last-of-type { font-size: 15px; bottom: 40px; left:160px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 200px; }
 }
 
 @media ( max-width:730px) { 
+    #gnbMenu .gnb li { height: 40px; }
+    #gnbMenu .gnb li a { font-size: 28px; height: 40px; }
+    #gnbMenu .gnbFooter { width: 95%; }
+
+    footer .info { width: 98%; }
+    footer .info li:nth-of-type(5)::after,
+    footer .info li:nth-of-type(3)::after { display: initial; }
+    footer .info li:nth-of-type(2)::after,
+    footer .info li:nth-of-type(4)::after,
+    footer .info li:nth-of-type(6)::after { display: none; }    
 }
 
+ 

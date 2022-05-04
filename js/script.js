@@ -71,7 +71,7 @@ $(function(){
         if( sec >= 3 ) {
             sec = 0
             if(!pause) { 
-                // $('.slide_more').trigger('click')  
+                $('.slide_more').trigger('click')  
             }
         } else {
             if(!pause) {
@@ -189,7 +189,7 @@ $(function(){
     // 스크롤 시 빨간 부분 표시
     $(window).on('scroll',function(){ 
         var scroll  = $(this).scrollTop()   
-        currentHeight = scroll / 40 
+        currentHeight = scroll / 35
         $('#scrollbar .scrollbar_inner').css({ height : currentHeight })
 
         if( scroll >= 100 ){
@@ -247,11 +247,9 @@ $(function(){
 
     // 자동 글자 애니메이션
     $('.marquee').marquee({ 
-        duration: 2000,
-        delayBeforeStart: 0,
+        duration: 15000, 
         direction : 'left',
-        loop : '-1',
-        // scrollamount: '0',
+        loop : '-1', 
         duplicated : 'true', 
     })
  
@@ -300,51 +298,69 @@ $(function(){
     circle04.setProperty('--mouse-y', e.clientY);
     });
 
-   var play = false
-    $('.playIcon').on('click',function(){ 
-        $('#player').css({ zIndex : 1 })
-        
-        if( play != false){
-            console.log('ㅋㅋㅋㅋㅋㅇㅇㅇㅇㅇㅇㅋㅋㅋㅋㅋㅋㅋ')  
-            
-            stopVideo()
-            play = false
-        }else{ 
-            $('#seoulLog .logSlide_wrap .playIcon.yogurt,'+
-            '#seoulLog .logSlide_wrap li span.yogurt ').animate({ bottom: '-80px'})
-            playVideo()
-            play = true
-            console.log(play)   
-        }
-    })
 
-    
-})  
+    var play=false
+    var player = ['player0','player1','player2','player3']
+
+        $('.playIcon').on('click',function(){
+            console.log(this)
+        })
  
-var player;
-function onYouTubeIframeAPIReady(){
-    player = new YT.Player('player',{    
-      
-      videoId:'3wHCprySi2I',
-      // origin : 가져올 서버의 주소를 입력
-      playerVars : { 
-        'rel': 0,
-        'loop':1,
-        'controls': 1,
-        'showinfo':0,
-        'autohide':0,
-        'modestbranding':1,
-        'frameborderz':0,
-        // 'mute':1,
-        },
+ 
+
+})  
+
+var playList = ['3wHCprySi2I','wIVANe3FMJE','BPxSGGkwVcA','4VBQ3ySuBjA']
+for( i=0; i<playList.length; i++){  
+    var playerId = 'player'+[i]  
+    // playList[i]
+    console.log(playList[i])
     
-    }) 
-}
+    var videoCode = playList[i]
+    var player = playerId
+    console.log(player)
+    function onYouTubeIframeAPIReady(){
+        player = new YT.Player(playerId,{    
+        videoId: videoCode,
+        // origin : 가져올 서버의 주소를 입력
+        playerVars : { 
+            'rel': 0,
+            'loop':1,
+            'controls': 1,
+            'showinfo':0,
+            'autohide':0,
+            'modestbranding':1,
+            'frameborderz':0,
+            'mute':1,
+            },
+            events: {
+                // 'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
+                'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
+            }
+        }) 
+        console.log(player)
+        }    
+        var playerState;
+        function onPlayerStateChange(event) {
+            playerState = event.data == YT.PlayerState.ENDED ? '종료됨' :
+                    event.data == YT.PlayerState.PLAYING ? '재생 중' :
+                    event.data == YT.PlayerState.PAUSED ? '일시중지 됨' :
+                    event.data == YT.PlayerState.BUFFERING ? '버퍼링 중' :
+                    event.data == YT.PlayerState.CUED ? '재생준비 완료됨' :
+                    event.data == -1 ? '시작되지 않음' : '예외';
 
-function playVideo(){
-    player.playVideo();
-}
-function stopVideo(){
-    player.stopVideo()
-}
 
+            console.log('onPlayerStateChange 실행: ' + playerState);
+        }
+
+        function playVideo() {
+            player.playVideo();
+        }
+
+        function stopVideo(){
+            player.stopVideo()
+        }
+
+}
+  
+     
