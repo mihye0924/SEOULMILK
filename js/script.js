@@ -316,6 +316,8 @@ $(function(){
             console.log(play)   
         }
     })
+
+    
 })  
  
 var player;
@@ -344,3 +346,4 @@ function playVideo(){
 function stopVideo(){
     player.stopVideo()
 }
+

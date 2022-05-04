@@ -39,7 +39,7 @@ header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180
 /* .logo.st0{fill:#000000;} */
 /* .logo.st1{fill:#00fff3;}  */
 /* .search.st0{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10;}
-.search.st1{fill:none; stroke:#00fff3; stroke-width:7; stroke-linecap:round; stroke-miterlimit:10;} */
+.search.st1{fill:none; stroke:#00fff3; stroke-width:7; events-linecap:round; stroke-miterlimit:10;} */
 #gnbMenu { display: none; position: fixed; z-index: 3; width: 100%; height: 100vh; }
 #gnbMenu .innerBg { position: relative; width: 100%; height: 100%; background-color: #ff1c1c33;  }
 #gnbMenu img { position: absolute; top: 0; z-index: -1; width: 100%; height:100% } 
@@ -79,8 +79,8 @@ header .gnbBtn .openBtn .bottom { display: block; position: absolute; bottom: 0p
 input#gnb_bg { position: relative; z-index: 5; display: none; }
 input#gnb_bg:checked ~ #gnbMenu { animation: gnbBg 0.8s ease-out; display: block; }
 header.active { mix-blend-mode: unset; }
-header.active .logo.st0 { fill: transparent; }
-header.active .logo.st1 { fill: #fff; }
+header.active #logo.logo.st0 { fill: transparent; }
+header.active #logo.logo.st1 { fill: #fff; }
 header.active .search.st0,
 header.active .search.st1 { stroke: #fff; }
 header.active .logo span { color: #fff; }
@@ -488,3 +488,4 @@ footer .info li:nth-of-type(7)::after { display: none; }
 
 @media ( max-width:730px) { 
 }
+
