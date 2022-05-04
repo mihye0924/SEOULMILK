@@ -9,13 +9,13 @@ address, em, i {font-style: normal;}
     font-family: 'SEOULMILK 1000mL';
     src: url(../font/SEOULMILK\ 1000mL\ TTF.ttf);
 } 
-@font-face {
+/* @font-face {
     font-family: 'FontAwesome';
     src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
     src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
-} 
+}  */
 /* 텍스트 애니메이션 적용 */
 .motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
 
@@ -371,7 +371,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #product .content .textBox { padding: 3vw; }
     #product .content .titleBox .title span { font-size: 38px; }
     #product .content .subTitle span { font-size: 18px; }
-    #product .content .productBox { margin: 15vw 0 0 0; padding-bottom: 335px; }
+    #product .content .productBox { margin: 15vw 0 0 0; padding-bottom: 400px; }
     #product .content .productBox li { height: 510px; }
     #product .content .productBox img { width: 55%; height: 55%; margin: 0 0 60px 0; }
     #product .content .productBox .productCategory { font-size:  1.8vw; margin: 1.9vw 0 0 30px; }
@@ -483,6 +483,8 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLove .textInner .seoulMilkReason span { font-size: 48px; }
     #seoulLove .circle01, #seoulLove .circle03 { width: 150px; height: 150px; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 80px; height: 80px; }
+    #seoulLove .textOuter span:first-child { position: absolute; top: 250px; right: -10px; }
+    #seoulLove .textOuter span:last-child { position: absolute; left: -20px; bottom: 215px;}
 }
 
 @media ( max-width:730px) { 
