@@ -79,8 +79,8 @@ header .gnbBtn .openBtn .bottom { display: block; position: absolute; bottom: 0p
 input#gnb_bg { position: relative; z-index: 5; display: none; }
 input#gnb_bg:checked ~ #gnbMenu { animation: gnbBg 0.8s ease-out; display: block; }
 header.active { mix-blend-mode: unset; }
-header.active #logo.logo.st0 { all: transparent; }
-header.active #logo.logo.st1 { all: #fff; }
+header.active #logo.logo.st0 { fill: transparent; }
+header.active #logo.logo.st1 { fill: #fff; }
 header.active .search.st0,
 header.active .search.st1 { all: #fff; }
 header.active .logo span { color: #fff; }
