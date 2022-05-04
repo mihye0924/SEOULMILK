@@ -139,23 +139,41 @@ $(function(){
         var scrollTop  = $(this).scrollTop()    
         var mainHeight = $('main #main').height() 
         var windowHeight = $(window).height()   
+        var windowWidth = $(window).width()
 
         if( scrollTop < mainHeight-windowHeight) {
             $('.slide_container').addClass('fixed') 
             $('main #main h1.title01').addClass('fixed') 
-        } 
-        var sck = document.querySelector('#scrollbar span:nth-of-type(2)').textContent 
-    
-        if(sck =='SCROLL'){ 
-            $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'none' })
+            var sck = document.querySelector('#scrollbar span:nth-of-type(2)').textContent 
+        
+            if(sck =='SCROLL'){ 
+                $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'none' })
+            }
+
+            if(windowWidth <= 768  ) {
+                $('.slide_container').removeClass('fixed') 
+            }else{
+                $('.slide_container').addClass('fixed') 
+            }
+
         }
+    }) 
 
+    $(window).resize(function(){    
+        var windowWidth = $(window).width()
+        console.log(windowWidth+ 17)  
+        var scroll  = $(this).scrollTop()   
+        var mainHeight = $('main #main').height() 
+        console.log(scroll,'스크롤')
+        console.log(mainHeight,'높이')
+        if( windowWidth + 17 <= 768 ) {
+            $('.slide_container').removeClass('fixed') 
+        }else{
+            $('.slide_container').addClass('fixed') 
+        } 
+        
     })
- 
-    
-
-   
-
+     
     // 스크롤 시 빨간 부분 표시
     $(window).on('scroll',function(){ 
         var scroll  = $(this).scrollTop()   
@@ -171,25 +189,29 @@ $(function(){
         } 
 
         // fresh text - 애니메이션 구현
-        var scrollD  = $(this).scrollTop()    
+        var scroll  = $(this).scrollTop()    
         var mainHeight = $('main #main').height() 
-        var windowHeight = $(window).height()   
+        var windowHeight = $(window).height()    
+        var windowWidth = $(window).width()
 
-        if( scrollD >= mainHeight-windowHeight) {
-              $('.slide_container').removeClass('fixed') 
-            $('main #main h1.title01').addClass('animated_opacity').removeClass('fixed') 
-
+        if( scroll >= mainHeight-windowHeight) {
+            $('.slide_container').removeClass('fixed') 
+            $('main #main h1.title01').addClass('animated_opacity').removeClass('fixed')    
         }else{
+            if(windowWidth + 17 <= 768  ) {
+                $('.slide_container').removeClass('fixed') 
+            }else{
+                $('.slide_container').addClass('fixed') 
+            }
             $('.slide_container').addClass('fixed') 
-            $('main #main h1.title01 ').removeClass('animated_opacity').addClass('fixed')
+            $('main #main h1.title01 ').removeClass('animated_opacity').addClass('fixed')  
         }
-     
         // 2번째 섹션으로 넘어가기
-        var gap = scrollD - (mainHeight - windowHeight)
+        var gap = scroll - (mainHeight - windowHeight)
         if( gap < 0 ) {
             gap = 0
         }  
-        if( scrollD > mainHeight - windowHeight ) { 
+        if( scroll > mainHeight - windowHeight ) { 
             $('#redBg_wrap').css({'opacity' : gap / 100 * 0.2, 'zIndex' : 3 }) 
             $('#product').css({'opacity' : gap / 100 * 0.2})   
         } else {
