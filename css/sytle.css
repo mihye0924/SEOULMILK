@@ -537,7 +537,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #product .content .productBox .productTitle { font-size: 28px; }
     #product .content .productBox .productCategory { font-size: 14px; margin: 15px 0 0 15px; }
 
-    .content,
+    .content { width: 90%; padding: 40vw 0; }
     #seoulLog .content,
     #story_wrap .imgBox { width: 90%; }  
     #story_wrap .textBox .mainTitle { font-size: 34px; }
