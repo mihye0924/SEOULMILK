@@ -570,10 +570,10 @@ footer .info li:nth-of-type(7)::after { display: none; }
     
     #seoulLog .logSlide_wrap .playIcon { width: 60px; height: 60px; }
     #seoulLog .logSlide_wrap .playIcon::after { width: 20px; height: 20px; margin: 20px; }
-    footer .sns { width: 190px; }
+    footer .sns { width: 190px; float: right; }
     footer .content { width: 90%; }
     footer .rightBox { width: 100%; }
-    footer .sns_wrap { width: 330px; }
+    footer .sns_wrap { width: 100%; display: unset; }
     footer .familysite li a { padding: 25px 0; } 
     footer .info span { font-size: 11px; }
 
