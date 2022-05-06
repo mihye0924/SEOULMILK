@@ -531,21 +531,21 @@ footer .info li:nth-of-type(7)::after { display: none; }
 
 @media (max-width:486px) {  
     #scrollbar { right: 15px; }
+    #scrollbar .scrollbar_right .scroll_text span:last-of-type { letter-spacing: 0; }
 
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type,
     main #main h1.title01 span:last-of-type { margin-left: 10px; letter-spacing: -2px; }
     main #main .scroll_wrap .imgBox { width: 100%; }
     main #main .scroll_wrap .imgBox img { width: 300px; }
+    main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
     main #main .slide_wrap .slide_content .textBox span.title { letter-spacing: -3px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
     main #main .slide_bar .slide_prograss { width: 260px; }
-    #scrollbar .scrollbar_right .scroll_text span:last-of-type { letter-spacing: 0; }
     /* main #main .scroll_wrap .imgBox.img02 { float: unset; } */
     /* 삭제예정 */
     main #main .slide_container { z-index: -2; }
-
 
     #product .content .titleBox .title span { font-size: 22px; }
     #product .content .subTitle span { font-size: 13px; }
