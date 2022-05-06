@@ -536,15 +536,15 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type,
     main #main h1.title01 span:last-of-type { margin-left: 10px; letter-spacing: -2px; }
-    main #main .scroll_wrap .imgBox { width: 340px; height: 555px; }
-    main #main .scroll_wrap .imgBox img { width: 340px; height: 475px; }
-    main #main .scroll_wrap .imgBox .bottomText { width: 340px; }
+    
+    main #main .scroll_wrap .imgBox { width: 325px; height: 525px; float: unset; margin: 0 auto; }
+    main #main .scroll_wrap .imgBox img { width: 290px; height: 445px; }
+    main #main .scroll_wrap .imgBox .bottomText { width: 290px; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
     main #main .slide_wrap .slide_content .textBox span.title { letter-spacing: -3px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
     main #main .slide_bar .slide_prograss { width: 260px; }
-    main #main .scroll_wrap .imgBox { width: 375px; float: unset; margin: 0 auto; }
     main #main .scroll_wrap .imgBox.img02 { float: unset; }
     /* 삭제예정 */
     main #main .slide_container { z-index: -2; }
