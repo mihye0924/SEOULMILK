@@ -31,8 +31,7 @@ header .logo a {  display: flex; justify-content: space-between; align-items: ce
 header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180px; font-size: 20px; color: #00fff3;  }
 .logo.st0{fill:#000000;} 
 .logo.st1{fill:#00fff3;} 
-.search.st0{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10; }
-.search.st1{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10; }
+
 #gnbMenu { display: none; position: fixed; z-index: 4; width: 100%; height: 100vh; }
 #gnbMenu .innerBg { position: relative; width: 100%; height: 100%; background-color: #ff1c1c33;  }
 #gnbMenu img { object-fit: cover; position: absolute; top: 0; z-index: -1; width: 100%; height:100% } 
@@ -64,7 +63,9 @@ header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180
 
 
 /* gnb버튼 */
-header .inner { display: flex; width: 80px; justify-content: space-between; align-items: center; } 
+header .inner { display: flex; width: 90px; justify-content: space-between; align-items: center; } 
+.search.st0{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10; }
+.search.st1{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10; } 
 header .gnbBtn .openBtn { position: relative; width: 35px; height: 20px; }
 header .gnbBtn .openBtn .top { display: block; position: absolute; top: 0; right: 0; width: 30px; height: 3px; border-radius: 25px; background-color: #00fff3; }
 header .gnbBtn .openBtn .center { display: block; position: absolute; top: 9px; right: 0; width: 25px; height: 3px; border-radius: 25px; background-color: #00fff3; }
@@ -458,7 +459,8 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #gnbMenu .gnb li a { font-size: 28px; height: 40px; }
     #gnbMenu .gnbFooter { width: 95%; }
  
-    main #main h1.title01 span:last-of-type { margin-left: 20px; }
+    main #main h1.title01 span:first-of-type,
+    main #main h1.title01 span:last-of-type { letter-spacing: -6px; margin-left: 20px; }
     main #main .fixedBox { width: 100%; }
     main #main .slide_container { position: relative; bottom: initial; top: 200px; width: 100%; height: 510px; } 
     main #main .slide_bar { margin: 0 0 55px 6%; } 
