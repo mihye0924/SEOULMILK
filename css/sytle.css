@@ -539,6 +539,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
     main #main .slide_bar .slide_prograss { width: 260px; }
+    #scrollbar .scrollbar_right .scroll_text span:last-of-type { letter-spacing: 0; }
     
     
     #product .content .titleBox .title span { font-size: 22px; }
