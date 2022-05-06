@@ -528,25 +528,31 @@ footer .info li:nth-of-type(7)::after { display: none; }
  
 
 @media (max-width:486px) {  
+    #scrollbar { right: 15px; }
+
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type,
+    main #main h1.title01 span:last-of-type { margin-left: 10px; letter-spacing: -2px; }
+    main #main .scroll_wrap .imgBox { width: 100%; }
+    main #main .scroll_wrap .imgBox img { width: 290px; }
     main #main .slide_wrap .slide_content .textBox span.title { letter-spacing: -3px; }
-    main #main h1.title01 span:last-of-type { margin-left: 10px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
-    #scrollbar { right: 15px; }
+    main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
+    main #main .slide_bar .slide_prograss { width: 260px; }
     
-    #product .content .productBox .productSubTitle { letter-spacing: -1px; }
+    
     #product .content .titleBox .title span { font-size: 22px; }
     #product .content .subTitle span { font-size: 13px; }
-    #story_wrap .textBox .mainTextBox { margin: 3.5vw 0;}
     #product .content .productBox .productTitle { font-size: 28px; }
+    #product .content .productBox .productSubTitle { letter-spacing: -1px; margin-top: 12vw; }
     #product .content .productBox .productCategory { font-size: 14px; margin: 15px 0 0 15px; }
-
+    
     .content { width: 90%; padding: 40vw 0; }
     #seoulLog .content,
     #story_wrap .imgBox { width: 90%; }  
+    #story_wrap .textBox .mainTextBox { margin: 3.5vw 0;}
     #story_wrap .textBox .mainTitle { font-size: 34px; }
-    #story_wrap .textBox .topTitle, #story_wrap .textBox .bottomTitle { font-size: 13px; letter-spacing: -2px; }
+    #story_wrap .textBox .topTitle, #story_wrap .textBox .bottomTitle { font-size: 13px; }
     #story_wrap .textBox button { width: 135px; height: 30px; margin-top: 65px; }
     #story_wrap .textBox button span { margin-left: 15px; }
     #story_wrap .textBox button span::after { width: 20px; height: 20px; right: -25px; }
