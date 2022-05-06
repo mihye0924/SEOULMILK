@@ -543,7 +543,10 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main .slide_bar .slide_prograss { width: 260px; }
     #scrollbar .scrollbar_right .scroll_text span:last-of-type { letter-spacing: 0; }
     /* main #main .scroll_wrap .imgBox.img02 { float: unset; } */
-    
+    /* 삭제예정 */
+    main #main .slide_container { z-index: -2; }
+
+
     #product .content .titleBox .title span { font-size: 22px; }
     #product .content .subTitle span { font-size: 13px; }
     #product .content .productBox .productTitle { font-size: 28px; }
