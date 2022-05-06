@@ -531,9 +531,11 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type,
     main #main .slide_wrap .slide_content .textBox span.title { letter-spacing: -3px; }
+    main #main h1.title01 span:last-of-type { margin-left: 10px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     #scrollbar { right: 15px; }
-
+    
+    #product .content .productBox .productSubTitle { letter-spacing: -1px; }
     #product .content .titleBox .title span { font-size: 22px; }
     #product .content .subTitle span { font-size: 13px; }
     #story_wrap .textBox .mainTextBox { margin: 3.5vw 0;}
@@ -563,7 +565,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLog .logSlide_wrap .strawBerryText { left: -120px; }
     #seoulLog .logSlide_wrap .cheeseText { left: -105px; }
     #seoulLog .logSlide_wrap a { width: 90%; }
-    #seoulLog .logSlide_wrap li { width: 340px; }
+    #seoulLog .logSlide_wrap li { width: 380px; }
     #seoulLog .logSlide_wrap li .subTitle { width: 175px; left: 100px; bottom: 33px; }
     
     #seoulLog .logSlide_wrap .playIcon { width: 60px; height: 60px; }
