@@ -160,37 +160,50 @@ $(function(){
     }) 
      
 
-    // $(window).resize(function(){    
-    //     var windowWidth = $(window).width()
-    //     var windowHeight = $(window).height()    
-    //     var scroll  = $(this).scrollTop()   
-    //     var mainHeight = $('main #main').height() 
-    //     console.log(scroll,'스크롤')
-    //     console.log(mainHeight,'높이')
+    $(window).resize(function(){    
+        var windowWidth = $(window).width()
+        var windowHeight = $(window).height()    
+        var scroll  = $(this).scrollTop()   
+        var mainHeight = $('main #main').height() 
+     
 
-    //     // 768 사이즈보다 작고, 첫번째 구간일때
-    //     if( windowWidth + 17 <= 768 ) {
-    //         $(window).on('scroll',function(){ 
-    //             if( scroll >= mainHeight-windowHeight ) {
-    //                 $('.slide_container').removeClass('fixed') 
-    //             } 
-    //         })
-    //     }else{
-    //         $(window).on('scroll',function(){ 
-    //             if( scroll >= mainHeight-windowHeight ) {
-    //                 $('.slide_container').removeClass('fixed') 
-    //             }else{
-    //                 $('.slide_container').addClass('fixed') 
-    //             }
-    //         })
-    //     } 
-    // })
+        // 768 사이즈보다 작고, 첫번째 구간일때
+        if( windowWidth + 17 <= 768 ) {
+            $(window).on('scroll',function(){ 
+                if( scroll >= mainHeight-windowHeight ) {
+                    $('.slide_container').removeClass('fixed') 
+                } 
+            })
+        }else{
+            $(window).on('scroll',function(){ 
+                if( scroll >= mainHeight-windowHeight ) {
+                    $('.slide_container').removeClass('fixed') 
+                }else{
+                    $('.slide_container').addClass('fixed') 
+                }
+            })
+        }
+        
+        
+        
+    })
     
     // 스크롤 시 빨간 부분 표시
     $(window).on('scroll',function(){ 
-        var scroll  = $(this).scrollTop()   
-        currentHeight = scroll / 35
-        $('#scrollbar .scrollbar_inner').css({ height : currentHeight })
+        var dHeight = $(document).height()
+        var height = $(this).height()
+        var scroll  = $(this).scrollTop() 
+        console.log(scroll,'스크롤')    
+        console.log(dHeight,'도큐높이')    
+        console.log(height,'높이')    
+
+        
+            currentHeight = scroll / 37.26428571428571
+            $('#scrollbar .scrollbar_inner').css({ height : currentHeight })     
+
+            console.log(currentHeight,'현재 스크롤바')
+     
+
 
         if( scroll >= 100 ){
             document.querySelector('#scrollbar span:nth-of-type(2)').textContent='BOTTOM'    

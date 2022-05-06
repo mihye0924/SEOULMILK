@@ -11,6 +11,8 @@ address, em, i {font-style: normal;}
 }  
 /* 텍스트 애니메이션 적용 */
 .motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
+ 
+
 
 :root { --color: #E00909; --font:'NotoSansKR', sans-serif; }
 body, textarea:focus, input:focus, a:focus { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
@@ -170,7 +172,7 @@ main #main .slide_container.fixed { position: fixed; height: 100%; }
 #product .content .productBox li { position: relative; width: calc(98%/2); height:640px; background-color: #fff; margin-bottom: 25px; }
 #product .content .productBox li:nth-of-type(2) { margin-top: 100px; }
 #product .content .productBox li:nth-of-type(3) { margin-top: -100px; }
-#product .content .productBox img { position: absolute; right: 0; width: 295px; height: 380px; object-fit: contain; }
+#product .content .productBox img { position: absolute; right: 0; width: 455px; height: 455px; margin: 25px; object-fit: contain; }
 
 #product .content .textBox { width: 100%;  padding: 50px; }
 #product .content .productBox .productTitle { font-size: 48px; font-weight: 900; display: block;  float: left; }
@@ -372,10 +374,10 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #product .content .titleBox .title span { font-size: 38px; }
     #product .content .subTitle span { font-size: 18px; }
     #product .content .productBox { margin: 15vw 0 0 0; padding-bottom: 400px; }
-    #product .content .productBox li { height: 510px; }
-    #product .content .productBox img { width: 55%; height: 55%; margin: 0 0 60px 0; }
+    #product .content .productBox li { height: 510px; } 
     #product .content .productBox .productCategory { font-size:  1.8vw; margin: 1.9vw 0 0 30px; }
     #product .content .productBox .productTitle { font-size: 3.5vw; } 
+    #product .content .productBox img { height: 385px; }
 
     #story_wrap .textBox .mainTitle { font-size: 55px; } 
     #story_wrap .textBox button { width: 160px; height: 35px; }
@@ -423,7 +425,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #product .content .productBox .productSubTitle { margin-top: 8vw; }
     #product .content .productBox .moreBox { margin: 3vw; }
     #product .content .productBox .productTitle { font-size: 4.3vw; } 
-
+    #product .content .productBox img { width: 295px; height: 295px; }
 
     #story_wrap .inner { margin-top: 20vw; }
     #story_wrap .imgBox { flex-wrap: wrap; width: 90%; }
@@ -487,9 +489,8 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #product .content .productBox .productTitle { font-size: 5vw; }
     #product .content .productBox .productCategory { font-size: 2.4vw; }
     #product .content .productBox .productSubTitle { margin-top: 10vw; }
-    #product .content .productBox .moreBox { margin: 5vw; }
-    #product .content .productBox img { width: 60%; height: 60%; margin: 0 0 30px 0; }
-    
+    #product .content .productBox .moreBox { margin: 5vw; } 
+    #product .content .productBox img { height: 280px; }
 
     #story_wrap .textBox .topTitle,
     #story_wrap .textBox .bottomTitle { font-size: 2.7vw; }
@@ -533,6 +534,11 @@ footer .info li:nth-of-type(7)::after { display: none; }
 @media (max-width:486px) {  
     #scrollbar { right: 15px; }
     #scrollbar .scrollbar_right .scroll_text span:last-of-type { letter-spacing: 0; }
+
+
+    #gnbMenu .gnb li.story.hover a { animation: outline 0.2s linear forwards;  }
+    @keyframes outline { 0%{ top: 0; } 100%{ top: -40px;} }
+
 
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type,
