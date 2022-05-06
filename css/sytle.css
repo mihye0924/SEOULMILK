@@ -143,7 +143,7 @@ main #main .scroll_wrap .imgBox.img02 img:last-of-type,
 main #main .scroll_wrap .imgBox.img03 img:last-of-type { z-index: 1; }
 @keyframes  imgAnimate { 100%{ opacity: 1;} }
 main #main .scroll_wrap .imgBox span { display: block; position: absolute; transform: rotate(90deg); top: 100px; left: -100px; font-size: 18px; font-weight: 600; letter-spacing: -1px; }
-main #main .scroll_wrap .imgBox .bottomText { width: 100%; height: 90px; overflow: hidden; position: absolute; bottom: 0; padding-left: 45px; }
+main #main .scroll_wrap .imgBox .bottomText { width: 320px; height: 90px; overflow: hidden; position: absolute; right: 0; bottom: 0; }
 main #main .scroll_wrap .imgBox .bottomText p { position: relative; bottom: -40px; font-size: 1.6vw; font-weight: 600; letter-spacing: -5px; }
 main #main .scroll_wrap .imgBox.img02 { float: right; margin-top: 25vw; }  
 main #main .scroll_wrap .imgBox.img03 { margin-top: 25vw; }
@@ -409,9 +409,9 @@ footer .info li:nth-of-type(7)::after { display: none; }
 
     main #main .scroll_wrap { margin: 30vw 0 120px 0; width: 45%; } 
     main #main .scroll_wrap .imgBox { width: 315px; height: 510px; }
-    main #main .scroll_wrap .imgBox img { width: 275px; height: 430px; }
-    main #main .scroll_wrap .imgBox .bottomText { padding-left: 35px; } 
-    main #main .scroll_wrap .imgBox .bottomText p { font-size: 22px; letter-spacing: -3px; }
+    main #main .scroll_wrap .imgBox img { width: 285px; height: 430px; }  
+    main #main .scroll_wrap .imgBox .bottomText { width: 285px; }
+    main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; letter-spacing: -3px; }
     main #main .slide_wrap { padding-top: 40%; }
     main #main .slide_wrap .slide_content .textBox { height: 110px; } 
     main #main .slide_wrap .slide_content .textBox span.title { font-size: 3.6vw; } 
@@ -536,14 +536,16 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type,
     main #main h1.title01 span:last-of-type { margin-left: 10px; letter-spacing: -2px; }
-    main #main .scroll_wrap .imgBox { width: 100%; }
-    main #main .scroll_wrap .imgBox img { width: 300px; }
+    main #main .scroll_wrap .imgBox { width: 340px; height: 555px; }
+    main #main .scroll_wrap .imgBox img { width: 340px; height: 475px; }
+    main #main .scroll_wrap .imgBox .bottomText { width: 340px; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
     main #main .slide_wrap .slide_content .textBox span.title { letter-spacing: -3px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
     main #main .slide_bar .slide_prograss { width: 260px; }
-    /* main #main .scroll_wrap .imgBox.img02 { float: unset; } */
+    main #main .scroll_wrap .imgBox { width: 375px; float: unset; margin: 0 auto; }
+    main #main .scroll_wrap .imgBox.img02 { float: unset; }
     /* 삭제예정 */
     main #main .slide_container { z-index: -2; }
 
@@ -556,7 +558,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     .content { width: 90%; padding: 40vw 0; }
     #seoulLog .content,
     #story_wrap .imgBox { width: 90%; }  
-    #story_wrap .textBox .mainTextBox { margin: 3.5vw 0;}
+    #story_wrap .textBox .mainTextBox { margin: 6.5vw 0;}
     #story_wrap .textBox .mainTitle { font-size: 34px; }
     #story_wrap .textBox .topTitle, #story_wrap .textBox .bottomTitle { font-size: 13px; letter-spacing: -2px; }
     #story_wrap .textBox button { width: 135px; height: 30px; margin-top: 65px; }
