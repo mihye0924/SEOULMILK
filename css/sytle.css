@@ -1,4 +1,4 @@
-*{ margin: 0; padding: 0; box-sizing: border-box; /* border: 1px solid #000; */ }
+*{ margin: 0; padding: 0; box-sizing: border-box; border: 1px solid #000; }
  
 li { list-style: none; }
 a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; letter-spacing: -1px; font-size: 15px; color: var(--color); }
@@ -536,8 +536,8 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type,
     main #main h1.title01 span:last-of-type { margin-left: 10px; letter-spacing: -2px; }
-    
     main #main .scroll_wrap .imgBox { width: 325px; height: 525px; float: unset; margin: 0 auto; }
+    main #main .scroll_wrap .imgBox span { top: 105px; }
     main #main .scroll_wrap .imgBox img { width: 290px; height: 445px; }
     main #main .scroll_wrap .imgBox .bottomText { width: 290px; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
