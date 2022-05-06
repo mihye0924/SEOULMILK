@@ -260,9 +260,19 @@ $(function(){
             // autoplay:true,
             autoWidth:true,
             margin:50,
-            autoplayTimeout:2000,
+            // autoplayTimeout:2000,
             autoplayHoverPause:true,
-            // items:1 
+            items:1,
+            responsive:{
+                486:{
+                    items:1,
+                    margin:20,
+                },
+                0:{
+                    items:1,
+                    margin:10,
+                } 
+            }
         }) 
 
         
