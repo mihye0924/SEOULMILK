@@ -410,7 +410,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main .scroll_wrap .imgBox { width: 315px; height: 510px; }
     main #main .scroll_wrap .imgBox img { width: 275px; height: 430px; }
     main #main .scroll_wrap .imgBox .bottomText { padding-left: 35px; } 
-    main #main .scroll_wrap .imgBox .bottomText p { font-size: 22px; }
+    main #main .scroll_wrap .imgBox .bottomText p { font-size: 22px; letter-spacing: -3px; }
     main #main .slide_wrap { padding-top: 40%; }
     main #main .slide_wrap .slide_content .textBox { height: 110px; } 
     main #main .slide_wrap .slide_content .textBox span.title { font-size: 3.6vw; } 
@@ -527,10 +527,11 @@ footer .info li:nth-of-type(7)::after { display: none; }
 }
  
 
-@media (max-width:486px) { 
-    header #header_wrap {  clear:right; margin:0 auto; }
+@media (max-width:486px) {  
     main #main h1.title01 span:first-of-type,
-    main #main h1.title01 span:last-of-type { letter-spacing: -3px; }
+    main #main h1.title01 span:last-of-type,
+    main #main .slide_wrap .slide_content .textBox span.title { letter-spacing: -3px; }
+    main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     #scrollbar { right: 15px; }
 
     #product .content .titleBox .title span { font-size: 22px; }
