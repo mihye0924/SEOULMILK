@@ -17,11 +17,11 @@ address, em, i {font-style: normal;}
 :root { --color: #E00909; --font:'NotoSansKR', sans-serif; }
 body, textarea:focus, input:focus, a:focus { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 #scrollbar { mix-blend-mode: difference; z-index: 4; position: fixed; bottom: 30px; right: 30px; width:30px; height: 410px;  }
-#scrollbar .scrollbar_right { margin: 50px auto; overflow: hidden; z-index: 2; width: 5px; height: 280px; background-color: rgba(233, 233, 233, 0.567); border-radius: 25px; }
+#scrollbar .scrollbar_right { margin: 50px auto; overflow: hidden; z-index: 2; width: 5px; height: 290px; background-color: rgba(233, 233, 233, 0.567); border-radius: 25px; }
 #scrollbar .scrollbar_right .scroll_text { display: flex; align-items: center; position:absolute; width: 410px; height: 30px; top: 190px; right: -192px; transform: rotate(90deg); font-size: 15px; font-weight: 900; }
 #scrollbar .scrollbar_right .scroll_text span:first-of-type { cursor: pointer; display: none; color: #00fff3; letter-spacing: 0; }
 #scrollbar .scrollbar_right .scroll_text span:last-of-type { cursor: pointer; position: absolute; right: 0; color: #00fff3; letter-spacing: 1px; }
-#scrollbar .scrollbar_right .scrollbar_inner { z-index: 3; top: 0; right: 0;  width: 5px; height: 0; background-color: #00fff3;  border-radius: 25px; }
+#scrollbar .scrollbar_right .scrollbar_inner { z-index: 3; top: 0; right: 0; width: 5px; height: 21px; background-color: #00fff3;  border-radius: 25px; }
  
 /* header */
 #smoothScroll { top: 0; right: 0; bottom: 0; left: 0; overflow: scroll; } 
@@ -102,14 +102,15 @@ header .openBtn.close .bottom { animation: gnbBottom-02 0.8s linear forwards; }
 #redBg_wrap { opacity: 0; width: 100%; height: 100%; position: absolute; background-color: var(--color); }
 main #main .inner { display: flex; justify-content: space-between; }
 main #main { position: relative; width: 100%; }
-main #main h1.title01  { position:absolute; overflow: hidden; right: 0; margin-top: 80px; display: flex; }
+main #main h1.title01 { position:absolute; overflow: hidden; right: 0; margin-top: 4.8vw; display: flex; }
 main #main h1.title01.fixed { position: fixed; }
 main #main h1.title01.animated_opacity { animation: opacity 1s linear; opacity: 0; animation-fill-mode: backwards; } 
 @keyframes opacity { 0%{ opacity: 1; } 100%{ opacity: 0; } } 
 main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; color: transparent; -webkit-text-stroke: 1px var(--color); }
 main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; margin-left: 50px; } 
 main #main .fixedBox { width: 58%; height: 100vh; }
-main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:55%; height: 40%; overflow: hidden; }
+main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:55%; height: 935px; overflow: hidden; } 
+main #main .slide_container.fixed { position: fixed; height: 935px; }
 main #main .slide_wrap { display: flex; width: 300% !important; height: 100%; position: absolute; padding-top: 28%; bottom: 0; }
 main #main .slide_wrap .slide_content { position: relative; width: 100%; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
@@ -146,11 +147,10 @@ main #main .scroll_wrap .imgBox.img03 img:last-of-type { z-index: 1; }
 @keyframes  imgAnimate { 100%{ opacity: 1;} }
 main #main .scroll_wrap .imgBox span { width: 280px; display: block; position: absolute; transform: rotate(90deg); top: 130px; left: -128px; font-size: 18px; font-weight: 600; letter-spacing: -1px; }
 main #main .scroll_wrap .imgBox a { display: block; }
-main #main .scroll_wrap .imgBox .bottomText { width: 320px; height: 90px; overflow: hidden; position: absolute; right: 0; bottom: 0; }
+main #main .scroll_wrap .imgBox .bottomText { width: 440px; height: 90px; overflow: hidden; position: absolute; right: 0; bottom: 0; }
 main #main .scroll_wrap .imgBox .bottomText p { position: relative; bottom: -40px; font-size: 1.6vw; font-weight: 600; letter-spacing: -5px; }
 main #main .scroll_wrap .imgBox.img02 { float: right; margin-top: 25vw; }  
 main #main .scroll_wrap .imgBox.img03 { margin-top: 25vw; }
-main #main .slide_container.fixed { position: fixed; height: 100%; }
 
 /* 텍스트 애니메이션 적용 */ 
 .bottomText.img01 .motion.animate__animated,
@@ -295,17 +295,17 @@ button.motion.animate__animated { animation-name: text40; animation-delay: 1500m
 #seoulLog .logSlide_wrap .strawBerryText { top: 120px; left: -115px; }
 #seoulLog .logSlide_wrap .cheeseText { top: 105px; left: -100px; } 
 #seoulLog .logSlide_wrap a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 200px; background:linear-gradient(transparent,rgba(0, 0, 0, 0.882));}
-#seoulLog .logSlide_wrap a { z-index: 2; position: absolute; display: block; width: 690px; height: 500px; right: 0; top: 0; }
+#seoulLog .logSlide_wrap a { z-index: 2; position: absolute; display: block; width: 685px; height: 500px; right: 0; top: 0; }
 #seoulLog .logSlide_wrap a img { object-fit: cover; position: absolute; z-index: -1; width: 100%; height: 100% }
+#seoulLog .logSlide_wrap .play iframe { display: none; }
+#seoulLog .logSlide_wrap .play.active iframe { display: block; z-index: 2; }
 #seoulLog .logSlide_wrap .play.active .playIcon,
 #seoulLog .logSlide_wrap .play.active .subTitle { animation: 0.8s slideDown linear forwards; }
 #seoulLog .logSlide_wrap .playIcon { position: absolute; box-shadow: -5px 5px 10px #85858549; z-index: 3; left: 20px; bottom: 20px; width: 80px; height: 80px; background-color: #fff; border-radius: 50%; }
 #seoulLog .logSlide_wrap .playIcon::after { position: absolute; content: ''; width: 30px; height: 30px; margin: 25px; background: url(../img/playIcon.png) no-repeat; background-size: contain; }
-@keyframes slideDown { 0%{ bottom: 0px; } 100%{ bottom: -80px; } }
-
-
-/* #seoulLog .logSlide_wrap li:hover .hoverBox { animation: opacityLog 0.8s linear forwards; background-color: #000; width: 690px; height: 500px; }
-@keyframes opacityLog { 0%{ opacity: 0;} 100%{ filter: grayscale(0.8);} } */
+@keyframes slideDown { 0%{ bottom: 0px; } 100%{ bottom: -80px; } } 
+#seoulLog .logSlide_wrap li:not(.active):hover .hoverBox { animation: opacityLog 0.8s linear forwards; background-color: #000; width: 100%; height: 500px; } 
+@keyframes opacityLog { 0%{ opacity: 0;} 100%{ filter: grayscale(0.8);} }
 #seoulLog .logSlide_wrap iframe { width: 100%; height: 100%; }
 #seoulLog .logSlide_wrap li.slide_video { width: 780px !important; height:500px;  }
 #player0, #player1, #player2, #player3 { position: absolute; }
@@ -319,14 +319,14 @@ footer a { color: #fff; }
 footer .menu { float: left; }
 footer .menu>li { position: relative;  margin: 30px 0 }
 footer .menu>li a { font-size: 24px; font-weight: 600; } 
-footer .menu>li:first-of-type a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line70 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:first-of-type a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line68 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
 footer .menu>li:nth-of-type(2) a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line45 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
 footer .menu>li:nth-of-type(3) a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line90 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
-footer .menu>li:nth-of-type(4) a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line130 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
+footer .menu>li:nth-of-type(4) a:hover::after { position: absolute; content: ''; width: 0;  height: 2px; animation: line135 0.2s linear forwards; bottom: -10px; left: 0;  background-color: #fff; }
 @keyframes line45 { 100%{ width: 45px;} }
-@keyframes line70 { 100%{ width: 70px;} }
+@keyframes line68 { 100%{ width: 68px;} }
 @keyframes line90 { 100%{ width: 90px;} }
-@keyframes line130 { 100%{ width: 130px;} }
+@keyframes line135 { 100%{ width: 135px;} }
 footer .rightBox { position: relative; width: 400px; float: right; } 
 footer .familysite li.mainTitle { position: relative; border-bottom: 2px solid #fff; }
 footer .familysite li.mainTitle .footer_plus { position: absolute; top: 35px; right: 0; content: ''; width: 30px; height: 30px; display: block; background: url(../img/footer_plus.png);  background-size: cover; }
@@ -345,20 +345,24 @@ footer .info li::after { content: ''; width: 1px; height: 10px; background-color
 footer .info span { display: inline-block; margin: 5px 0; font-weight: 400; letter-spacing: -1px; }
 footer .info li:nth-of-type(3)::after, 
 footer .info li:nth-of-type(5)::after,
+footer .info li:nth-of-type(6)::after,
 footer .info li:nth-of-type(7)::after { display: none; }
-
+footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
 
 
 /* 반응형 */
 @media ( max-width: 1500px) {
     a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 14px; color: var(--color); }
 
+    #gnbMenu .gnb li.story.hover a { animation: outline 0.2s linear forwards;  }
+    @keyframes outline { 0%{ top: 0; } 100%{ top: -55px;} }
+    main #main h1.title01 { margin-top: 5.8vw; }
     main #main h1.title01 span:first-of-type { font-size: 15vw; }
     main #main h1.title01 span:last-of-type { font-size: 15vw; }
     main #main .scroll_wrap { width: 43%; margin: 30vw 0 120px 0; }
     main #main .scroll_wrap .imgBox { width: 360px; height: 565px; }
     main #main .scroll_wrap .imgBox img { width: 320px; height: 480px;} 
-    main #main .scroll_wrap .imgBox .bottomText { height: 65px; }
+    main #main .scroll_wrap .imgBox .bottomText { width: 320px; height: 65px; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 24px; }
     main #main .slide_wrap { padding-top: 33%; }
     main #main .slide_wrap .slide_content .textBox { width: 80%; height: 110px; }
@@ -377,7 +381,7 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #product .content .productBox li { height: 510px; } 
     #product .content .productBox .productCategory { font-size:  1.8vw; margin: 1.9vw 0 0 30px; }
     #product .content .productBox .productTitle { font-size: 3.5vw; } 
-    #product .content .productBox img { height: 385px; }
+    #product .content .productBox img { height: 365px; }
 
     #story_wrap .textBox .mainTitle { font-size: 55px; } 
     #story_wrap .textBox button { width: 160px; height: 35px; }
@@ -402,14 +406,18 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLog .logSlide_wrap a { width: 93%; height: 420px;  } 
     #seoulLog .logSlide_wrap li { width: 50vw; height: 420px; }
     #seoulLog .logSlide_wrap li.yogurt img { object-position: 100%; }
+    
 }   
 
 @media ( max-width: 1024px) {  
 
     #gnbMenu .gnb li { height: 45px; }
     #gnbMenu .gnb li a { font-size: 34px; height: 45px; }
-    #gnbMenu .gnbFooter { width: 97%; } 
+    #gnbMenu .gnb li.story.hover a { animation: outline 0.2s linear forwards;  }
+    @keyframes outline { 0%{ top: 0; } 100%{ top: -45px;} }
 
+    #gnbMenu .gnbFooter { width: 97%; } 
+    main #main h1.title01 { margin-top: 10vw; }
     main #main .scroll_wrap { margin: 30vw 0 120px 0; width: 45%; } 
     main #main .scroll_wrap .imgBox { width: 315px; height: 510px; }
     main #main .scroll_wrap .imgBox img { width: 285px; height: 430px; }  
@@ -449,23 +457,15 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLog .logSlide_wrap a {  height: 500px; } 
     #seoulLog .logSlide_wrap li { width: 78vw; height: 500px;  }
     #seoulLog .logSlide_wrap li.yogurt img { object-position: 100%; } 
-
- 
-
-
- 
+  
 } 
+@media ( max-width:768px) {  
 
-@media ( max-width:730px) {  
-    a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 13px; color: var(--color); }
-    #gnbMenu .gnb li { height: 40px; }
-    #gnbMenu .gnb li a { font-size: 28px; height: 40px; }
-    #gnbMenu .gnbFooter { width: 95%; }
- 
+    main #main h1.title01 { margin-top: 25vw; }
     main #main h1.title01 span:first-of-type,
-    main #main h1.title01 span:last-of-type { letter-spacing: -6px; margin-left: 20px; }
-    main #main .fixedBox { width: 100%; }
-    main #main .slide_container { position: relative; bottom: initial; top: 200px; width: 100%; height: 510px; } 
+    main #main h1.title01 span:last-of-type { font-size: 110px; letter-spacing: -6px; margin-left: 20px; }
+    main #main .fixedBox { width: 100%; height: 85vh; }
+    main #main .slide_container { position: relative; bottom: initial; top: 37vw; width: 100%; height: 510px; } 
     main #main .slide_bar { margin: 0 0 55px 6%; } 
     main #main .slide_more { top: 40%; }  
     main #main .inner { flex-wrap: wrap; flex-direction: column; }
@@ -477,7 +477,20 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main .scroll_wrap { width: 90%; margin: 25vw auto 120px auto; }
     main #main .scroll_wrap .imgBox { width: 345px; }
     main #main .scroll_wrap .imgBox img { width: 310px; }
-    
+    main #main .scroll_wrap .imgBox .bottomText { width: 310px; }  
+    main #main .scroll_wrap .imgBox.img02 { margin-top: 35vw; } 
+    main #main .scroll_wrap .imgBox.img03 { margin-top: 35vw; } 
+}
+@media ( max-width:730px) {  
+    a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 13px; color: var(--color); }
+
+    #gnbMenu .gnb li { height: 40px; }
+    #gnbMenu .gnb li a { font-size: 28px; height: 40px; }
+    @keyframes outline { 0%{ top: 0; } 100%{ top: -40px;} }
+    #gnbMenu .gnbFooter { width: 95%; }
+ 
+    main #main h1.title01 span:first-of-type,
+    main #main h1.title01 span:last-of-type { font-size: 15vw; }
     #product .autoText { font-size: 12vw; }
     #product .content .titleBox .title span { font-size: 5vw; }
     #product .content .subTitle span { font-size: 2.7vw; }
@@ -486,11 +499,11 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #product .content .productBox li { width: 380px; height: 380px; }
     #product .content .productBox li:nth-of-type(2),
     #product .content .productBox li:nth-of-type(3) { margin-top: 0; } 
-    #product .content .productBox .productTitle { font-size: 5vw; }
+    #product .content .productBox .productTitle { font-size: 4.5vw; }
     #product .content .productBox .productCategory { font-size: 2.4vw; }
-    #product .content .productBox .productSubTitle { margin-top: 10vw; }
+    #product .content .productBox .productSubTitle { margin-top: 8vw; }
     #product .content .productBox .moreBox { margin: 5vw; } 
-    #product .content .productBox img { height: 280px; }
+    #product .content .productBox img { height: 235px; }
 
     #story_wrap .textBox .topTitle,
     #story_wrap .textBox .bottomTitle { font-size: 2.7vw; }
@@ -510,7 +523,10 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLog .subTitle span { font-size: 2.7vw; }
     #seoulLog .logSlide_wrap li .subTitle { font-size: 15px; bottom: 40px; left:120px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 60%; }
     #seoulLog .logSlide_wrap li>span { left: -110px; }
-
+    #seoulLog .logSlide_wrap .coffeeText { top: 123px; left: -125px; }
+    #seoulLog .logSlide_wrap .strawBerryText { top: 120px; left: -120px; }
+    #seoulLog .logSlide_wrap .cheeseText { top: 105px; left: -105px; }
+    
     footer .content { width: 80%; padding: 10vw 0; display: grid;  }
     footer .rightBox { width: 100%; margin: 0 auto; }
     footer .sns_wrap { float: right; }
@@ -521,11 +537,11 @@ footer .info li:nth-of-type(7)::after { display: none; }
     footer .info { margin-top: 2vw; padding: 0; width: 100%; }  
     footer .menu>li:first-of-type a:hover::after { animation: line50 0.2s linear forwards; }
     footer .menu>li:nth-of-type(2) a:hover::after { animation: line35 0.2s linear forwards; }
-    footer .menu>li:nth-of-type(3) a:hover::after { animation: line65 0.2s linear forwards; }
+    footer .menu>li:nth-of-type(3) a:hover::after { animation: line70 0.2s linear forwards; }
     footer .menu>li:nth-of-type(4) a:hover::after { animation: line100 0.2s linear forwards; }
     @keyframes line50 { 100%{ width: 50px;} }
     @keyframes line35 { 100%{ width: 35px;} }
-    @keyframes line65 { 100%{ width: 65px;} }
+    @keyframes line70 { 100%{ width: 70px;} }
     @keyframes line100 { 100%{ width: 100px;} }
         
 }
@@ -534,15 +550,9 @@ footer .info li:nth-of-type(7)::after { display: none; }
 @media (max-width:486px) {  
     #scrollbar { right: 15px; }
     #scrollbar .scrollbar_right .scroll_text span:last-of-type { letter-spacing: 0; }
-
-
-    #gnbMenu .gnb li.story.hover a { animation: outline 0.2s linear forwards;  }
-    @keyframes outline { 0%{ top: 0; } 100%{ top: -40px;} }
-
-
+ 
     main #main h1.title01 span:first-of-type,
-    main #main h1.title01 span:last-of-type,
-    main #main h1.title01 span:last-of-type { margin-left: 10px; letter-spacing: -2px; }
+    main #main h1.title01 span:last-of-type { font-size: 14vw; margin-left: 10px; letter-spacing: -2px; }
     main #main .scroll_wrap .imgBox { width: 325px; height: 525px; float: unset; margin: 0 auto; }
     main #main .scroll_wrap .imgBox a { display: block; }  
     main #main .scroll_wrap .imgBox img { width: 290px; height: 445px; }
@@ -552,9 +562,8 @@ footer .info li:nth-of-type(7)::after { display: none; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
     main #main .slide_bar .slide_prograss { width: 260px; }
-    main #main .scroll_wrap .imgBox.img02 { float: unset; }
-    /* 삭제예정 */
-    main #main .slide_container { z-index: -2; }
+    main #main .scroll_wrap .imgBox.img02 { float: unset; } 
+
 
     #product .content .titleBox .title span { font-size: 22px; }
     #product .content .subTitle span { font-size: 13px; }
@@ -580,14 +589,11 @@ footer .info li:nth-of-type(7)::after { display: none; }
     #seoulLog .title { margin-top: 5px; margin-bottom:25px; }
     #seoulLog .title span { font-size: 58px; }
     #seoulLog .subTitle span { font-size: 16px; }
-    #seoulLog .logSlide_wrap li>span { top: 115px; left: -110px; }
-    #seoulLog .logSlide_wrap li .subTitle { font-size: 13px; }
-    #seoulLog .logSlide_wrap .coffeeText,
-    #seoulLog .logSlide_wrap .strawBerryText { top: 125px; left: -120px; }
-    #seoulLog .logSlide_wrap .cheeseText { top: 110px; left: -105px; }
     #seoulLog .logSlide_wrap a { width: 90%; }
-    #seoulLog .logSlide_wrap li { width: 380px; }
-    #seoulLog .logSlide_wrap li .subTitle { width: 175px; left: 100px; bottom: 33px; }
+    #seoulLog .logSlide_wrap li { width: 350px; } 
+    #seoulLog .logSlide_wrap li>span { top: 115px; left: -110px; }
+    #seoulLog .logSlide_wrap li .subTitle { font-size: 13px; width: 175px; left: 100px; bottom: 33px; }
+ 
     
     #seoulLog .logSlide_wrap .playIcon { width: 60px; height: 60px; }
     #seoulLog .logSlide_wrap .playIcon::after { width: 20px; height: 20px; margin: 20px; }

@@ -1,8 +1,11 @@
 var pause = false;
 var sec = 0
 var click = false 
-
-
+/* Youtube API 로드*/
+ var tag = document.createElement('script');
+ tag.src = "https://www.youtube.com/iframe_api";
+ var firstScriptTag = document.getElementsByTagName('script')[0];
+ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
  
 
 $(function(){        
@@ -71,7 +74,7 @@ $(function(){
         if( sec >= 3 ) {
             sec = 0
             if(!pause) { 
-                // $('.slide_more').trigger('click')  
+                $('.slide_more').trigger('click')  
             }
         } else {
             if(!pause) {
@@ -139,7 +142,6 @@ $(function(){
         var scrollTop  = $(this).scrollTop()    
         var mainHeight = $('main #main').height() 
         var windowHeight = $(window).height()   
-        var windowWidth = $(window).width()
 
         if( scrollTop < mainHeight-windowHeight) {
             $('.slide_container').addClass('fixed') 
@@ -148,83 +150,45 @@ $(function(){
         
             if(sck =='SCROLL'){ 
                 $('#scrollbar span:nth-of-type(2)').css({ pointerEvents : 'none' })
-            }
-
-            if(windowWidth <= 768  ) {
-                $('.slide_container').removeClass('fixed') 
-            }else{
-                $('.slide_container').addClass('fixed') 
-            }
-
+            }  
         }
+
+        // 메인섹션 - 호출
+        mainResize()
     }) 
      
-
+  // 메인섹션 - 호출
     $(window).resize(function(){    
-        var windowWidth = $(window).width()
-        var windowHeight = $(window).height()    
-        var scroll  = $(this).scrollTop()   
-        var mainHeight = $('main #main').height() 
-     
-
-        // 768 사이즈보다 작고, 첫번째 구간일때
-        if( windowWidth + 17 <= 768 ) {
-            $(window).on('scroll',function(){ 
-                if( scroll >= mainHeight-windowHeight ) {
-                    $('.slide_container').removeClass('fixed') 
-                } 
-            })
-        }else{
-            $(window).on('scroll',function(){ 
-                if( scroll >= mainHeight-windowHeight ) {
-                    $('.slide_container').removeClass('fixed') 
-                }else{
-                    $('.slide_container').addClass('fixed') 
-                }
-            })
-        }
-        
-        
-        
+        mainResize() 
     })
     
-    // 스크롤 시 빨간 부분 표시
+    
     $(window).on('scroll',function(){ 
         var dHeight = $(document).height()
         var height = $(this).height()
-        var scroll  = $(this).scrollTop() 
-        console.log(scroll,'스크롤')    
-        console.log(dHeight,'도큐높이')    
-        console.log(height,'높이')    
+        var scroll  = $(this).scrollTop()  
 
-        
-            currentHeight = scroll / 37.26428571428571
-            $('#scrollbar .scrollbar_inner').css({ height : currentHeight })     
+        // 메인섹션 - 호출
+        mainResize()
 
-            console.log(currentHeight,'현재 스크롤바')
-     
-
+        // 스크롤 시 빨간 부분 표시
+        currentHeight = Math.floor( ((scroll+height) / dHeight * 100 )* 2.9)
+        $('#scrollbar .scrollbar_inner').css({ height : currentHeight })      
 
         if( scroll >= 100 ){
-            document.querySelector('#scrollbar span:nth-of-type(2)').textContent='BOTTOM'    
+            document.querySelector('#scrollbar span:nth-of-type(2)').textContent='DOWN'    
             $('#scrollbar span:first-of-type').css({ opacity:0, display: 'block' }).animate({opacity:1},1000)
         }else{
             document.querySelector('#scrollbar span:nth-of-type(2)').textContent='SCROLL' 
             $('#scrollbar span:first-of-type').css({ opacity:0, display: 'none' }).animate({opacity:1},1000)
         } 
 
+
         // fresh text - 애니메이션 구현
         var scroll  = $(this).scrollTop()    
         var mainHeight = $('main #main').height() 
         var windowHeight = $(window).height()    
-
-        if( scroll >= mainHeight-windowHeight ) {
-            $('.slide_container').removeClass('fixed') 
-            $('main #main h1.title01').addClass('animated_opacity').removeClass('fixed')    
-        }else{
-            $('.slide_container').addClass('fixed') 
-            $('main #main h1.title01 ').removeClass('animated_opacity').addClass('fixed')  
-        }
+ 
         // 2번째 섹션으로 넘어가기
         var gap = scroll - (mainHeight - windowHeight)
         if( gap < 0 ) {
@@ -320,52 +284,54 @@ $(function(){
     circle04.setProperty('--mouse-x', e.clientX);
     circle04.setProperty('--mouse-y', e.clientY);
     });
-
-
-  
-     
-var play = document.querySelectorAll('ul.logSlide_wrap li .play') 
-for( i = 0 ; i < play.length; i++ ){
-    click(i) 
-}
-
-
-
-function click(idx) {
-    play[idx].onclick = function(){  
+ 
+    // 플레이 버튼
+    $('.play').on('click', function() {
+        let idx = $('.play').index(this) 
         $(this).addClass('active')  
-        onYouTubeIframeAPIReady(idx) 
-        onPlayerReady()         
-        }
-    } 
+        $('.slide_list').addClass('active')  
 
-})  
+        // 동영상 재생
+        playerList[idx].playVideo()
+    })    
+
+
+})/* 문서 준비 이벤트(끝) */  
 
     var playList = ['3wHCprySi2I','wIVANe3FMJE','BPxSGGkwVcA','4VBQ3ySuBjA']
-    
+    var playerList = new Array();
 
-    var player =''
-    function onYouTubeIframeAPIReady(idx){  
-        player = new YT.Player('player'+idx,{    
-        videoId: playList[idx],
-        // origin : 가져올 서버의 주소를 입력
-        playerVars : { 
-            'rel': 0,
-            'loop':1,
-            'controls': 1,
-            'showinfo':0,
-            'autohide':0,
-            'modestbranding':1,
-            'frameborderz':0,
-            // 'mute':1,
-            },
-            events: {
-                'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
-                'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
-            }
-        })  
-        
-     
+    // 자동 호출 
+    // - videoId, iframe 및 옵션을 가지고 player 객체 생성하여 유튜브 동영상 화면을 준비
+    function onYouTubeIframeAPIReady(){  
+
+        let N = playList.length
+
+        for (let i = 0; i < N; i++) {
+            // 유튜브 동영상 제어하는 객체 : player
+            let player = new YT.Player('player' + i,{    
+            videoId: playList[i],
+            // origin : 가져올 서버의 주소를 입력
+            playerVars : { 
+                'rel': 0,
+                'loop':1,
+                'controls': 1,
+                'showinfo':0,
+                'autohide':0,
+                'modestbranding':1,
+                'frameborderz':0,
+                // 'mute':1,
+                },
+                events: {
+                    'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
+                    'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
+                }
+            })  
+            playerList.push(player)
+        }
+
+    }
+    
     var playerState;
     function onPlayerStateChange(event) {
         playerState = event.data == YT.PlayerState.ENDED ? '종료됨' :
@@ -374,27 +340,56 @@ function click(idx) {
                 event.data == YT.PlayerState.BUFFERING ? '버퍼링 중' :
                 event.data == YT.PlayerState.CUED ? '재생준비 완료됨' :
                 event.data == -1 ? '시작되지 않음' : '예외';
- 
 
-         
-            if(event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED ){
-        
-            $('#player'+idx).css({zIndex:-2}) 
-            console.log('동작',idx) 
+            console.log(event);
+            // div#player
+            let target = event.target.o.id
             
-            }else{
-                $('#player'+idx).css({zIndex:2})
-            }
+            // 일시중지, 종료
+            if(event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED ){
+                // 멈췄을 때, 다시 재생버튼
+                $('#' + target).parent().removeClass('active')
+                $('.slide_list').removeClass('active')
+            } 
 
         console.log('onPlayerStateChange 실행: ' + playerState);
     } 
-}    
+       
+    function onPlayerReady() { }
 
-function onPlayerReady() {
-    if (player.playVideo)
-    player.playVideo();
+    function stopVideo(){
+        player.stopVideo()
     }
 
-function stopVideo(){
-    player.stopVideo()
-}
+
+    // 메인 섹션 - 리사이징 768 이하 및 이상 일때 반응형 적용
+    function mainResize(){
+        var windowWidth = $(window).width()
+        var windowHeight = $(window).height()    
+        var scroll  = $(this).scrollTop()   
+        var mainHeight = $('main #main').height() 
+        console.log(windowWidth+17)
+     
+
+        // 768 사이즈보다 작고, 첫번째 구간일때
+        if( windowWidth + 17 <= 768 ) { 
+            if( scroll >= mainHeight-windowHeight ) {
+                $('.slide_container').removeClass('fixed')
+                $('main #main h1.title01').removeClass('animated_opacity').removeClass('fixed') 
+                console.log('동작')
+            }else{
+                $('.slide_container').removeClass('fixed') 
+                $('main #main h1.title01').removeClass('animated_opacity').removeClass('fixed') 
+                console.log('동작222')
+            }
+        
+        }else{
+            if( scroll >= mainHeight-windowHeight ) {
+                $('.slide_container').removeClass('fixed') 
+                $('main #main h1.title01').addClass('animated_opacity').removeClass('fixed') 
+            }else{
+                $('.slide_container').addClass('fixed') 
+                $('main #main h1.title01').removeClass('animated_opacity').addClass('fixed') 
+            }
+        } 
+    }
