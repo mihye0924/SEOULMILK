@@ -569,9 +569,8 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .subTitle span { font-size: 2.7vw; }
     #seoulLog .logSlide_wrap li .subTitle { font-size: 15px; bottom: 40px; left:120px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 60%; }
     #seoulLog .logSlide_wrap li>span { left: -110px; }
-    #seoulLog .logSlide_wrap .coffeeText { top: 123px; left: -125px; }
-    #seoulLog .logSlide_wrap .strawBerryText { top: 120px; left: -120px; }
-    #seoulLog .logSlide_wrap .cheeseText { top: 105px; left: -105px; }
+    #seoulLog .logSlide_wrap .coffeeText { top: 122px; left: -120px; }
+    #seoulLog .logSlide_wrap .strawBerryText { top: 120px; left: -120px; } 
     
     /* 푸터 */
     footer .content { width: 80%; padding: 10vw 0; display: grid;  }
@@ -659,7 +658,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .subTitle span { font-size: 16px; }
     #seoulLog .logSlide_wrap a { width: 90%; }
     #seoulLog .logSlide_wrap li { width: 350px; } 
-    #seoulLog .logSlide_wrap li>span { top: 115px; left: -110px; }
+    #seoulLog .logSlide_wrap li>span { width: 270px; top: 125px; left: -120px; }
     #seoulLog .logSlide_wrap li .subTitle { font-size: 13px; width: 175px; left: 100px; bottom: 33px; }
     #seoulLog .logSlide_wrap .playIcon { width: 60px; height: 60px; }
     #seoulLog .logSlide_wrap .playIcon::after { width: 20px; height: 20px; margin: 20px; }
