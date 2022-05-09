@@ -55,7 +55,10 @@
             <div class="scrollbar_inner"></div>  
         </div>
     </div> 
- 
+
+
+
+
     <!-- 뒷배경 -->
     <div id="bg"></div>
 
@@ -84,15 +87,27 @@
                     <span>서울우유</span>
                 </a> 
             </div>
-            <div class="inner">  
-               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 120 80" xml:space="preserve">
-                 
-                <path class="search st0" d="M58.67,32.78c0,6.15-2.07,11.83-5.55,16.36c-4.92,6.4-12.65,10.53-21.34,10.53
-                    c-14.85,0-26.89-12.04-26.89-26.89S16.93,5.89,31.78,5.89S58.67,17.93,58.67,32.78z"/>
-                <line class="search st1" x1="51.89" y1="51.22" x2="75.33" y2="74.67"/>
-                </svg>   
-                 
+            <div class="inner"> 
+
+                <div class="star">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 80 80" xml:space="preserve">
+                    <polygon class="star st0" points="42.2,12.7 50.9,30.3 70.3,33.1 56.3,46.8 59.6,66.2 42.2,57 24.9,66.2 28.2,46.8 14.1,33.1 33.5,30.3"/>
+                    </svg>
+                </div>
+                <div class="search">
+                <a href="#">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 80 80" xml:space="preserve">
+                
+                    <path class="search st0" d="M58.67,32.78c0,6.15-2.07,11.83-5.55,16.36c-4.92,6.4-12.65,10.53-21.34,10.53
+                        c-14.85,0-26.89-12.04-26.89-26.89S16.93,5.89,31.78,5.89S58.67,17.93,58.67,32.78z"/>
+                    <line class="search st1" x1="51.89" y1="51.22" x2="75.33" y2="74.67"/>
+                    </svg>
+                </a>
+                </div>
+               
+
                 <div class="gnbBtn">
                     <div class="openBtn">
                         <span class="top"></span>
@@ -103,6 +118,28 @@
             </div>
         </div> 
     </header>
+
+    <input type="checkbox" name="star_popup" id="star_popup">   
+    <div id="star_bg">
+        <div class="star_popup">
+            <div class="purchaseBox">
+                <span>나 100샵</span>
+                <span>오랫동안 사랑받아온<br> 서울우유,</span>
+                <!-- <img src="./img/me100shop.jpg" alt=""> -->
+                <a href="#">
+                    <span>GO</span>
+                </a>
+            </div>
+            <div class="deliveryBox">
+                <span>가정배달</span>
+                <span>고객들을 위한<br>배달서비스</span>
+                <!-- <img src="./img/me100shop.jpg" alt=""> -->
+                <a href="#">
+                    <span>GO</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- 사이드메뉴 -->
     <input type="checkbox" name="gnb_bg" id="gnb_bg">  
@@ -154,7 +191,7 @@
                     <div class="fixedBox">
                         <div class="slide_container">
                                 <div class="slide_wrap"> 
-                                    <div class="slide_content">
+                                    <div class="slide_content yogurt">
                                         <a href="#"><img src="./img/slideImg01.jpg" alt=""></a>
                                         <div class="textBox">
                                             <div class="title_inner">
@@ -176,7 +213,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="slide_content">
+                                    <div class="slide_content strawBerry">
                                         <a href="#"><img src="./img/slideImg03.jpg" alt=""></a>
                                         <div class="textBox">
                                             <div class="title_inner">

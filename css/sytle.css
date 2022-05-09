@@ -11,29 +11,58 @@ address, em, i {font-style: normal;}
 }  
 /* 텍스트 애니메이션 적용 */
 .motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
- 
-
-
 :root { --color: #E00909; --font:'NotoSansKR', sans-serif; }
 body, textarea:focus, input:focus, a:focus { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+/* 사이드 - 스크롤바 */
 #scrollbar { mix-blend-mode: difference; z-index: 4; position: fixed; bottom: 30px; right: 30px; width:30px; height: 410px;  }
 #scrollbar .scrollbar_right { margin: 50px auto; overflow: hidden; z-index: 2; width: 5px; height: 290px; background-color: rgba(233, 233, 233, 0.567); border-radius: 25px; }
 #scrollbar .scrollbar_right .scroll_text { display: flex; align-items: center; position:absolute; width: 410px; height: 30px; top: 190px; right: -192px; transform: rotate(90deg); font-size: 15px; font-weight: 900; }
-#scrollbar .scrollbar_right .scroll_text span:first-of-type { cursor: pointer; display: none; color: #00fff3; letter-spacing: 0; }
-#scrollbar .scrollbar_right .scroll_text span:last-of-type { cursor: pointer; position: absolute; right: 0; color: #00fff3; letter-spacing: 1px; }
-#scrollbar .scrollbar_right .scrollbar_inner { z-index: 3; top: 0; right: 0; width: 5px; height: 21px; background-color: #00fff3;  border-radius: 25px; }
- 
+#scrollbar .scrollbar_right .scroll_text span:first-of-type { cursor: pointer; display: none; color: #1bf9ef; letter-spacing: 0; }
+#scrollbar .scrollbar_right .scroll_text span:last-of-type { cursor: pointer; position: absolute; right: 0; color: #1bf9ef; letter-spacing: 1px; }
+#scrollbar .scrollbar_right .scrollbar_inner { z-index: 3; top: 0; right: 0; width: 5px; height: 21px; background-color: #1bf9ef;  border-radius: 25px; }
+#scrollbar.active { display: none; }
+
 /* header */
 #smoothScroll { top: 0; right: 0; bottom: 0; left: 0; overflow: scroll; } 
 #bg { width: 100vw; height: 100vh; position: fixed; background: url(../img/bg.jpg) no-repeat; background-size: cover; }
-header {  mix-blend-mode: difference; z-index: 5; position: fixed; width: 100%; height: 80px; /* background-color: #fff; */ }
+header {  mix-blend-mode: difference; z-index: 6; position: fixed; width: 100%; height: 80px; /* background-color: #fff; */ }
 header #header_wrap { display: flex; justify-content: space-between; align-items: center; width: 90%; height: 80px; margin: 0 auto; }
 header .logo { width: 160px; height: 80px; }
 header .logo a {  display: flex; justify-content: space-between; align-items: center;  }
-header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180px; font-size: 20px; color: #00fff3;  }
-.logo.st0{fill:#000000;} 
-.logo.st1{fill:#00fff3;} 
+header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180px; font-size: 20px; color: #1bf9ef;  }
+header .logo.st0 {fill:#000000;} 
+header .logo.st1 {fill:#1bf9ef;} 
+header .inner { display: flex; width: 127px; justify-content: space-between; align-items: center; } 
+header .search { width: 30px; height: 30px; }
+header .search.st0{fill:none; stroke:#1bf9ef; stroke-width:7; stroke-miterlimit:10; }
+header .search.st1{fill:none; stroke:#1bf9ef; stroke-width:7; stroke-miterlimit:10; } 
 
+header .star { width: 38px; height: 41px; }
+header .star .st0 { fill:none; stroke:#1bf9ef; stroke-width:5; stroke-miterlimit:10; }
+input#star_popup { position: relative; z-index: 5; display: none; }
+input#star_popup:checked ~ #star_bg {  display: block; }
+#star_bg { display: none; z-index: 5; position: fixed; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.699); }
+#star_bg .star_popup { position: absolute; bottom: 50px; right: 50px; }
+#star_bg .star_popup .purchaseBox,
+#star_bg .star_popup .deliveryBox { position: relative; width: 175px; height: 175px; margin: 7px auto; box-shadow: 5px 5px 15px rgba(88, 88, 88, 0.404); border-radius: 15px; background-color: #fff; }
+#star_bg .star_popup  a { display: block; position: absolute; bottom: 10px; right: -10px; transform: translateX(-50%); }
+#star_bg .star_popup span { display: block; padding: 45px 0 0 0; font-size: 18px; font-weight: 900; text-align: center; color: #006546; }
+#star_bg .star_popup span:nth-of-type(2) { display: block; padding: 15px 0 0 0; font-size: 14px; font-weight: 900; text-align: center; color: #006546; }
+#star_bg .star_popup span:last-child { display: block; width: 35px; height: 35px; line-height: 22px; padding: 5px 10px; background-color: #006546; color: #fff; border-radius: 25px; text-align: center; font-size: 12px; }
+#star_bg .star_popup img { width: 245px; display: block; margin: 15px auto; }
+ 
+
+
+header .gnbBtn .openBtn { position: relative; width: 35px; height: 20px; }
+header .gnbBtn .openBtn .top { display: block; position: absolute; top: 0; right: 0; width: 30px; height: 3px; border-radius: 25px; background-color: #1bf9ef; }
+header .gnbBtn .openBtn .center { display: block; position: absolute; top: 9px; right: 0; width: 25px; height: 3px; border-radius: 25px; background-color: #1bf9ef; }
+header .gnbBtn .openBtn .bottom { display: block; position: absolute; bottom: 0px; right: 0; width: 30px; height: 3px; border-radius: 25px; background-color: #1bf9ef; }
+
+
+/* 메뉴 버튼 */
+input#gnb_bg { position: relative; z-index: 5; display: none; }
+input#gnb_bg:checked ~ #gnbMenu { animation: gnbBg 0.8s ease-out; display: block; }
 #gnbMenu { display: none; position: fixed; z-index: 4; width: 100%; height: 100vh; }
 #gnbMenu .innerBg { position: relative; width: 100%; height: 100%; background-color: #ff1c1c33;  }
 #gnbMenu img { object-fit: cover; position: absolute; top: 0; z-index: -1; width: 100%; height:100% } 
@@ -56,30 +85,13 @@ header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180
 #gnbMenu .gnb li.seoulLog.hover a { animation: outline 0.2s linear forwards;  }
 #gnbMenu .gnb li.promotionEvent.hover a { animation: outline 0.2s linear forwards;  }
 @keyframes outline { 0%{ top: 0; } 100%{ top: -55px;} }
-
-/* 텍스트 애니메이션 적용 */ 
-.story .motion { animation-name:text70; animation-delay: 200ms; }
-.product .motion { animation-name:text70; animation-delay: 400ms; }
-.seoulLog .motion { animation-name:text70; animation-delay: 600ms; }
-.promotionEvent .motion { animation-name:text70; animation-delay: 800ms; }
-
-
-/* gnb버튼 */
-header .inner { display: flex; width: 90px; justify-content: space-between; align-items: center; } 
-.search.st0{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10; }
-.search.st1{fill:none; stroke:#00fff3; stroke-width:7; stroke-miterlimit:10; } 
-header .gnbBtn .openBtn { position: relative; width: 35px; height: 20px; }
-header .gnbBtn .openBtn .top { display: block; position: absolute; top: 0; right: 0; width: 30px; height: 3px; border-radius: 25px; background-color: #00fff3; }
-header .gnbBtn .openBtn .center { display: block; position: absolute; top: 9px; right: 0; width: 25px; height: 3px; border-radius: 25px; background-color: #00fff3; }
-header .gnbBtn .openBtn .bottom { display: block; position: absolute; bottom: 0px; right: 0; width: 30px; height: 3px; border-radius: 25px; background-color: #00fff3; }
-input#gnb_bg { position: relative; z-index: 5; display: none; }
-input#gnb_bg:checked ~ #gnbMenu { animation: gnbBg 0.8s ease-out; display: block; }
-header.active { mix-blend-mode: unset; }
+header.active { mix-blend-mode: unset; } 
 header.active .logo.st0 { fill: transparent; }
 header.active .logo.st1 { fill: #fff; }
 header.active .search.st0,
-header.active .search.st1 { stroke: #fff; }
+header.active .search.st1 { stroke: #fff; } 
 header.active .logo span { color: #fff; }
+header.active .star { stroke: #fff; }
 header.active .openBtn .top,
 header.active .openBtn .center,
 header.active .openBtn .bottom { background-color: #fff; } 
@@ -96,8 +108,15 @@ header .openBtn.close .bottom { animation: gnbBottom-02 0.8s linear forwards; }
 @keyframes gnbTop-02 { 0%{ top: 8px; transform: rotate(-45deg); } 100%{ top: 0; transform: rotate(0deg);} }
 @keyframes gnbCetner-02 { 0%{ width: 0; } 100%{ width: 25px; } }
 @keyframes gnbBottom-02 { 0%{ bottom:8px; transform: rotate(45deg); } 100%{ bottom: 0; transform: rotate(0deg);} }
-#scrollbar.active { display: none; }
- 
+
+/* 텍스트 애니메이션 적용 */ 
+.story .motion { animation-name:text70; animation-delay: 200ms; }
+.product .motion { animation-name:text70; animation-delay: 400ms; }
+.seoulLog .motion { animation-name:text70; animation-delay: 600ms; }
+.promotionEvent .motion { animation-name:text70; animation-delay: 800ms; }
+
+  
+
 /* main */ 
 #redBg_wrap { opacity: 0; width: 100%; height: 100%; position: absolute; background-color: var(--color); }
 main #main .inner { display: flex; justify-content: space-between; }
@@ -109,8 +128,8 @@ main #main h1.title01.animated_opacity { animation: opacity 1s linear; opacity: 
 main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; color: transparent; -webkit-text-stroke: 1px var(--color); }
 main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; margin-left: 50px; } 
 main #main .fixedBox { width: 58%; height: 100vh; }
-main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:55%; height: 935px; overflow: hidden; } 
-main #main .slide_container.fixed { position: fixed; height: 935px; }
+main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:55%; height: 33.8%; overflow: hidden; } 
+main #main .slide_container.fixed { position: fixed; height: 100%; }
 main #main .slide_wrap { display: flex; width: 300% !important; height: 100%; position: absolute; padding-top: 28%; bottom: 0; }
 main #main .slide_wrap .slide_content { position: relative; width: 100%; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
@@ -121,7 +140,7 @@ main #main .slide_wrap .slide_content .textBox .subTitle_inner { position: relat
 main #main .slide_wrap .slide_content .textBox span.subTitle { position: absolute; bottom: -80px; font-size: 1.8vw; letter-spacing: -4px; font-weight: 900; color: #fff; }
 main #main .slide_bar { position: absolute; bottom: 0; left: 0; margin: 0 0 65px 6%; }
 main #main .slide_bar span { color: #fff; }
-main #main .slide_bar .slide_prograss {  position: relative; top: 0; display: inline-block; margin: 0 10px; width: 280px; height: 8px; background-color: var(--color); border-radius: 25px; overflow: hidden;  }
+main #main .slide_bar .slide_prograss {  position: relative; top: -3px; display: inline-block; margin: 0 10px; width: 280px; height: 5px; background-color: var(--color); border-radius: 25px; overflow: hidden;  }
 main #main .slide_bar .slide_prograss .slide_prograss_inner { position: absolute; top: -5px;  width: 0px; height: 18px; background-color: #fff; }
 main #main .slide_bar .slide_prograss .slide_prograss_inner.animate { animation: timer 3s linear; animation-iteration-count: infinite; } 
 main #main .slide_bar .slide_prograss .slide_prograss_inner.pause { animation-play-state: paused; } 
@@ -354,8 +373,11 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
 @media ( max-width: 1500px) {
     a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 14px; color: var(--color); }
 
+    /* 사이드메뉴 */
     #gnbMenu .gnb li.story.hover a { animation: outline 0.2s linear forwards;  }
     @keyframes outline { 0%{ top: 0; } 100%{ top: -55px;} }
+
+    /* 섹션 - 메인 */
     main #main h1.title01 { margin-top: 5.8vw; }
     main #main h1.title01 span:first-of-type { font-size: 15vw; }
     main #main h1.title01 span:last-of-type { font-size: 15vw; }
@@ -371,7 +393,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 45px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 2.2vw; }
    
-   
+    /* 섹션 - 제품 */
     .content { width: 95%; } 
     #product .autoText  { font-size: 10vw; } 
     #product .content .textBox { padding: 3vw; }
@@ -383,6 +405,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #product .content .productBox .productTitle { font-size: 3.5vw; } 
     #product .content .productBox img { height: 365px; }
 
+    /* 섹션 - 스토리 */
     #story_wrap .textBox .mainTitle { font-size: 55px; } 
     #story_wrap .textBox button { width: 160px; height: 35px; }
     #story_wrap .textBox button span::after { top: -1px; }
@@ -392,6 +415,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #story_wrap .imgBox .img { width: 250px; height: 250px; }
     #story_wrap .imgBox .text { width: 250px; } 
 
+    /* 섹션 - 사랑하는 이유 */
     #seoulLove .content { padding: 55vw 0; }
     #seoulLove .textOuter span:first-child,
     #seoulLove .textOuter span:last-child { font-size: 16vw; } 
@@ -402,6 +426,8 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLove .circle04 { bottom: 35vw; right: -8vw; }
     #seoulLove .circle01, #seoulLove .circle03 { width: 250px; height: 250px; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 155px; height: 155px; }
+
+    /* 섹션 - 서울로그 */
     #seoulLog .logSlide_wrap { height: 420px; }
     #seoulLog .logSlide_wrap a { width: 93%; height: 420px;  } 
     #seoulLog .logSlide_wrap li { width: 50vw; height: 420px; }
@@ -411,13 +437,14 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
 
 @media ( max-width: 1024px) {  
 
+    /* 사이드 메뉴 */
     #gnbMenu .gnb li { height: 45px; }
     #gnbMenu .gnb li a { font-size: 34px; height: 45px; }
     #gnbMenu .gnb li.story.hover a { animation: outline 0.2s linear forwards;  }
-    @keyframes outline { 0%{ top: 0; } 100%{ top: -45px;} }
-
+    @keyframes outline { 0%{ top: 0; } 100%{ top: -45px;} } 
     #gnbMenu .gnbFooter { width: 97%; } 
-    main #main h1.title01 { margin-top: 10vw; }
+
+    /* 섹션 - 메인 */ 
     main #main .scroll_wrap { margin: 30vw 0 120px 0; width: 45%; } 
     main #main .scroll_wrap .imgBox { width: 315px; height: 510px; }
     main #main .scroll_wrap .imgBox img { width: 285px; height: 430px; }  
@@ -427,7 +454,11 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .slide_wrap .slide_content .textBox { height: 110px; } 
     main #main .slide_wrap .slide_content .textBox span.title { font-size: 3.6vw; } 
     main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 2.8vw; }
+    main #main .slide_wrap .slide_content.yogurt img { object-position: 55%;}
+    main #main .slide_wrap .slide_content.slideCoffee img { object-position: 30%;}
+    main #main .slide_wrap .slide_content.strawBerry img { object-position: 65%;}
   
+    /* 섹션 - 제품 */
     #product .content .productBox li { height: 425px; }
     #product .content .productBox .productCategory { font-size: 2vw; margin: 2.5vw 0 0 15px; }
     #product .content .productBox .productSubTitle { margin-top: 8vw; }
@@ -435,6 +466,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #product .content .productBox .productTitle { font-size: 4.3vw; } 
     #product .content .productBox img { width: 295px; height: 295px; }
 
+    /* 섹션 - 스토리 */
     #story_wrap .inner { margin-top: 20vw; }
     #story_wrap .imgBox { flex-wrap: wrap; width: 90%; }
     #story_wrap .imgBox .img { width: 280px; height: 280px; }
@@ -442,12 +474,14 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #story_wrap .imgBox .text span:first-of-type { font-size: 18px; margin: 0 0 30px 0; }
     #story_wrap .imgBox li:nth-of-type(3) { margin-top: 80px; }
 
+    /* 섹션 - 사랑하는 이유 */
     #seoulLove .content { padding: 60vw 0; }
     #seoulLove .textInner .seoulMilkReason span { font-size: 55px; } 
     #seoulLove .textOuter span:first-child, #seoulLove .textOuter span:last-child { font-size: 22vw; }
     #seoulLove .circle01, #seoulLove .circle03 { width: 200px; height: 200px; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 100px; height: 100px; }
     
+    /* 섹션 - 서울로그 */
     #seoulLog .content { margin: 15vw auto; }
     #seoulLog .subTitle span { font-size: 18px; }
     #seoulLog .title { margin-bottom: 50px; margin-top: 10px; }
@@ -460,19 +494,20 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
   
 } 
 @media ( max-width:768px) {  
-    main #main h1.title01 { width: 100%; margin-top: 0; margin: 20vw auto 0 auto; justify-content: center; } 
+    /* 섹션 - 메인 */
+    main #main h1.title01 { width: 100%; margin-top: 0; margin: 15vw auto 0 auto; justify-content: center; }
     main #main h1.title01 span:first-of-type { font-size: 110px; letter-spacing: -6px; margin-left: 0; }
-    main #main h1.title01 span:last-of-type { font-size: 110px; letter-spacing: -6px; margin-left: 20px; }
-    main #main .fixedBox { width: 100%; height: 85vh; }
-    main #main .slide_container { position: relative; bottom: initial; top: 37vw; width: 100%; height: 510px; } 
+    main #main h1.title01 span:last-of-type { font-size: 110px; letter-spacing: -6px; margin-left: 10px; }
+    main #main .fixedBox { width: 100%; height: 85vh; } 
+    main #main .slide_container { position: relative; bottom: initial; top: 32vw; width: 100%; height: 510px; } 
     main #main .slide_bar { margin: 0 0 55px 6%; } 
     main #main .slide_more { top: 40%; }  
     main #main .inner { flex-wrap: wrap; flex-direction: column; }
     main #main .slide_wrap { padding: 0; }
     main #main .slide_wrap .slide_content { height: 510px; }
     main #main .slide_wrap .slide_content .textBox { margin: 0 0 90px 6%; }
-    main #main .slide_wrap .slide_content .textBox span.title { font-size: 6vw; }
-    main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 3.8vw; }
+    main #main .slide_wrap .slide_content .textBox span.title { font-size: 5vw; letter-spacing: -4px; }
+    main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 3.2vw; letter-spacing: -2px; }
     main #main .scroll_wrap { width: 90%; margin: 25vw auto 120px auto; }
     main #main .scroll_wrap .imgBox { width: 345px; }
     main #main .scroll_wrap .imgBox img { width: 310px; }
@@ -483,14 +518,21 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
 @media ( max-width:730px) {  
     a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 13px; color: var(--color); }
     
+    /* 사이드 바 */
     #scrollbar { display: none; }
+    
+    /* 사이드 메뉴 */
     #gnbMenu .gnb li { height: 40px; }
     #gnbMenu .gnb li a { font-size: 28px; height: 40px; }
     @keyframes outline { 0%{ top: 0; } 100%{ top: -40px;} }
     #gnbMenu .gnbFooter { width: 95%; }
  
+    /* 섹션 - 메뉴 */
+    main #main h1.title01 { width: 100%; margin-top: 0; margin: 15vw auto 0 auto; justify-content: center;  } 
     main #main h1.title01 span:first-of-type,
-    main #main h1.title01 span:last-of-type { font-size: 13vw; }
+    main #main h1.title01 span:last-of-type { font-size: 13vw; letter-spacing: -4px; }
+
+    /* 섹션 - 제품 */
     #product .autoText { font-size: 12vw; }
     #product .content .titleBox .title span { font-size: 5vw; }
     #product .content .subTitle span { font-size: 2.7vw; }
@@ -505,20 +547,24 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #product .content .productBox .moreBox { margin: 5vw; } 
     #product .content .productBox img { height: 235px; }
 
+    /* 섹션 - 스토리  */
     #story_wrap .textBox .topTitle,
     #story_wrap .textBox .bottomTitle { font-size: 2.7vw; }
     #story_wrap .textBox .mainTitle { font-size: 7vw; } 
     #story_wrap .imgBox { flex-wrap: wrap; justify-content: center; width: 85%; }
     #story_wrap .imgBox .text { width: 350px; }
     #story_wrap .imgBox .img { width: 350px; height: 350px; } 
+    #story_wrap .textBox .topTitle, #story_wrap .textBox .bottomTitle { font-size: 2.7vw; font-weight: 900; }
     
+    /* 섹션 - 사랑하는 이유 */
     #seoulLove .content { padding: 90vw 0; }
     #seoulLove .textInner .seoulMilkReason span { font-size: 7vw; }
-    #story_wrap .textBox .topTitle, #story_wrap .textBox .bottomTitle { font-size: 2.7vw; font-weight: 900; }
     #seoulLove .textOuter span:first-child { position: absolute; top: 250px; right: -10px; }
     #seoulLove .textOuter span:last-child { position: absolute; left: -20px; bottom: 215px; }
     #seoulLove .circle01, #seoulLove .circle03 { width: 150px; height: 150px; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 80px; height: 80px; }
+    
+    /* 섹션 - 서울로그 */
     #seoulLog .title span { font-size: 10vw; }
     #seoulLog .subTitle span { font-size: 2.7vw; }
     #seoulLog .logSlide_wrap li .subTitle { font-size: 15px; bottom: 40px; left:120px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 60%; }
@@ -527,6 +573,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .logSlide_wrap .strawBerryText { top: 120px; left: -120px; }
     #seoulLog .logSlide_wrap .cheeseText { top: 105px; left: -105px; }
     
+    /* 푸터 */
     footer .content { width: 80%; padding: 10vw 0; display: grid;  }
     footer .rightBox { width: 100%; margin: 0 auto; }
     footer .sns_wrap { float: right; }
@@ -548,29 +595,35 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
  
 
 @media (max-width:486px) {  
-    #scrollbar { right: 15px; }
-    #scrollbar .scrollbar_right .scroll_text span:last-of-type { letter-spacing: 0; }
- 
+    /* 스크롤 바 */
+    #scrollbar { display: none; } 
+    
+    /* 섹션 - 메인 */
+    main #main h1.title01 { margin: 20vw auto 0 auto; }
     main #main h1.title01 span:first-of-type,
-    main #main h1.title01 span:last-of-type { font-size: 14vw; margin-left: 10px; letter-spacing: -2px; }
+    main #main h1.title01 span:last-of-type { font-size: 14vw; letter-spacing: -2px; }
+    main #main .slide_container { top:40vw; }
     main #main .scroll_wrap .imgBox { width: 325px; height: 525px; float: unset; margin: 0 auto; }
     main #main .scroll_wrap .imgBox a { display: block; }  
     main #main .scroll_wrap .imgBox img { width: 290px; height: 445px; }
     main #main .scroll_wrap .imgBox .bottomText { width: 290px; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
+    main #main .scroll_wrap .imgBox.img02 { float: unset; } 
+    main #main .slide_wrap .slide_content .textBox { height: 65px; margin: 0 0 105px 6%; }
+    main #main .slide_wrap .slide_content .textBox .title_inner { height: 30px; }
+    main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 35px; }
     main #main .slide_wrap .slide_content .textBox span.title { letter-spacing: -3px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { letter-spacing: -2px; }
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
     main #main .slide_bar .slide_prograss { width: 260px; }
-    main #main .scroll_wrap .imgBox.img02 { float: unset; } 
-
-
+    /* 섹션 -제품 */
     #product .content .titleBox .title span { font-size: 22px; }
     #product .content .subTitle span { font-size: 13px; }
     #product .content .productBox .productTitle { font-size: 28px; }
     #product .content .productBox .productSubTitle { letter-spacing: -1px; margin-top: 12vw; }
     #product .content .productBox .productCategory { font-size: 14px; margin: 15px 0 0 15px; }
     
+    /* 섹션 - 스토리 */
     .content { width: 90%; padding: 40vw 0; }
     #seoulLog .content,
     #story_wrap .imgBox { width: 90%; }  
@@ -580,12 +633,15 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #story_wrap .textBox button { width: 135px; height: 30px; margin-top: 65px; }
     #story_wrap .textBox button span { margin-left: 15px; }
     #story_wrap .textBox button span::after { width: 20px; height: 20px; right: -25px; }
+   
+    /* 섹션 - 서울사랑하는 이유 */
     #seoulLove .content { width: 90%; padding: 105vw 0; }
     #seoulLove .textInner .seoulMilkReason { height: 140px; }
     #seoulLove .textInner .seoulMilkReason span { font-size: 34px; }
     #seoulLove .textOuter span:last-child { bottom: 240px; }
     #seoulLove .textInner .text01 span, #seoulLove .textInner .text02 span, #seoulLove .textInner .text03 span { font-size: 13px; letter-spacing: -1px; }
     
+    /* 섹션 - 서울로그 */
     #seoulLog .title { margin-top: 5px; margin-bottom:25px; }
     #seoulLog .title span { font-size: 58px; }
     #seoulLog .subTitle span { font-size: 16px; }
@@ -593,10 +649,10 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .logSlide_wrap li { width: 350px; } 
     #seoulLog .logSlide_wrap li>span { top: 115px; left: -110px; }
     #seoulLog .logSlide_wrap li .subTitle { font-size: 13px; width: 175px; left: 100px; bottom: 33px; }
- 
-    
     #seoulLog .logSlide_wrap .playIcon { width: 60px; height: 60px; }
     #seoulLog .logSlide_wrap .playIcon::after { width: 20px; height: 20px; margin: 20px; }
+ 
+    /* 푸터 */
     footer .sns { width: 190px; float: right; }
     footer .content { width: 90%; }
     footer .rightBox { width: 100%; }
