@@ -4,6 +4,10 @@ li { list-style: none; }
 a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; letter-spacing: -1px; font-size: 15px; color: var(--color); }
 a img {border: none;} 
 address, em, i {font-style: normal;}
+body { overflow-x: hidden; } 
+.cursor { width: 50px; height: 50px; border: 2px solid #1bf9ef; border-radius: 50%; position: absolute; z-index: 1000; transform: translate(-50%, -50%); pointer-events: none; transition: all 0.3s ease; 
+transform-origin: 100% 100%; background-color: #1bf9ef; mix-blend-mode: difference; background-size: cover; }
+a { cursor: none; }
 
 @font-face {
     font-family: 'SEOULMILK 1000mL';
@@ -12,14 +16,14 @@ address, em, i {font-style: normal;}
 /* 텍스트 애니메이션 적용 */
 .motion { animation-duration: 1000ms; animation-fill-mode: forwards; background-repeat: no-repeat; } 
 :root { --color: #E00909; --font:'NotoSansKR', sans-serif; }
-body, textarea:focus, input:focus, a:focus { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+body, textarea:focus, input:focus, a:focus { cursor: none; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
 /* 사이드 - 스크롤바 */
-#scrollbar { mix-blend-mode: difference; z-index: 4; position: fixed; bottom: 30px; right: 30px; width:30px; height: 410px;  }
+#scrollbar { mix-blend-mode: difference; z-index: 4; position: fixed; bottom: 30px; right: 10px; width:30px; height: 410px;  }
 #scrollbar .scrollbar_right { margin: 50px auto; overflow: hidden; z-index: 2; width: 5px; height: 290px; background-color: rgba(233, 233, 233, 0.567); border-radius: 25px; }
 #scrollbar .scrollbar_right .scroll_text { display: flex; align-items: center; position:absolute; width: 410px; height: 30px; top: 190px; right: -192px; transform: rotate(90deg); font-size: 15px; font-weight: 900; }
-#scrollbar .scrollbar_right .scroll_text span:first-of-type { cursor: pointer; display: none; color: #1bf9ef; letter-spacing: 0; }
-#scrollbar .scrollbar_right .scroll_text span:last-of-type { cursor: pointer; position: absolute; right: 0; color: #1bf9ef; letter-spacing: 1px; }
+#scrollbar .scrollbar_right .scroll_text span:first-of-type { display: none; color: #1bf9ef; letter-spacing: 0; }
+#scrollbar .scrollbar_right .scroll_text span:last-of-type { position: absolute; right: 0; color: #1bf9ef; letter-spacing: 1px; }
 #scrollbar .scrollbar_right .scrollbar_inner { z-index: 3; top: 0; right: 0; width: 5px; height: 21px; background-color: #1bf9ef;  border-radius: 25px; }
 #scrollbar.active { display: none; }
 
@@ -52,8 +56,7 @@ input#star_popup:checked ~ #star_bg {  display: block; }
 #star_bg .star_popup span:last-child { display: block; width: 35px; height: 35px; line-height: 22px; padding: 5px 10px; background-color: #006546; color: #fff; border-radius: 25px; text-align: center; font-size: 12px; }
 #star_bg .star_popup img { width: 245px; display: block; margin: 15px auto; }
  
-
-
+ 
 header .gnbBtn .openBtn { position: relative; width: 35px; height: 20px; }
 header .gnbBtn .openBtn .top { display: block; position: absolute; top: 0; right: 0; width: 30px; height: 3px; border-radius: 25px; background-color: #1bf9ef; }
 header .gnbBtn .openBtn .center { display: block; position: absolute; top: 9px; right: 0; width: 25px; height: 3px; border-radius: 25px; background-color: #1bf9ef; }
@@ -128,12 +131,12 @@ main #main h1.title01.animated_opacity { animation: opacity 1s linear; opacity: 
 main #main h1.title01 span:first-of-type { position: relative; top: 0; font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; color: transparent; -webkit-text-stroke: 1px var(--color); }
 main #main h1.title01 span:last-of-type { font-family: 'Archivo', sans-serif; font-size: 12.8vw; letter-spacing: -10px; margin-left: 50px; } 
 main #main .fixedBox { width: 58%; height: 100vh; }
-main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:55%; height: 33.8%; overflow: hidden; } 
-main #main .slide_container.fixed { position: fixed; height: 100%; }
+main #main .slide_container { z-index: 2; position: absolute; bottom: 0; width:55%; height: 100vh; overflow: hidden; } 
+main #main .slide_container.fixed { position: fixed; }
 main #main .slide_wrap { display: flex; width: 300% !important; height: 100%; position: absolute; padding-top: 28%; bottom: 0; }
 main #main .slide_wrap .slide_content { position: relative; width: 100%; }
 main #main .slide_wrap .slide_content img { width: 100%; height: 100%; object-fit: cover; }
-main #main .slide_wrap .slide_content .textBox { position: absolute; left: 0; bottom: 0; margin:0 0 110px 6%; width: 80%; height: 120px;  }
+main #main .slide_wrap .slide_content .textBox { position: absolute; left: 0; bottom: 0; margin:0 0 110px 6%; width: 90%; height: 120px;  }
 main #main .slide_wrap .slide_content .textBox .title_inner { position: relative; overflow: hidden; height: 65px; }
 main #main .slide_wrap .slide_content .textBox span.title { position: absolute; bottom: -125px;  font-size: 2.4vw; font-weight: 900; letter-spacing: -6px; color: #fff; }
 main #main .slide_wrap .slide_content .textBox .subTitle_inner { position: relative; overflow: hidden; height: 50px; margin: 0.3vw 0 0 0; }
@@ -144,7 +147,7 @@ main #main .slide_bar .slide_prograss {  position: relative; top: -3px; display:
 main #main .slide_bar .slide_prograss .slide_prograss_inner { position: absolute; top: -5px;  width: 0px; height: 18px; background-color: #fff; }
 main #main .slide_bar .slide_prograss .slide_prograss_inner.animate { animation: timer 3s linear; animation-iteration-count: infinite; } 
 main #main .slide_bar .slide_prograss .slide_prograss_inner.pause { animation-play-state: paused; } 
-main #main .slide_more { cursor: pointer; position: absolute; width: 80px; height: 80px; top: 60%; left: 6%; border-radius: 50%; border:1px solid #fff; }
+main #main .slide_more { position: absolute; width: 80px; height: 80px; top: 60%; left: 6%; border-radius: 50%; border:1px solid #fff; }
 main #main .slide_more:hover { animation: sizeUp 0.3s ease-in; animation-fill-mode: forwards; }
 @keyframes sizeUp { 0%{ transform: scale(1); } 100%{ transform:scale(1.2);} }
 main #main .slide_more .slide_line { position: absolute; right: 0; width: 0; height: 1px; background-color: #fff; top: 60%; left: 20%; }
@@ -394,7 +397,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 2.2vw; }
    
     /* 섹션 - 제품 */
-    .content { width: 95%; } 
+    .content { width: 90%; } 
     #product .autoText  { font-size: 10vw; } 
     #product .content .textBox { padding: 3vw; }
     #product .content .titleBox .title span { font-size: 38px; }
@@ -433,9 +436,12 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .logSlide_wrap li { width: 50vw; height: 420px; }
     #seoulLog .logSlide_wrap li.yogurt img { object-position: 100%; }
     
-}   
+}  
 
-@media ( max-width: 1024px) {  
+@media ( max-width: 1024px ) {  
+
+    /* 사이드 바 */
+    #scrollbar { display: none; }
 
     /* 사이드 메뉴 */
     #gnbMenu .gnb li { height: 45px; }
@@ -498,30 +504,32 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .logSlide_wrap li { width: 78vw; height: 500px;  }
     #seoulLog .logSlide_wrap li.yogurt img { object-position: 100%; } 
   
-} 
-@media ( max-width:768px) {  
+}   
+
+@media ( max-width:1024px) {  
     /* 섹션 - 메인 */
-    main #main h1.title01 { width: 100%; margin-top: 0; margin: 15vw auto 0 auto; justify-content: center; }
-    main #main h1.title01 span:first-of-type { font-size: 110px; letter-spacing: -6px; margin-left: 0; }
-    main #main h1.title01 span:last-of-type { font-size: 110px; letter-spacing: -6px; margin-left: 10px; }
-    main #main .fixedBox { width: 100%; height: 90vh; } 
-    main #main .slide_container { position: relative; bottom: initial; top: 32vw; width: 100%; height: 510px; } 
+    main #main h1.title01 { width: 100%; margin-top: 0; margin: 10vw auto 0 auto; justify-content: center; }
+    main #main h1.title01 span:first-of-type { font-size: 14vw; letter-spacing: -6px; margin-left: 0; }
+    main #main h1.title01 span:last-of-type { font-size: 14vw; letter-spacing: -6px; margin-left: 10px; }
+    main #main .fixedBox { width: 90%; height: 100vh; margin: 0 auto; } 
+    main #main .slide_container { position: relative; bottom: initial; top: 30vw; width: 100%; height: 570px; } 
+
     main #main .slide_bar { margin: 0 0 55px 6%; } 
     main #main .slide_more { top: 40%; }  
     main #main .inner { flex-wrap: wrap; flex-direction: column; }
     main #main .slide_wrap { padding: 0; }
-    main #main .slide_wrap .slide_content { height: 510px; }
+    main #main .slide_wrap .slide_content { height: 570px; }
     main #main .slide_wrap .slide_content .textBox { margin: 0 0 90px 6%; }
-    main #main .slide_wrap .slide_content .textBox span.title { font-size: 5vw; letter-spacing: -4px; }
-    main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 3.2vw; letter-spacing: -2px; }
-    main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 35px; }
-    main #main .scroll_wrap { width: 90%; margin: 25vw auto 120px auto; }
-    main #main .scroll_wrap .imgBox { width: 345px; }
+    main #main .slide_wrap .slide_content .textBox span.title { font-size: 4vw; letter-spacing: -4px; }
+    main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 2.4vw; letter-spacing: -2px; }
+    main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 40px; }
+    main #main .scroll_wrap { width: 90%; margin: 15vw auto 120px auto; }
+    main #main .scroll_wrap .imgBox { width: 360px; }
     main #main .scroll_wrap .imgBox img { width: 310px; }
     main #main .scroll_wrap .imgBox .bottomText { width: 310px; }  
     main #main .scroll_wrap .imgBox.img02 { margin-top: 35vw; } 
-    main #main .scroll_wrap .imgBox.img03 { margin-top: 35vw; } 
-
+    main #main .scroll_wrap .imgBox.img03 { margin-top: 20vw; } 
+    main #main .scroll_wrap .imgBox span { left: -115px; }
 
     #seoulLog .logSlide_wrap li>span { width: 285px; top: 132px; left: -135px; }
     #seoulLog .logSlide_wrap .coffeeText { top: 132px; left: -135px; }
@@ -530,11 +538,13 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     
 
 }
+@media ( max-width:816px) {  
+    main #main .scroll_wrap .imgBox.img02 { margin-top: 15vw; } 
+    main #main .scroll_wrap .imgBox.img03 { margin-top: 15vw; } 
+}
 @media ( max-width:730px) {  
     a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 13px; color: var(--color); }
     
-    /* 사이드 바 */
-    #scrollbar { display: none; }
     
     /* 사이드 메뉴 */
     #gnbMenu .gnb li { height: 40px; }
@@ -543,10 +553,14 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #gnbMenu .gnbFooter { width: 95%; }
  
     /* 섹션 - 메뉴 */
-    main #main h1.title01 { width: 100%; margin-top: 0; margin: 15vw auto 0 auto; justify-content: center;  } 
+    main #main h1.title01 { width: 100%; margin-top: 0; margin: 18vw auto 0 auto; justify-content: center;  } 
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type { font-size: 13vw; letter-spacing: -4px; }
+    main #main .slide_wrap .slide_content .textBox span.title { font-size: 5.5vw; letter-spacing: -4px; }
+    main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 3.2vw; letter-spacing: -2px; }
+    
     main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 30px; }
+    main #main .slide_container { top: 35vw; }
 
     /* 섹션 - 제품 */
     #product .autoText { font-size: 12vw; }
@@ -617,21 +631,23 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     /* 섹션 - 메인 */
     main #main h1.title01 { margin: 20vw auto 0 auto; }
     main #main h1.title01 span:first-of-type,
-    main #main h1.title01 span:last-of-type { font-size: 14vw; letter-spacing: -2px; }
+    main #main h1.title01 span:last-of-type { font-size: 13vw; letter-spacing: -2px; }
     main #main .slide_container { top:40vw; }
-    main #main .scroll_wrap .imgBox { width: 325px; height: 525px; float: unset; margin: 0 auto; }
+    main #main .scroll_wrap .imgBox { width: 370px; height: 575px; float: unset; margin: 0 auto; }
     main #main .scroll_wrap .imgBox a { display: block; }  
-    main #main .scroll_wrap .imgBox img { width: 290px; height: 445px; }
-    main #main .scroll_wrap .imgBox .bottomText { width: 290px; }
+    main #main .scroll_wrap .imgBox img { width: 335px; height: 495px; }
+    main #main .scroll_wrap .imgBox span { left: -128px; }
+    main #main .scroll_wrap .imgBox .bottomText { width: 335px; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
     main #main .scroll_wrap .imgBox.img02 { float: unset; } 
     main #main .slide_wrap .slide_content .textBox { height: 55px; margin: 0 0 105px 6%; }
-    main #main .slide_wrap .slide_content .textBox .title_inner { height: 30px; }
-    main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 25px; }
+    main #main .slide_wrap .slide_content .textBox .title_inner { height: 40px; }
+    main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 30px; }
     main #main .slide_wrap .slide_content .textBox span.title { font-size: 6vw; letter-spacing: -3px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 4.2vw; letter-spacing: -2px; }
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 25%;}
     main #main .slide_bar .slide_prograss { width: 260px; }
+    
     /* 섹션 -제품 */
     #product .content .titleBox .title span { font-size: 22px; }
     #product .content .subTitle span { font-size: 13px; }
@@ -657,12 +673,10 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLove .textOuter span:last-child { bottom: 240px; }
     #seoulLove .textInner .text01 span, #seoulLove .textInner .text02 span, #seoulLove .textInner .text03 span { font-size: 13px; letter-spacing: -1px; }
     
-
     /* svg이미지 애니메이션 적용 */ 
     .storymilk.motion.animate__animated { animation-name: storymilk; animation-delay: 500ms; }
     .storyyogurt.motion.animate__animated { animation-name: storyyogurt; animation-delay: 1000ms; }
     .storycoffee.motion.animate__animated { animation-name: storycoffee; animation-delay: 1500ms; }
-
 
 
     /* 섹션 - 서울로그 */
@@ -670,7 +684,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .title span { font-size: 58px; }
     #seoulLog .subTitle span { font-size: 16px; }
     #seoulLog .logSlide_wrap a { width: 90%; }
-    #seoulLog .logSlide_wrap li { width: 350px; }  
+    #seoulLog .logSlide_wrap li { width: 375px; }  
     #seoulLog .logSlide_wrap li .subTitle { font-size: 13px; width: 175px; left: 100px; bottom: 33px; }
     #seoulLog .logSlide_wrap .playIcon { width: 60px; height: 60px; }
     #seoulLog .logSlide_wrap .playIcon::after { width: 20px; height: 20px; margin: 20px; }

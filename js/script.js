@@ -24,18 +24,26 @@ $(function(){
 
     })
 
+    let mouseCursor = document.querySelector(".cursor");   
+    $(window).on("mousemove", cursor); 
+    function cursor(e) {
+      mouseCursor.style.left = e.pageX + "px";
+      mouseCursor.style.top = e.pageY  + "px"; 
+    }
+ 
+
     // 슬라이드 네비게이션바 타이머
     setInterval(() => {   
     
         if( sec >= 3 ) {
             sec = 0
             if(!pause) { 
-                $('.slide_more').trigger('click')  
+                // $('.slide_more').trigger('click')  
             }
         } else {
             if(!pause) {
                 sec = Number(sec.toFixed(2)) + 0.01 
-                console.log(sec)
+                // console.log(sec)
             }
         }
     
@@ -400,7 +408,7 @@ $(function(){
     }
 
 
-    // 메인 섹션 - 리사이징 768 이하 및 이상 일때 반응형 적용
+    // 메인 섹션 - 리사이징 1024 이하 및 이상 일때 반응형 적용
     function mainResize(){
         var windowWidth = $(window).width()
         var windowHeight = $(window).height()    
@@ -408,8 +416,8 @@ $(function(){
         var mainHeight = $('main #main').height()  
      
 
-        // 768 사이즈보다 작고, 첫번째 구간일때
-        if( windowWidth + 17 <= 768 ) { 
+        // 1024 사이즈보다 작고, 첫번째 구간일때
+        if( windowWidth + 17 <= 1024 ) { 
             if( scroll >= mainHeight-windowHeight ) {
                 $('.slide_container').removeClass('fixed')
                 $('main #main h1.title01').removeClass('animated_opacity').removeClass('fixed') 
