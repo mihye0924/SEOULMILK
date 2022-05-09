@@ -684,13 +684,13 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     footer .sns_wrap { width: 100%; display: unset; }
     footer .familysite li a { padding: 25px 0; } 
     footer .info span { font-size: 11px; }
-    footer .menu>li:first-of-type a:hover::after { animation: line40 0.2s linear forwards; }
+    footer .menu>li:first-of-type a:hover::after { animation: line45 0.2s linear forwards; }
     footer .menu>li:nth-of-type(2) a:hover::after { animation: line30 0.2s linear forwards; }
     footer .menu>li:nth-of-type(3) a:hover::after { animation: line60 0.2s linear forwards; }
-    footer .menu>li:nth-of-type(4) a:hover::after { animation: line80 0.2s linear forwards; }
-    @keyframes line40 { 100%{ width: 40px;} }
+    footer .menu>li:nth-of-type(4) a:hover::after { animation: line85 0.2s linear forwards; }
+    @keyframes line45 { 100%{ width: 45px;} }
     @keyframes line30 { 100%{ width: 30px;} }
     @keyframes line60 { 100%{ width: 60px;} }
-    @keyframes line80 { 100%{ width: 80px;} }
+    @keyframes line85 { 100%{ width: 85px;} }
         
 }
