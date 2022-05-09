@@ -474,12 +474,18 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #story_wrap .imgBox .text span:first-of-type { font-size: 18px; margin: 0 0 30px 0; }
     #story_wrap .imgBox li:nth-of-type(3) { margin-top: 80px; }
 
+    
     /* 섹션 - 사랑하는 이유 */
     #seoulLove .content { padding: 60vw 0; }
     #seoulLove .textInner .seoulMilkReason span { font-size: 55px; } 
     #seoulLove .textOuter span:first-child, #seoulLove .textOuter span:last-child { font-size: 22vw; }
     #seoulLove .circle01, #seoulLove .circle03 { width: 200px; height: 200px; }
     #seoulLove .circle02, #seoulLove .circle04 { width: 100px; height: 100px; }
+    #seoulLog .logSlide_wrap li>span { width: 285px; top: 132px; left: -125px; }
+    #seoulLog .logSlide_wrap .coffeeText { top: 132px; left: -125px; }
+    #seoulLog .logSlide_wrap .strawBerryText { top: 132px; left: -125px; } 
+    #seoulLog .logSlide_wrap .cheeseText { top: 132px; left: -125px; }
+    
     
     /* 섹션 - 서울로그 */
     #seoulLog .content { margin: 15vw auto; }
@@ -568,10 +574,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .title span { font-size: 10vw; }
     #seoulLog .subTitle span { font-size: 2.7vw; }
     #seoulLog .logSlide_wrap li .subTitle { font-size: 15px; bottom: 40px; left:120px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 60%; }
-    #seoulLog .logSlide_wrap li>span { left: -110px; }
-    #seoulLog .logSlide_wrap .coffeeText { top: 122px; left: -120px; }
-    #seoulLog .logSlide_wrap .strawBerryText { top: 120px; left: -120px; } 
-    
+
     /* 푸터 */
     footer .content { width: 80%; padding: 10vw 0; display: grid;  }
     footer .rightBox { width: 100%; margin: 0 auto; }
@@ -657,8 +660,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .title span { font-size: 58px; }
     #seoulLog .subTitle span { font-size: 16px; }
     #seoulLog .logSlide_wrap a { width: 90%; }
-    #seoulLog .logSlide_wrap li { width: 350px; } 
-    #seoulLog .logSlide_wrap li>span { width: 270px; top: 125px; left: -120px; }
+    #seoulLog .logSlide_wrap li { width: 350px; }  
     #seoulLog .logSlide_wrap li .subTitle { font-size: 13px; width: 175px; left: 100px; bottom: 33px; }
     #seoulLog .logSlide_wrap .playIcon { width: 60px; height: 60px; }
     #seoulLog .logSlide_wrap .playIcon::after { width: 20px; height: 20px; margin: 20px; }
