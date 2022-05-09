@@ -637,7 +637,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .scroll_wrap .imgBox a { display: block; }  
     main #main .scroll_wrap .imgBox img { width: 315px; height: 455px; }
     main #main .scroll_wrap .imgBox span { left: -128px; }
-    main #main .scroll_wrap .imgBox .bottomText { width: 305px; }
+    main #main .scroll_wrap .imgBox .bottomText { width: 315px; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
     main #main .scroll_wrap .imgBox.img02 { float: unset; margin-top: 20vw; } 
     main #main .scroll_wrap .imgBox.img03 { margin-top: 20vw; } 
