@@ -642,8 +642,8 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .scroll_wrap .imgBox.img02 { float: unset; margin-top: 20vw; } 
     main #main .scroll_wrap .imgBox.img03 { margin-top: 20vw; } 
     main #main .fixedBox { height: 100vh; }
-    main #main .slide_container { top:40vw; height: 550px; } 
-    main #main .slide_wrap .slide_content { height: 550px; }
+    main #main .slide_container { top:40vw; height: 540px; } 
+    main #main .slide_wrap .slide_content { height: 540px; }
     main #main .slide_wrap .slide_content .textBox { height: 55px; margin: 0 0 105px 6%; }
     main #main .slide_wrap .slide_content .textBox .title_inner { height: 40px; }
     main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 30px; }
