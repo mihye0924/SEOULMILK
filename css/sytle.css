@@ -640,9 +640,9 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
     main #main .scroll_wrap .imgBox.img02 { float: unset; margin-top: 20vw; } 
     main #main .scroll_wrap .imgBox.img03 { margin-top: 20vw; } 
-    main #main .fixedBox { height: 100vh; }
-    main #main .slide_container { top:40vw; height: 680px; } 
-    main #main .slide_wrap .slide_content { height: 680px; }
+    main #main .fixedBox { height: 80vh; }
+    main #main .slide_container { top:40vw; height: 500px; } 
+    main #main .slide_wrap .slide_content { height: 500px; }
     main #main .slide_wrap .slide_content .textBox { height: 55px; margin: 0 0 105px 6%; }
     main #main .slide_wrap .slide_content .textBox .title_inner { height: 40px; }
     main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 30px; }
