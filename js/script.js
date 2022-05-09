@@ -280,12 +280,12 @@ $(function(){
     // 서울로그 슬라이드
     var owl = $('.owl-carousel'); 
         owl.owlCarousel({ 
-            loop:true,
-            autoplay:true,
+            // loop:true,
+            // autoplay:true,
             autoWidth:true,
             margin:50,
-            autoplayTimeout:2000,
-            autoplayHoverPause:true,
+            // autoplayTimeout:2000,
+            // autoplayHoverPause:true,
             items:1,
             responsive:{
                 486:{
@@ -335,6 +335,7 @@ $(function(){
     // 플레이 버튼
     $('.play').on('click', function() {
         let idx = $('.play').index(this) 
+        console.log(idx)
         $(this).addClass('active')  
         $('.slide_list').addClass('active')  
 
