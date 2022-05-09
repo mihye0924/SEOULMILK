@@ -108,7 +108,7 @@ $(function(){
         if( sec >= 3 ) {
             sec = 0
             if(!pause) { 
-                $('.slide_more').trigger('click')  
+                // $('.slide_more').trigger('click')  
             }
         } else {
             if(!pause) {

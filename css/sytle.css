@@ -456,8 +456,8 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 2.8vw; }
     main #main .slide_wrap .slide_content.yogurt img { object-position: 55%;}
     main #main .slide_wrap .slide_content.slideCoffee img { object-position: 30%;}
-    main #main .slide_wrap .slide_content.strawBerry img { object-position: 65%;}
-  
+    main #main .slide_wrap .slide_content.strawBerry img { object-position: 65%;} 
+
     /* 섹션 - 제품 */
     #product .content .productBox li { height: 425px; }
     #product .content .productBox .productCategory { font-size: 2vw; margin: 2.5vw 0 0 15px; }
@@ -514,6 +514,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .slide_wrap .slide_content .textBox { margin: 0 0 90px 6%; }
     main #main .slide_wrap .slide_content .textBox span.title { font-size: 5vw; letter-spacing: -4px; }
     main #main .slide_wrap .slide_content .textBox span.subTitle { font-size: 3.2vw; letter-spacing: -2px; }
+    main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 35px; }
     main #main .scroll_wrap { width: 90%; margin: 25vw auto 120px auto; }
     main #main .scroll_wrap .imgBox { width: 345px; }
     main #main .scroll_wrap .imgBox img { width: 310px; }
@@ -545,6 +546,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main h1.title01 { width: 100%; margin-top: 0; margin: 15vw auto 0 auto; justify-content: center;  } 
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type { font-size: 13vw; letter-spacing: -4px; }
+    main #main .slide_wrap .slide_content .textBox .subTitle_inner { height: 30px; }
 
     /* 섹션 - 제품 */
     #product .autoText { font-size: 12vw; }
