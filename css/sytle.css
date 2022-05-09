@@ -520,6 +520,14 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .scroll_wrap .imgBox .bottomText { width: 310px; }  
     main #main .scroll_wrap .imgBox.img02 { margin-top: 35vw; } 
     main #main .scroll_wrap .imgBox.img03 { margin-top: 35vw; } 
+
+
+    #seoulLog .logSlide_wrap li>span { width: 285px; top: 132px; left: -135px; }
+    #seoulLog .logSlide_wrap .coffeeText { top: 132px; left: -135px; }
+    #seoulLog .logSlide_wrap .strawBerryText { top: 132px; left: -135px; } 
+    #seoulLog .logSlide_wrap .cheeseText { top: 132px; left: -135px; }
+    
+
 }
 @media ( max-width:730px) {  
     a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; font-size: 13px; color: var(--color); }
