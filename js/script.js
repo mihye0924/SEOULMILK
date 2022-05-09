@@ -113,6 +113,7 @@ $(function(){
         } else {
             if(!pause) {
                 sec = Number(sec.toFixed(2)) + 0.01 
+                console.log(sec)
             }
         }
  
@@ -374,8 +375,7 @@ $(function(){
                 event.data == YT.PlayerState.BUFFERING ? '버퍼링 중' :
                 event.data == YT.PlayerState.CUED ? '재생준비 완료됨' :
                 event.data == -1 ? '시작되지 않음' : '예외';
-
-            console.log(event);
+ 
             // div#player
             let target = event.target.o.id
             
@@ -386,7 +386,7 @@ $(function(){
                 $('.slide_list').removeClass('active')
             } 
 
-        console.log('onPlayerStateChange 실행: ' + playerState);
+        // console.log('onPlayerStateChange 실행: ' + playerState);
     } 
        
     function onPlayerReady() { }
@@ -401,8 +401,7 @@ $(function(){
         var windowWidth = $(window).width()
         var windowHeight = $(window).height()    
         var scroll  = $(this).scrollTop()   
-        var mainHeight = $('main #main').height() 
-        console.log(windowWidth+17)
+        var mainHeight = $('main #main').height()  
      
 
         // 768 사이즈보다 작고, 첫번째 구간일때
@@ -410,11 +409,9 @@ $(function(){
             if( scroll >= mainHeight-windowHeight ) {
                 $('.slide_container').removeClass('fixed')
                 $('main #main h1.title01').removeClass('animated_opacity').removeClass('fixed') 
-                console.log('동작')
             }else{
                 $('.slide_container').removeClass('fixed') 
-                $('main #main h1.title01').removeClass('animated_opacity').removeClass('fixed') 
-                console.log('동작222')
+                $('main #main h1.title01').removeClass('animated_opacity').removeClass('fixed')        
             }
         
         }else{
