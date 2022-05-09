@@ -677,19 +677,20 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
  
     /* 푸터 */
     footer .menu>li { margin: 8vw 0; } 
+    footer .menu>li a { font-size: 18px; }
     footer .sns { width: 190px; float: right; }
     footer .content { width: 90%; }
     footer .rightBox { width: 100%; }
     footer .sns_wrap { width: 100%; display: unset; }
     footer .familysite li a { padding: 25px 0; } 
     footer .info span { font-size: 11px; }
-    footer .menu>li:first-of-type a:hover::after { animation: line50 0.2s linear forwards; }
-    footer .menu>li:nth-of-type(2) a:hover::after { animation: line35 0.2s linear forwards; }
-    footer .menu>li:nth-of-type(3) a:hover::after { animation: line70 0.2s linear forwards; }
-    footer .menu>li:nth-of-type(4) a:hover::after { animation: line100 0.2s linear forwards; }
-    @keyframes line50 { 100%{ width: 50px;} }
-    @keyframes line35 { 100%{ width: 35px;} }
-    @keyframes line70 { 100%{ width: 70px;} }
-    @keyframes line100 { 100%{ width: 100px;} }
+    footer .menu>li:first-of-type a:hover::after { animation: line40 0.2s linear forwards; }
+    footer .menu>li:nth-of-type(2) a:hover::after { animation: line30 0.2s linear forwards; }
+    footer .menu>li:nth-of-type(3) a:hover::after { animation: line60 0.2s linear forwards; }
+    footer .menu>li:nth-of-type(4) a:hover::after { animation: line80 0.2s linear forwards; }
+    @keyframes line40 { 100%{ width: 40px;} }
+    @keyframes line30 { 100%{ width: 30px;} }
+    @keyframes line60 { 100%{ width: 60px;} }
+    @keyframes line80 { 100%{ width: 80px;} }
         
 }
