@@ -66,7 +66,7 @@ $(function(){
         }
 
 
-        // $('header').toggleClass('active')
+        $('header').toggleClass('active')
         $('#scrollbar').toggleClass('active')
  
         e.preventDefault();
