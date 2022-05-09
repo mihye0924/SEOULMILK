@@ -24,6 +24,24 @@ $(function(){
 
     })
 
+    // 슬라이드 네비게이션바 타이머
+    setInterval(() => {   
+    
+        if( sec >= 3 ) {
+            sec = 0
+            if(!pause) { 
+                $('.slide_more').trigger('click')  
+            }
+        } else {
+            if(!pause) {
+                sec = Number(sec.toFixed(2)) + 0.01 
+                console.log(sec)
+            }
+        }
+    
+    }, 10);
+    
+
     //스마일 호버시
     $('.star').on('click',function(){ 
         var chk = $('input#star_popup').is(":checked") 
@@ -102,22 +120,7 @@ $(function(){
     })
  
 
-    // 슬라이드 네비게이션바 타이머
-    setInterval(() => {   
-        
-        if( sec >= 3 ) {
-            sec = 0
-            if(!pause) { 
-                $('.slide_more').trigger('click')  
-            }
-        } else {
-            if(!pause) {
-                sec = Number(sec.toFixed(2)) + 0.01 
-                console.log(sec)
-            }
-        }
- 
-    }, 10);
+
  
     // 마우스 올렸을때
     $('.slide_content, .slide_more, .slide_bar').on('mouseover', function(){  
@@ -190,6 +193,7 @@ $(function(){
 
         // 메인섹션 - 호출
         mainResize()
+        
     }) 
      
   // 메인섹션 - 호출
