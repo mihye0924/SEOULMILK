@@ -676,6 +676,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLog .logSlide_wrap .playIcon::after { width: 20px; height: 20px; margin: 20px; }
  
     /* 푸터 */
+    footer .menu>li { margin: 8vw 0; } 
     footer .sns { width: 190px; float: right; }
     footer .content { width: 90%; }
     footer .rightBox { width: 100%; }
