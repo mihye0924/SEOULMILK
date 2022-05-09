@@ -280,11 +280,11 @@ $(function(){
     // 서울로그 슬라이드
     var owl = $('.owl-carousel'); 
         owl.owlCarousel({ 
-            // loop:true,
-            // autoplay:true,
+            loop:true,
+            autoplay:true,
             autoWidth:true,
             margin:50,
-            // autoplayTimeout:2000,
+            autoplayTimeout:2000,
             autoplayHoverPause:true,
             items:1,
             responsive:{
