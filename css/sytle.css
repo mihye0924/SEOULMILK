@@ -641,6 +641,14 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     #seoulLove .textOuter span:last-child { bottom: 240px; }
     #seoulLove .textInner .text01 span, #seoulLove .textInner .text02 span, #seoulLove .textInner .text03 span { font-size: 13px; letter-spacing: -1px; }
     
+
+    /* svg이미지 애니메이션 적용 */ 
+    .storymilk.motion.animate__animated { animation-name: storymilk; animation-delay: 500ms; }
+    .storyyogurt.motion.animate__animated { animation-name: storyyogurt; animation-delay: 1000ms; }
+    .storycoffee.motion.animate__animated { animation-name: storycoffee; animation-delay: 1500ms; }
+
+
+
     /* 섹션 - 서울로그 */
     #seoulLog .title { margin-top: 5px; margin-bottom:25px; }
     #seoulLog .title span { font-size: 58px; }

@@ -26,23 +26,25 @@ $(function(){
 
     //스마일 호버시
     $('.star').on('click',function(){ 
-        var chk_pop = $('input#star_popup').is(":checked") 
-        if( chk_pop != false ){ 
+        var chk = $('input#star_popup').is(":checked") 
+        if( chk != false ){ 
             $(this).removeClass('active')
             $('input#star_popup').removeAttr('checked') 
             $('header').removeClass('active')
-            chk_pop = false
+            chk = false
         }else{
             $(this).addClass('active')
             $('input#star_popup').attr('checked','checked') 
             $('header').addClass('active')
             $('.openBtn').removeClass('active')
-            if(chk_pop !=false){ 
+            if(chk !=false){ 
                 $('input#gnb_bg').attr('checked','checked')  
+                chk = false
             }else{
                 $('input#gnb_bg').removeAttr('checked') 
+                chk = true
             }  
-            chk_pop = true
+            chk = true
         }
     })
 
@@ -59,14 +61,14 @@ $(function(){
             $('header').addClass('active') 
             if(chk !=false){ 
                 $('input#star_popup').attr('checked','checked')  
+                chk = false
             }else{
-                $('input#star_popup').removeAttr('checked')  
+                $('input#star_popup').removeAttr('checked') 
+                chk = true 
             } 
             chk = true
         }
-
-
-        $('header').toggleClass('active')
+ 
         $('#scrollbar').toggleClass('active')
  
         e.preventDefault();
