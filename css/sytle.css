@@ -632,7 +632,7 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main h1.title01 { margin: 20vw auto 0 auto; }
     main #main h1.title01 span:first-of-type,
     main #main h1.title01 span:last-of-type { font-size: 13vw; letter-spacing: -2px; }
-    main #main .scroll_wrap { margin: 0 auto; }
+    main #main .scroll_wrap { margin: 30vw auto 120px auto; }
     main #main .scroll_wrap .imgBox { width: 350px; height: 535px; float: unset; margin: 0 auto; }
     main #main .scroll_wrap .imgBox a { display: block; }  
     main #main .scroll_wrap .imgBox img { width: 305px; height: 455px; }
@@ -641,8 +641,8 @@ footer .info li:nth-of-type(7) span { margin:30px 0 0 0; }
     main #main .scroll_wrap .imgBox .bottomText p { font-size: 20px; }
     main #main .scroll_wrap .imgBox.img02 { float: unset; margin-top: 20vw; } 
     main #main .scroll_wrap .imgBox.img03 { margin-top: 20vw; } 
-    main #main .fixedBox { height: 90vh; }
-    main #main .slide_container { top:40vw; height: 540px; } 
+    main #main .fixedBox { height: 100%; }
+    main #main .slide_container { top:0; margin-top: 160px; height: 540px; } 
     main #main .slide_wrap .slide_content { height: 540px; }
     main #main .slide_wrap .slide_content .textBox { height: 55px; margin: 0 0 105px 6%; }
     main #main .slide_wrap .slide_content .textBox .title_inner { height: 40px; }
