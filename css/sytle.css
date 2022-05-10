@@ -5,7 +5,7 @@ a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; le
 a img {border: none;} 
 address, em, i {font-style: normal;}
 body { overflow-x: hidden; } 
-.cursor { width: 50px; height: 50px; border: 2px solid #1bf9ef; border-radius: 50%; position: absolute; z-index: 1000; transform: translate(-50%, -50%); pointer-events: none;
+.cursor { width: 50px; height: 50px; border: 2px solid #1bf9ef; border-radius: 50%; position: absolute; z-index: 1000; transform: translate(-100%, -100%); pointer-events: none;
 transform-origin: 100% 100%; background-color: #1bf9ef; mix-blend-mode: difference; background-size: cover; }
 a { cursor: none; }
 
