@@ -145,7 +145,7 @@ main #main .slide_bar { position: absolute; bottom: 0; left: 0; margin: 0 0 65px
 main #main .slide_bar span { color: #fff; }
 main #main .slide_bar .slide_prograss {  position: relative; top: -3px; display: inline-block; margin: 0 10px; width: 280px; height: 5px; background-color: var(--color); border-radius: 25px; overflow: hidden;  }
 main #main .slide_bar .slide_prograss .slide_prograss_inner { position: absolute; top: -5px;  width: 0px; height: 18px; background-color: #fff; }
-main #main .slide_bar .slide_prograss .slide_prograss_inner.animate { animation: timer 3s linear; animation-iteration-count: infinite; } 
+/* main #main .slide_bar .slide_prograss .slide_prograss_inner.animate { animation: timer 3s linear; animation-iteration-count: infinite; }  */
 main #main .slide_bar .slide_prograss .slide_prograss_inner.pause { animation-play-state: paused; } 
 main #main .slide_more { position: absolute; width: 80px; height: 80px; top: 60%; left: 6%; border-radius: 50%; border:1px solid #fff; }
 main #main .slide_more:hover { animation: sizeUp 0.3s ease-in; animation-fill-mode: forwards; }
@@ -156,7 +156,7 @@ main #main .slide_more:hover span { animation: moreText 0.3s linear forwards; }
 main #main .slide_more:hover .slide_line { animation: moreLine 0.3s linear forwards; }
 @keyframes moreText { 100% { top: 40%; } }
 @keyframes moreLine { 100% { width: 80px; } }
-@keyframes timer { 0% { width: 0;} 100% { width: 100%; } } 
+/* @keyframes timer { 0% { width: 0;} 100% { width: 100%; } }  */
 main #main .scroll_wrap { position: relative; right: 0; margin: 20vw 0 120px 0; width: 40%; }
 main #main .scroll_wrap .imgBox { position: relative; float: left; width: 485px; height: 740px; }
 main #main .scroll_wrap .imgBox img { z-index: 2; position: absolute; right: 0; width: 440px; height: 630px; }  

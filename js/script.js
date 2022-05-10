@@ -32,22 +32,18 @@ $(function(){
     }
  
 
+    $('.slide_prograss_inner').css( { 'width' : 0 })
+    $('.slide_prograss_inner').stop().animate({ 'width' : '100%' },3000) 
     // 슬라이드 네비게이션바 타이머
     setInterval(() => {   
+     
+        if(!pause) { 
+            $('.slide_more').trigger('click')  
+            $('.slide_prograss_inner').css( { 'width' : 0 })
+            $('.slide_prograss_inner').stop().animate({ 'width' : '100%' },3000)  
+        } 
     
-        if( sec >= 3 ) {
-            sec = 0
-            if(!pause) { 
-                $('.slide_more').trigger('click')  
-            }
-        } else {
-            if(!pause) {
-                sec = Number(sec.toFixed(2)) + 0.01 
-                // console.log(sec)
-            }
-        }
-    
-    }, 10);
+    }, 3000);
     
 
     //스마일 호버시
@@ -140,8 +136,7 @@ $(function(){
         pause = false
     }) 
 
-    // 애니메이션 - 텍스트, 이미지
-    $('.slide_prograss_inner').addClass('animate')   
+    // 애니메이션 - 텍스트, 이미지 
     $('.textBox .title').css({ bottom: '-125px'}).animate({ bottom: 0 })
     $('.textBox .subTitle').css({ bottom: '-80px'}).animate({ bottom: 0 })
 
