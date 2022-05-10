@@ -24,12 +24,19 @@ $(function(){
 
     })
 
+
+    // 마우스 커서 이벤트
     let mouseCursor = document.querySelector(".cursor");   
     $(window).on("mousemove", cursor); 
     function cursor(e) {
       mouseCursor.style.left = e.pageX + "px";
       mouseCursor.style.top = e.pageY  + "px"; 
     }
+    $('a, .gnbBtn, .star').on('mouseover',function(){
+        $('.cursor').stop().animate({'width':'180px','height' : '180px'})
+    }).on('mouseout', function(){
+        $('.cursor').stop().animate({'width':'80px','height' : '80px'})
+    })
  
 
     $('.slide_prograss_inner').css( { 'width' : 0 })
