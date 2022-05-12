@@ -5,7 +5,7 @@ a,p,span,h1,h2,h3,h4,h5,h6 { font-family: var(--font); text-decoration: none; le
 a img {border: none;} 
 address, em, i {font-style: normal;}
 body { overflow-x: hidden; } 
-.cursor { width: 50px; height: 50px; border: 2px solid #1bf9ef; border-radius: 50%; position: absolute; z-index: 1000; transform: translate(-100%, -100%); pointer-events: none;
+.cursor { width: 50px; height: 50px; border: 2px solid #1bf9ef; border-radius: 50%; position: absolute; z-index: 1000; transform: translate(-50%, -50%); pointer-events: none;
 transform-origin: 100% 100%; background-color: #1bf9ef; mix-blend-mode: difference; background-size: cover; }
 a { cursor: none; }
 
@@ -21,6 +21,7 @@ body, textarea:focus, input:focus, a:focus { cursor: none; -webkit-tap-highlight
 /* 사이드 - 스크롤바 */
 #scrollbar { mix-blend-mode: difference; z-index: 4; position: fixed; bottom: 30px; right: 10px; width:30px; height: 410px;  }
 #scrollbar .scrollbar_right { margin: 50px auto; overflow: hidden; z-index: 2; width: 5px; height: 290px; background-color: rgba(233, 233, 233, 0.567); border-radius: 25px; }
+#scrollbar .scrollbar_right .scroll_text.pointer span { cursor: pointer;}
 #scrollbar .scrollbar_right .scroll_text { display: flex; align-items: center; position:absolute; width: 410px; height: 30px; top: 190px; right: -192px; transform: rotate(90deg); font-size: 15px; font-weight: 900; }
 #scrollbar .scrollbar_right .scroll_text span:first-of-type { display: none; color: #1bf9ef; letter-spacing: 0; }
 #scrollbar .scrollbar_right .scroll_text span:last-of-type { position: absolute; right: 0; color: #1bf9ef; letter-spacing: 1px; }
@@ -38,10 +39,11 @@ header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180
 header .logo.st0 {fill:#000000;} 
 header .logo.st1 {fill:#1bf9ef;} 
 header .inner { display: flex; width: 127px; justify-content: space-between; align-items: center; } 
+header .search.pointer { cursor: pointer; }
 header .search { width: 30px; height: 30px; }
 header .search.st0{fill:none; stroke:#1bf9ef; stroke-width:7; stroke-miterlimit:10; }
 header .search.st1{fill:none; stroke:#1bf9ef; stroke-width:7; stroke-miterlimit:10; } 
-
+header .star.pointer { cursor: pointer; }
 header .star { width: 38px; height: 41px; }
 header .star .st0 { fill:none; stroke:#1bf9ef; stroke-width:5; stroke-miterlimit:10; }
 input#star_popup { position: relative; z-index: 5; display: none; }
@@ -56,7 +58,7 @@ input#star_popup:checked ~ #star_bg {  display: block; }
 #star_bg .star_popup span:last-child { display: block; width: 35px; height: 35px; line-height: 22px; padding: 5px 10px; background-color: #006546; color: #fff; border-radius: 25px; text-align: center; font-size: 12px; }
 #star_bg .star_popup img { width: 245px; display: block; margin: 15px auto; }
  
- 
+header .gnbBtn.pointer { cursor: pointer; }
 header .gnbBtn .openBtn { position: relative; width: 35px; height: 20px; }
 header .gnbBtn .openBtn .top { display: block; position: absolute; top: 0; right: 0; width: 30px; height: 3px; border-radius: 25px; background-color: #1bf9ef; }
 header .gnbBtn .openBtn .center { display: block; position: absolute; top: 9px; right: 0; width: 25px; height: 3px; border-radius: 25px; background-color: #1bf9ef; }

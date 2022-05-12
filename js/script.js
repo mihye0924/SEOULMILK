@@ -32,10 +32,17 @@ $(function(){
       mouseCursor.style.left = e.pageX + "px";
       mouseCursor.style.top = e.pageY  + "px"; 
     }
-    $('a, .gnbBtn, .star').on('mouseover',function(){
+    $('a').on('mouseover',function(){
         $('.cursor').stop().animate({'width':'180px','height' : '180px'})
     }).on('mouseout', function(){
         $('.cursor').stop().animate({'width':'80px','height' : '80px'})
+    })
+    $('.gnbBtn, .search, .star, .scroll_text').on('mouseover',function(){
+        $('.cursor').hide()
+        $(this).addClass('pointer')
+    }).on('mouseout', function(){ 
+        $('.cursor').show()
+        $(this).removeClass('pointer')
     })
  
 
