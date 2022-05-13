@@ -58,9 +58,7 @@ $(function(){
     } 
 
     }, 3000);
-
-    $('#scrollbar').toggleClass('active') 
-    
+ 
     $('#gnbMenu .gnb li a').addClass('motion')
    
 
@@ -264,7 +262,7 @@ $(function(){
     // 플레이 버튼
     $('.play').on('click', function() {
         let idx = $('.play').index(this) 
-        console.log(idx)
+        // console.log(idx)
         $(this).addClass('active')  
         $('.slide_list').addClass('active')  
 
@@ -373,14 +371,15 @@ $(function(){
                 } 
                 chk = true
             }
-            
+
             if($(this).hasClass('active')){
                 $('.openBtn').removeClass('active')
                 $('.openBtn').addClass('close')
             }else{
                 $('.openBtn').addClass('active')
                 $('.openBtn').removeClass('close')
-            }
+            } 
+                $('#scrollbar').toggleClass('active') 
         }) 
 
     })
