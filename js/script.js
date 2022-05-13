@@ -32,7 +32,7 @@ $(function(){
       mouseCursor.style.left = e.pageX + "px";
       mouseCursor.style.top = e.pageY  + "px"; 
     }
-    $('a').on('mouseover',function(){
+    $('a, .viewmore').on('mouseover',function(){
         $('.cursor').stop().animate({'width':'180px','height' : '180px'})
     }).on('mouseout', function(){
         $('.cursor').stop().animate({'width':'80px','height' : '80px'})
