@@ -35,17 +35,12 @@ header {  mix-blend-mode: difference; z-index: 6; position: fixed; width: 100%; 
 header #header_wrap { display: flex; justify-content: space-between; align-items: center; width: 90%; height: 80px; margin: 0 auto; }
 header .logo { width: 160px; height: 80px; }
 header .logo a {  display: flex; justify-content: space-between; align-items: center;  }
-header .logo span {  font-family: 'SEOULMILK 1000mL'; display: block; width: 180px; font-size: 20px; color: #1bf9ef;  }
-header .logo.st0 {fill:#000000;} 
-header .logo.st1 {fill:#1bf9ef;} 
 header .inner { display: flex; width: 127px; justify-content: space-between; align-items: center; } 
 header .search.pointer { cursor: pointer; }
-header .search { width: 30px; height: 30px; }
-header .search.st0{fill:none; stroke:#1bf9ef; stroke-width:7; stroke-miterlimit:10; }
-header .search.st1{fill:none; stroke:#1bf9ef; stroke-width:7; stroke-miterlimit:10; } 
-header .star.pointer { cursor: pointer; }
-header .star { width: 38px; height: 41px; }
-header .star .st0 { fill:none; stroke:#1bf9ef; stroke-width:5; stroke-miterlimit:10; }
+header .searchImg { width: 30px; height: 30px; }
+header .starImg.pointer { cursor: pointer; }
+header .starImg {  position:relative; width: 38px; height: 35px; }
+header .starImg object { z-index: -1; position: absolute; }
 input#star_popup { position: relative; z-index: 5; display: none; }
 input#star_popup:checked ~ #star_bg {  display: block; }
 #star_bg { display: none; z-index: 5; position: fixed; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.699); }
@@ -91,12 +86,6 @@ input#gnb_bg:checked ~ #gnbMenu { animation: gnbBg 0.8s ease-out; display: block
 #gnbMenu .gnb li.promotionEvent.hover a { animation: outline 0.2s linear forwards;  }
 @keyframes outline { 0%{ top: 0; } 100%{ top: -55px;} }
 header.active { mix-blend-mode: unset; } 
-header.active .logo.st0 { fill: transparent; }
-header.active .logo.st1 { fill: #fff; }
-header.active .search.st0,
-header.active .search.st1 { stroke: #fff; } 
-header.active .logo span { color: #fff; }
-header.active .star { stroke: #fff; }
 header.active .openBtn .top,
 header.active .openBtn .center,
 header.active .openBtn .bottom { background-color: #fff; } 

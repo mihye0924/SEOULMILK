@@ -37,7 +37,7 @@ $(function(){
     }).on('mouseout', function(){
         $('.cursor').stop().animate({'width':'80px','height' : '80px'})
     })
-    $('.gnbBtn, .search, .star, .scroll_text').on('mouseover',function(){
+    $('.gnbBtn, .searchImg, .starImg, .scroll_text').on('mouseover',function(){
         $('.cursor').hide()
         $(this).addClass('pointer')
     }).on('mouseout', function(){ 
@@ -59,19 +59,43 @@ $(function(){
     
     }, 3000);
     
+    // 찾기
+    var search = document.getElementById('search')
+    var searchDoc = search.contentDocument;
+    var search_wrap = searchDoc.getElementById('search_wrap')
+    
+    // 별
+    var star = document.getElementById('star')
+    var starDoc = star.contentDocument;
+    var star_wrap = starDoc.getElementById('star')
+
+    // 로고
+    var logo = document.getElementById('logo')
+    var logoDoc = logo.contentDocument;
+    var logoSimbolo = logoDoc.getElementById('logoSimbolo')
+    var logo_wrap = logoDoc.getElementById('logo')
+    
 
     //스마일 호버시
-    $('.star').on('click',function(){ 
+    $('.starImg').on('click',function(){ 
         var chk = $('input#star_popup').is(":checked") 
         if( chk != false ){ 
             $(this).removeClass('active')
             $('input#star_popup').removeAttr('checked') 
             $('header').removeClass('active')
+            $(search_wrap).removeClass('active')   
+            $(star_wrap).removeClass('active')   
+            $(logo_wrap).removeClass('active')   
+            $(logoSimbolo).removeClass('active') 
             chk = false
         }else{
             $(this).addClass('active')
             $('input#star_popup').attr('checked','checked') 
             $('header').addClass('active')
+            $(search_wrap).addClass('active')   
+            $(star_wrap).addClass('active')   
+            $(logo_wrap).addClass('active')   
+            $(logoSimbolo).addClass('active')  
             $('.openBtn').removeClass('active')
             if(chk !=false){ 
                 $('input#gnb_bg').attr('checked','checked')  
@@ -90,11 +114,19 @@ $(function(){
         if( chk != false ){ 
             $('input#gnb_bg').removeAttr('checked') 
             $('header').removeClass('active')
+            $(search_wrap).removeClass('active')   
+            $(star_wrap).removeClass('active')   
+            $(logo_wrap).removeClass('active')   
+            $(logoSimbolo).removeClass('active') 
             chk = false
         }else{
-            $('.star').removeClass('active')
+            $('.starImg').removeClass('active')
             $('input#gnb_bg').attr('checked','checked')
-            $('header').addClass('active') 
+            $('header').addClass('active')   
+            $(search_wrap).addClass('active')   
+            $(star_wrap).addClass('active')   
+            $(logo_wrap).addClass('active')   
+            $(logoSimbolo).addClass('active')   
             if(chk !=false){ 
                 $('input#star_popup').attr('checked','checked')  
                 chk = false
