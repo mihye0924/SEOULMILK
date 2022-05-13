@@ -60,13 +60,7 @@ $(function(){
     }, 3000);
 
     $('#scrollbar').toggleClass('active') 
-    if($(this).hasClass('active')){
-        $('.openBtn').removeClass('active')
-        $('.openBtn').addClass('close')
-    }else{
-        $('.openBtn').addClass('active')
-        $('.openBtn').removeClass('close')
-    }
+    
     $('#gnbMenu .gnb li a').addClass('motion')
    
 
@@ -378,6 +372,14 @@ $(function(){
                     chk = true 
                 } 
                 chk = true
+            }
+            
+            if($(this).hasClass('active')){
+                $('.openBtn').removeClass('active')
+                $('.openBtn').addClass('close')
+            }else{
+                $('.openBtn').addClass('active')
+                $('.openBtn').removeClass('close')
             }
         }) 
 
