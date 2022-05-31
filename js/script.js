@@ -206,14 +206,9 @@ $(function(){
  
     // 서울로그 슬라이드
     var owl = $('.owl-carousel'); 
-        owl.owlCarousel({ 
-            // loop:true,
-            // autoplay:true,
+        owl.owlCarousel({  
             autoWidth:true,
-            margin:50,
-            // autoplayTimeout:2000,
-            // autoplayHoverPause:true,
-            items:1,
+            margin:50, 
             responsive:{
                 486:{
                     items:1,
@@ -441,6 +436,7 @@ $(function(){
                 // 멈췄을 때, 다시 재생버튼
                 $('#' + target).parent().removeClass('active')
                 $('.slide_list').removeClass('active')
+                $('.play').removeClass('active')
             } 
 
         // console.log('onPlayerStateChange 실행: ' + playerState);
