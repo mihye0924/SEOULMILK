@@ -9,7 +9,6 @@ var click = false
  
 
 $(function(){        
-
     var content = $('.slide_content')
     var slide_wrap = $('.slide_wrap')
     var slideCount = content.length
@@ -47,14 +46,14 @@ $(function(){
  
 
     $('.slide_prograss_inner').css( { 'width' : 0 })
-    $('.slide_prograss_inner').stop().animate({ 'width' : '100%' },3000) 
+    $('.slide_prograss_inner').stop().animate({ 'width' : '100%' }, 3000) 
     // 슬라이드 네비게이션바 타이머
     setInterval(() => {   
      
     if(!pause) { 
         $('.slide_more').trigger('click')  
         $('.slide_prograss_inner').css( { 'width' : 0 })
-        $('.slide_prograss_inner').stop().animate({ 'width' : '100%' },3000)  
+        $('.slide_prograss_inner').stop().animate({ 'width' : '100%' }, 3000)  
     } 
 
     }, 3000);
