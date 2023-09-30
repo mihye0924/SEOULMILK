@@ -26,23 +26,43 @@ $(function(){
 
     // 마우스 커서 이벤트
     let mouseCursor = document.querySelector(".cursor");   
-    $(window).on("mousemove", cursor); 
+    // 마우스 좌표
+    let mouseX = 0;
+    let mouseY = 0;
+
+    // el좌표
+    let currentX = 0;
+    let currentY = 0;
+
+    $(document).on("mousemove", cursor);  
     function cursor(e) {
-      mouseCursor.style.left = e.pageX + "px";
-      mouseCursor.style.top = e.pageY  + "px"; 
+        mouseX = e.clientX;
+        mouseY = e.clientY; 
+        tick()
     }
-    $('a, .viewmore').on('mouseover',function(){
-        $('.cursor').stop().animate({'width':'180px','height' : '180px'})
-    }).on('mouseout', function(){
-        $('.cursor').stop().animate({'width':'80px','height' : '80px'})
-    })
-    $('.gnbBtn, .searchImg, .starImg, .scroll_text').on('mouseover',function(){
-        $('.cursor').hide()
-        $(this).addClass('pointer')
-    }).on('mouseout', function(){ 
-        $('.cursor').show()
-        $(this).removeClass('pointer')
-    })
+    function tick(){
+        requestAnimationFrame(tick);
+        
+        currentX += (mouseX - currentX - 40) * 0.5;
+        currentY += (mouseY - currentY - 40) * 0.5; 
+        mouseCursor.style.cssText = `
+        position:fixed; 
+        transform: translate(${currentX}px, ${currentY}px);
+        `;
+   } 
+
+    // $('a, .viewmore').on('mouseover',function(){
+    //     $('.cursor').stop().animate({'width':'180px','height' : '180px'})
+    // }).on('mouseout', function(){
+    //     $('.cursor').stop().animate({'width':'80px','height' : '80px'})
+    // })
+    // $('.gnbBtn, .searchImg, .starImg, .scroll_text').on('mouseover',function(){
+    //     $('.cursor').hide()
+    //     $(this).addClass('pointer')
+    // }).on('mouseout', function(){ 
+    //     $('.cursor').show()
+    //     $(this).removeClass('pointer')
+    // })
  
 
     $('.slide_prograss_inner').css( { 'width' : 0 })
