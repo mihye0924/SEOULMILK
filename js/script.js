@@ -43,8 +43,8 @@ $(function(){
     function tick(){
         requestAnimationFrame(tick);
         
-        currentX += (mouseX - currentX - 40) * 0.5;
-        currentY += (mouseY - currentY - 40) * 0.5; 
+        currentX += (mouseX - currentX - 10) * 0.5;
+        currentY += (mouseY - currentY - 10) * 0.5; 
         mouseCursor.style.cssText = `
         position:fixed; 
         transform: translate(${currentX}px, ${currentY}px);
