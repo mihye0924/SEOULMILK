@@ -13,7 +13,7 @@ https://mihye0924.github.io/PERIPERA/peripera.html](https://mihye0924.github.io/
 >작업 수: 1명
   
 ------------
-## React Stacks
+## Stacks
 
 #### Environment   
 <img src="https://github.com/mihye0924/react_context_app/assets/71968785/6e825b86-c259-48c2-a272-4286e74d9798" width="30">
