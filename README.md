@@ -3,7 +3,7 @@
  
 ------------
 # Site Link
-https://mihye0924.github.io/PERIPERA/peripera.html](https://mihye0924.github.io/SEOULMILK/seoulmilk.html
+https://mihye0924.github.io/SEOULMILK/seoulmilk.html
  
 
 >작업용도: 홈페이지
