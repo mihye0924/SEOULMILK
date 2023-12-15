@@ -2,15 +2,16 @@
 ![화면_캡처_2023-09-30_165603](https://github.com/mihye0924/SEOULMILK/assets/71968785/58ac11fa-c19f-4aab-87de-6759990e5630)
 
 ------------
-# Site Link
-https://mihye0924.github.io/PERIPERA/peripera.html](https://mihye0924.github.io/SEOULMILK/seoulmilk.html
- 
+# Site Link 
+https://mihye0924.github.io/re-blog/
 
->작업용도: 홈페이지
+>작업용도: 블로그
 >
->작업기간: 30일이내
+>테스트:  ID 1004, PW  1004
 >
->작업 수: 1명
+>작업기간: 2023.09.16 ~ 2023.10.30
+>
+>작업 수: 2명(조미혜, 황웅희)
   
 ------------
 ## Stacks
