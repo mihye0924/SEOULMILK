@@ -15,13 +15,4 @@ https://mihye0924.github.io/SEOULMILK/seoulmilk.html
 ------------
 ## Stacks
 
-#### Environment   
-<img src="https://github.com/mihye0924/react_context_app/assets/71968785/6e825b86-c259-48c2-a272-4286e74d9798" width="30">
-<img src="https://github.com/mihye0924/react_context_app/assets/71968785/557f00bf-2f5f-4bc9-9d63-10565250d6f9" width="30">
-<img src="https://github.com/mihye0924/react_context_app/assets/71968785/64f67e8b-759f-4063-a3bc-29dc3918e44b" width="30">
-
-#### Development  
-<img src="https://github.com/mihye0924/PERIPERA/assets/71968785/7b32d8ff-cb6b-4f81-9501-357f15c48994" width="30">
-<img src="https://github.com/mihye0924/PERIPERA/assets/71968785/f71d27fe-0839-43c4-bafe-7f9fe7474639" width="30">
-<img src="https://github.com/mihye0924/PERIPERA/assets/71968785/171f03bc-fc22-456c-aedf-ad9c944c70ae" width="30"> 
-
+<img style="display:inline-block;" alt="Static Badge" src="https://img.shields.io/badge/HTML5-E34F26?logo=HTML5&logoColor=white"> <img style="display:inline-block;" alt="Static Badge" src="https://img.shields.io/badge/CSS3-1572B6?logo=CSS3&logoColor=white"> <img style="display:inline-block;"  alt="Static Badge" src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?logo=JAVASCRIPT&logoColor=white">  
